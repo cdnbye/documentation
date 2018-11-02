@@ -1,0 +1,21 @@
+{
+  "name": "documentation",
+  "version": "1.0.0",
+  "description": "> An awesome project.",
+  "main": "index.js",
+  "scripts": {
+    "git-push": "git add . && git commit -m 'create pkg.json' && git push origin master",
+    "git-pull": "git pull origin master",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdnbye/documentation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdnbye/documentation/issues"
+  },
+  "homepage": "https://github.com/cdnbye/documentation#readme"
+}
