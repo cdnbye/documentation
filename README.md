@@ -1,1 +1,3 @@
-# documentation
+# Headline
+
+> An awesome project.
