@@ -1,0 +1,6 @@
+- language
+    - [中文](/)
+    - [English](/en/)
+- [Demo](/)
+- [Contact Us](/)
+- [Console](https://docs.snipaste.com/)
