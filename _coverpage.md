@@ -1,4 +1,4 @@
-<img width="250" src="cdnbye.png" alt="cdnbye logo">
+<img width="250" src="pics/cdnbye.png" alt="cdnbye logo">
 
 # `hlsjs-p2p-engine` <small>0.5.1</small>
 
@@ -11,5 +11,5 @@
 
 <!-- 背景图片 -->
 
-![](bg.jpg)
+![](pics/bg.jpg)
 
