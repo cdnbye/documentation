@@ -4,10 +4,10 @@
 
 > 视频网站省流量`&`加速神器
 <br>
-> <br>免费的Web视频加速插件，基于WebRTC datachannel技术。
+> <br>基于WebRTC datachannel技术
 
 [GitHub](https://github.com/cdnbye/hlsjs-p2p-engine)
-[快速入门](#head)
+[快速入门](/README.md)
 
 <!-- 背景图片 -->
 

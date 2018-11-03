@@ -7,7 +7,7 @@
 > <br>while also maximizing a user’s viewing experience. 
 
 [GitHub](https://github.com/cdnbye/hlsjs-p2p-engine)
-[Getting Started](#head)
+[Getting Started](/en/README.md)
 
 <!-- 背景图片 -->
 

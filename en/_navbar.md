@@ -1,6 +1,6 @@
-- language
-    - [中文](/)
-    - [English](/en/)
-- [Demo](/)
+- language(语言)
+  - [:uk: English](/en/)
+  - [:cn: 中文](/)
+- [Demo](https://cdnbye.github.io/hlsjs-p2p-demo/)
 - [Contact Us](/)
 - [Console](https://docs.snipaste.com/)

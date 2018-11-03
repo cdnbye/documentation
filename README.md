@@ -16,3 +16,22 @@ P2P技术使观看相同内容的用户之间可以相互分享数据，不仅�
 
 ## 演示Demo
 打开2个相同的网页：[demo](https://cdnbye.github.io/hlsjs-p2p-demo/)
+
+## 浏览器支持情况
+由于WebRTC已成为HTML5标准，目前大部分主流浏览器都已经支持。CDNBye的浏览器兼容性取决于WebRTC和hls.js。需要注意的是iOS版Safari由于不支持MediaSource API，因此也不支持hls.js(不过Safari原生支持HLS播放)。
+
+ 兼容性|Chrome | Firefox | Mac Safari| iOS Safari | Opera | IE | Edge|   
+:-: | :-: | :-: | :-: | :-: | :-: | :-:| :-:
+WebRTC | Yes | Yes | Yes | Yes | Yes | No | No
+Hls.js | Yes | Yes | Yes | No | Yes | Yes | Yes
+CDNBye | Yes | Yes | Yes | No | Yes | No | No 
+
+## CDN
+- [jsDelivr](https://www.jsdelivr.com/package/npm/cdnbye)
+- [unpkg](https://unpkg.com/cdnbye@latest/)
+
+## 联系我们
+邮箱：service@cdnbye.com
+
+## 技术交流
+QQ群：746163014
