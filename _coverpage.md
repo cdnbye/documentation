@@ -9,7 +9,9 @@
 [GitHub](https://github.com/cdnbye/hlsjs-p2p-engine)
 [快速入门](/README.md)
 
-<!-- 背景图片 -->
+<!-- 背景色 -->
 
-![](pics/bg.jpg)
+![color](#00C5CD)
+
+
 

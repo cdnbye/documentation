@@ -2,5 +2,4 @@
   - [:uk: English](/en/)
   - [:cn: 中文](/)
 - [产品演示](https://cdnbye.github.io/hlsjs-p2p-demo/)
-- [联系我们](/)
-- [控制台](https://docs.snipaste.com/)
+- [控制台](/)
