@@ -123,7 +123,7 @@
 </html>
 ```
 
-## DPlayer
+## DPlayer(推荐)
 [DPlayer介绍](https://github.com/MoePlayer/DPlayer)
 <br>本示例基于嵌入hlsjs-p2p-engine的[P2P-DPlayer](https://github.com/cdnbye/P2P-DPlayer)
 ```html
