@@ -3,6 +3,7 @@
 - [Player Integration](/en/players.md)
 - [API & Config](/en/API.md)
 - [Signaling Service](/en/signaling.md)
+- [CDN](/en/CDN.md)
 - Console<sup style="color:red;">new!</sup>
     - [Domain Binding](/en/bindings.md)
     - [Data Visualization](/en/data-explain.md)

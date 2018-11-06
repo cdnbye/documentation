@@ -26,9 +26,6 @@ WebRTC | Yes | Yes | Yes | Yes | Yes | No | No
 Hls.js | Yes | Yes | Yes | No | Yes | Yes | Yes
 CDNBye | Yes | Yes | Yes | No | Yes | No | No 
 
-## CDN
-- [jsDelivr](https://www.jsdelivr.com/package/npm/cdnbye)
-- [unpkg](https://unpkg.com/cdnbye@latest/)
 
 ## 联系我们
 邮箱：service@cdnbye.com

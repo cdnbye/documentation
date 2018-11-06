@@ -2,6 +2,7 @@
 - [使用方法](usage.md)
 - [第三方播放器](players.md)
 - [API文档](API.md)
+- [CDN](CDN.md)
 - [信令服务](signaling.md)
 - 控制台<sup style="color:red;">新!</sup>
     - [绑定域名](bindings.md)
