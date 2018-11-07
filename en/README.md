@@ -7,6 +7,7 @@ This JS library implements WebRTC datachannel to scale live/vod video streaming 
 ## Features
 - WebRTC data channels for lightweight peer-to-peer communication with no plugins
 - Very easy to  integrate with an existing hls.js project
+- Seamlessly fallback to normal server usage if a browser doesn't support WebRTC
 - Highly configurable for users
 - Support most popular HTML5 players such as video.js、Clappr、Flowplayer
 - Efficient scheduling policies to enhance the performance of P2P streaming
