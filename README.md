@@ -15,6 +15,9 @@ P2P技术使观看相同内容的用户之间可以相互分享数据，不仅�
 - 通过有效的调度策略来保证用户的播放体验以及p2p率
 - Tracker服务器根据访问IP的ISP、地域等进行智能调度
 
+## 演示Demo
+打开2个相同的网页：[demo](https://demo.cdnbye.com/)
+
 ## 浏览器支持情况
 由于WebRTC已成为HTML5标准，目前大部分主流浏览器都已经支持。CDNBye的浏览器兼容性取决于WebRTC和hls.js。需要注意的是iOS版Safari由于不支持MediaSource API，因此也不支持hls.js(不过Safari原生支持HLS播放)。
 

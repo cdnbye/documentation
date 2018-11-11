@@ -13,6 +13,9 @@ This JS library implements WebRTC datachannel to scale live/vod video streaming 
 - Efficient scheduling policies to enhance the performance of P2P streaming
 - Use IP database to group up peers by ISP and regions
 
+## Demo
+[Click me!](https://demo.cdnbye.com/)
+
 ## Browser Support
 WebRTC has already been incorporated into the HTML5 standard and it is broadly deployed in modern browsers. The compatibility of CDNBye depends on the browser support of WebRTC and Hls.js. Please note that iOS Safari "Mobile" does not support the MediaSource API.
 
