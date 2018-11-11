@@ -6,7 +6,7 @@
 <br>
 > <br>while also maximizing a user’s viewing experience. 
 
-[Demo](https://cdnbye.github.io/hlsjs-p2p-demo/)
+[Demo](https://demo.cdnbye.com/)
 [Getting Started](/en/README.md)
 
 <!-- 背景色 -->

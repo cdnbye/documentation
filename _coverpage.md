@@ -6,7 +6,7 @@
 <br>
 > <br>基于WebRTC datachannel技术
 
-[产品演示](https://cdnbye.github.io/hlsjs-p2p-demo/)
+[产品演示](https://demo.cdnbye.com/)
 [快速入门](/README.md)
 
 <!-- 背景色 -->
