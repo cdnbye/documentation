@@ -1,6 +1,6 @@
 <img width="250" src="pics/cdnbye.png" alt="cdnbye logo">
 
-# `hlsjs-p2p-engine` <small>0.5.1</small>
+# `hlsjs-p2p-engine` <small>0.5.2</small>
 
 > 视频网站省流量`&`加速神器
 <br>
