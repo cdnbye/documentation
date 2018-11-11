@@ -1,5 +1,4 @@
 - language(语言)
   - [:uk: English](/en/)
   - [:cn: 中文](/)
-- [产品演示](https://cdnbye.github.io/hlsjs-p2p-demo/)
 - [控制台](/)
