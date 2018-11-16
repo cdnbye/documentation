@@ -8,3 +8,16 @@ Deploy your own Signaling Server (Recommended)
     
 ## Use free Signaling Server
 - 'wss://signal.cdnbye.com/wss' (Default signaling server)
+
+## Example
+```javascript
+var hlsjsConfig = {
+    p2pConfig: {
+        wsSignalerAddr: 'ws://your.signalservice.com',
+        // Other p2pConfig options provided by hlsjs-p2p-engine
+    }
+};
+// Hls constructor is overriden by included bundle
+var hls = new Hls(hlsjsConfig);
+// Use `hls` just like the usual hls.js ...
+```

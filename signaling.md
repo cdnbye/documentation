@@ -9,3 +9,16 @@
 
 ## 第三方免费信令服务
 - 'wss://signal.cdnbye.com/wss'（本插件默认信令地址）
+
+## 使用示例
+```javascript
+var hlsjsConfig = {
+    p2pConfig: {
+        wsSignalerAddr: 'ws://your.signalservice.com',
+        // Other p2pConfig options provided by hlsjs-p2p-engine
+    }
+};
+// Hls constructor is overriden by included bundle
+var hls = new Hls(hlsjsConfig);
+// Use `hls` just like the usual hls.js ...
+```
