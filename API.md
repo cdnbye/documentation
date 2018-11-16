@@ -31,7 +31,6 @@ if (Hls.WEBRTC_SUPPORT) {
 | 字段 | 类型 | 默认值 | 描述 |
 | :-: | :-: | :-: | :-: |
 | `logLevel` | string or boolean | 'none' | log的等级，分为debug、info、warn、error、none，设为true等于debug，设为false等于none。
-| `announce` | string | 'https://api.cdnbye.com/v1' | tracker服务器地址。
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com/wss' | 信令服务器地址。
 | `wsMaxRetries` | number | 3 |websocket连接重试次数。
 | `wsReconnectInterval` | number | 5 | websocket重连时间间隔。
