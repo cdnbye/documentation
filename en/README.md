@@ -11,7 +11,7 @@ This JS library implements WebRTC datachannel to scale live/vod video streaming 
 - Highly configurable for users
 - Support most popular HTML5 players such as video.js、Clappr、Flowplayer
 - Efficient scheduling policies to enhance the performance of P2P streaming
-- Use IP database to group up peers by ISP and regions
+- Use IP database to group up peers by ISP and region
 
 ## Demo
 [Click me!](https://demo.cdnbye.com/)
