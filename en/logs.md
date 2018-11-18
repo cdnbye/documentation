@@ -6,3 +6,7 @@
 
 ## 0.5.2
 - fix bug when re-instantiate Hls, signaling is switched to default setting
+
+## 0.5.3
+- fix a bug may block p2p
+- max buffer size setting for mobile
