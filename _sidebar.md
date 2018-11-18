@@ -12,6 +12,6 @@
 - 更多
   - [技术原理](design.md)
   - [更新日志](logs.md)
-  - [交流论坛](https://cdnbye.github.io/documentation/#/)
+  - [交流论坛](/coming-soon)
   
 

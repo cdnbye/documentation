@@ -12,6 +12,6 @@
 - More
   - [Design](/en/design.md)
   - [Change Log](/en/logs.md)
-  - [Forum](https://cdnbye.github.io/documentation/#/)
+  - [Forum](/coming-soon)
   
 
