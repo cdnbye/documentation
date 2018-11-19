@@ -1,6 +1,6 @@
 <img width="250" src="pics/cdnbye.png" alt="cdnbye logo">
 
-# `hlsjs-p2p-engine` <small>0.5.2</small>
+# `hlsjs-p2p-engine` <small>0.5.3</small>
 
 > A free hls.js plugin to offload bandwidth from expensive traditional CDNs，
 <br>
