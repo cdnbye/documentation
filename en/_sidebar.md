@@ -3,7 +3,7 @@
 - [Player Integration](/en/players.md)
 - [API & Config](/en/API.md)
 - [Signaling Service](/en/signaling.md)
-- [m3u8 Optimization](m3u8.md)
+- [m3u8 Optimization](/en/m3u8.md)
 - [CDN](/en/CDN.md)
 - Console<sup style="color:red;">new!</sup>
     - [Domain Binding](/en/bindings.md)
