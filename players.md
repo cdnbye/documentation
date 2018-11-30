@@ -376,3 +376,41 @@
 </body>
 </html>
 ```
+
+## 西瓜播放器
+[西瓜播放器介绍](http://h5player.bytedance.com/)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="referrer" content="no-referrer">
+    <title>CDNBye XGPlayer Demo</title>
+    <style type="text/css">
+        html, body {width:100%;height:100%;margin:auto;overflow: hidden;}
+        body {display:flex;}
+        #mse {flex:auto;}
+    </style>
+    <script type="text/javascript">
+        window.addEventListener('resize',function(){document.getElementById('mse').style.height=window.innerHeight+'px';});
+    </script>
+</head>
+<body>
+<div id="mse"></div>
+<script src="//cdn.jsdelivr.net/npm/xgplayer@1.1.4-beta.3/browser/index.js" charset="utf-8"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="//cdn.jsdelivr.net/npm/p2p-xgplayer-hlsjs@latest"></script>
+<script type="text/javascript">
+    new window.HlsJsPlayer({
+        id: 'mse',
+        url: '//video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8',
+        autoplay: true,
+        playsinline: true,
+        height: window.innerHeight,
+        width: window.innerWidth
+    });
+</script>
+</body>
+</html>
+```
