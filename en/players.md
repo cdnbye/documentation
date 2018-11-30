@@ -378,7 +378,7 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
 ```
 
 ## XGPlayer
-[Introduction to XGPlayer](http://h5player.bytedance.com/)
+[Introduction to XGPlayer](http://h5player.bytedance.com/en/)
 ```html
 <!DOCTYPE html>
 <html>

@@ -377,8 +377,8 @@
 </html>
 ```
 
-## 西瓜播放器
-[西瓜播放器介绍](http://h5player.bytedance.com/)
+## XGPlayer
+[XGPlayer介绍](http://h5player.bytedance.com/)
 ```html
 <!DOCTYPE html>
 <html>
