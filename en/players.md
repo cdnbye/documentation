@@ -255,7 +255,7 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
 ```
 
 ## MediaElement.js
-[MediaElement.js介绍](http://www.mediaelementjs.com/)
+[Introduction to MediaElement.js](http://www.mediaelementjs.com/)
 ```html
 <!DOCTYPE html>
 <html lang="en">
