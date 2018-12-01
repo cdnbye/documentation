@@ -14,9 +14,10 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
 <link href="//vjs.zencdn.net/7.2/video-js.min.css" rel="stylesheet">
 <script src="//vjs.zencdn.net/7.2/video.min.js"></script>
 <!-- increase browser support with MSE polyfill -->
-<script src="https://unpkg.com/videojs-contrib-media-sources@4.4.4/dist/videojs-contrib-media-sources.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-contrib-hlsjs.min.js"></script>
+<script src="//unpkg.com/videojs-contrib-media-sources@4.4.4/dist/videojs-contrib-media-sources.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-contrib-hlsjs.min.js"></script>
+
 <body>
 <div id="main">
     <video id="player" class="video-js vjs-default-skin" height="360" width="640" controls preload="none">
@@ -32,7 +33,7 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
                 debug: false,
                 // Other hlsjsConfig options provided by hls.js
                 p2pConfig: {
-                    tag: 'videojs',
+                    logLevel: true,
                     // Other p2pConfig options provided by CDNBye
                 }
             }
@@ -50,9 +51,9 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
 <!-- skin -->
 <link rel="stylesheet" href="https://releases.flowplayer.org/7.2.6/skin/skin.css">
 <!-- CDNBye hls.js -->
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hls.light.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hls.light.min.js"></script>
 <!-- flowplayer -->
-<script src="https://releases.flowplayer.org/7.2.6/flowplayer.min.js"></script>
+<script src="//releases.flowplayer.org/7.2.6/flowplayer.min.js"></script>
 <!-- body section -->
 <div id="player"></div>
 <script>
@@ -69,7 +70,7 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                tag: 'flowplayer',
+                logLevel: true,
                 // Other p2pConfig options provided by CDNBye
             }
         }
@@ -86,11 +87,11 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
     <meta charset="UTF-8">
     <title>CDNBye JWPlayer Demo</title>
     <!-- CDNBye Plugin -->
-    <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
     <!-- JW Player Builds -->
     <script src="//ssl.p.jwpcdn.com/player/v/8.0.11/jwplayer.js"></script>
     <!-- JWPlayer Hlsjs Provider -->
-    <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/jwplayer.hlsjs.provider.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/jwplayer.hlsjs.provider.min.js"></script>
 </head>
 <body>
 <header></header>
@@ -108,7 +109,7 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                tag: 'jwplayer',
+                logLevel: true,
                 // Other p2pConfig options provided by CDNBye
             }
         },
@@ -125,7 +126,7 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
 
 ## DPlayer
 [Introduction to DPlayer](https://github.com/MoePlayer/DPlayer)
-<br>本示例基于嵌入hlsjs-p2p-engine的[P2P-DPlayer](https://github.com/cdnbye/P2P-DPlayer)
+<br>See [P2P-DPlayer](https://github.com/cdnbye/P2P-DPlayer)
 ```html
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/p2p-dplayer@latest/dist/DPlayer.min.css">
@@ -137,8 +138,8 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
 </style>
 <div id="dplayer"></div>
 <div id="stats"></div>
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-<script src="https://cdn.jsdelivr.net/npm/p2p-dplayer@latest"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="//cdn.jsdelivr.net/npm/p2p-dplayer@latest"></script>
 <script>
     var dp = new DPlayer({
         container: document.getElementById('dplayer'),
@@ -181,13 +182,13 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
 
 ## CKPlayer
 [Introduction to CKPlayer](http://www.ckplayer.com/)
-<br>本示例基于嵌入hlsjs-p2p-engine的[P2P-CKPlayer](https://github.com/cdnbye/P2P-CKPlayer)
+<br>See [P2P-CKPlayer](https://github.com/cdnbye/P2P-CKPlayer)
 ```html
 <!DOCTYPE html>
 <html>
 <body>
 <div id="video" style="width: 100%; height: 400px;max-width: 600px;"></div>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p2p-ckplayer@latest/ckplayer/ckplayer.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/p2p-ckplayer@latest/ckplayer/ckplayer.min.js" charset="UTF-8"></script>
 <script type="text/javascript">
     var videoObject = {
         container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
@@ -201,7 +202,7 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
             p2pConfig: {
                 logLevel: true,
                 // Other p2pConfig options provided by CDNBye
-                // https://github.com/cdnbye/hlsjs-p2p-engine/blob/master/docs/%E4%B8%AD%E6%96%87/API.md
+                // https://docs.cdnbye.com/#/en/API
             }
         }
     };
@@ -220,11 +221,11 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
     <meta charset="UTF-8">
     <title>CDNBye Clappr Demo</title>
     <!-- Clappr Builds -->
-    <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
     <!-- CDNBye P2PEngine -->
-    <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
     <!-- CDNBye Clappr Plugin -->
-    <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/clappr-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/clappr-plugin.min.js"></script>
 </head>
 <body>
 <div id="player"></div>
@@ -242,7 +243,7 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
                     debug: false,
                     // Other hlsjsConfig options provided by hls.js
                     p2pConfig: {
-                        tag: 'clappr',
+                        logLevel: 'debug',
                         // Other p2pConfig options provided by CDNBye
                     }
                 }
@@ -254,16 +255,16 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
 ```
 
 ## MediaElement.js
-[Introduction to MediaElement.js](http://www.mediaelementjs.com/)
+[MediaElement.js介绍](http://www.mediaelementjs.com/)
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>CDNBye MediaElement Demo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@latest/build/mediaelementplayer.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mediaelement@latest/build/mediaelement-and-player.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mediaelement@latest/build/mediaelementplayer.min.css">
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+    <script src="//cdn.jsdelivr.net/npm/mediaelement@latest/build/mediaelement-and-player.min.js"></script>
 </head>
 <body>
 <video id="player"
@@ -277,7 +278,7 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                tag: 'mediaelement',
+                logLevel: true,
                 // Other p2pConfig options provided by CDNBye
             }
         },
@@ -285,13 +286,14 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
             me.play();
         }
     });
+
 </script>
 </body>
 </html>
 ```
 
 ## TCPlayer  
-[Introduction to TCPlayer](https://cloud.tencent.com/document/product/267/7479)(腾讯云播放器)
+[Introduction to TCPlayer](https://cloud.tencent.com/document/product/267/7479)
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -314,7 +316,7 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
 <body>
 <div id="video-container" style="margin: 0px auto;">
 </div>
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.3.js"></script>
 <script>
     var options = {
@@ -328,7 +330,6 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
                 logLevel: true,
-                tag: 'tcplayer',
                 // Other p2pConfig options provided by CDNBye
             }
         }
@@ -349,11 +350,11 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
     <meta charset="UTF-8">
     <title>CDNBye Chimee Demo</title>
     <!-- Chimee Builds -->
-    <script src="https://cdn.jsdelivr.net/npm/chimee@0.11.0/lib/index.browser.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/chimee@0.11.0/lib/index.browser.min.js"></script>
     <!-- CDNBye P2PEngine -->
-    <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
     <!-- Chimee HLS Kernel -->
-    <script src="https://cdn.jsdelivr.net/npm/p2p-chimee-kernel-hls@latest"></script>
+    <script src="//cdn.jsdelivr.net/npm/p2p-chimee-kernel-hls@latest"></script>
 </head>
 <body>
 <div id="player"></div>
@@ -366,7 +367,7 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
             hls: {
                 handler: window.ChimeeKernelHls,
                 p2pConfig: {
-                    tag: 'chimee'
+                    logLevel: 'debug',
                     // Other p2pConfig options provided by CDNBye
                 }
             }
