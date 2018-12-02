@@ -13,6 +13,7 @@ CDNBye hlsjs-p2p-engine implements WebRTC datachannel to scale live/vod video st
 - Support most popular HTML5 players such as video.js、Clappr、Flowplayer
 - Efficient scheduling policies to enhance the performance of P2P streaming
 - Use IP database to group up peers by ISP and regions
+- API frozen, new releases will not break your code
 
 ## Demo
 [Click me!](https://demo.cdnbye.com/)
