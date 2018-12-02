@@ -8,7 +8,7 @@
   <a href="https://www.jsdelivr.com/package/npm/cdnbye"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
 </p>
 
-# `hlsjs-p2p-engine` <small>0.5.3</small>
+# `hlsjs-p2p-engine`
 
 > 视频网站省流量`&`加速神器
 <br>
