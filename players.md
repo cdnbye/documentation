@@ -415,3 +415,33 @@
 </body>
 </html>
 ```
+
+## fluidplayer
+[fluidplayer介绍](https://www.fluidplayer.com/)
+```html
+<link rel="stylesheet" href="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.css" type="text/css"/>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.js"></script>
+<video id='hls-video'>
+    <source src='https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8' type='application/x-mpegURL'/>
+</video>
+<script>
+    fluidPlayer(
+        'hls-video',
+        {
+            layoutControls: {
+                fillToContainer: true
+            },
+            hlsjsConfig: {
+                // debug: false,
+                // Other hlsjsConfig options provided by hls.js
+                p2pConfig: {
+                    logLevel: true,
+                    // Other p2pConfig options provided by CDNBye
+                    // https://docs.cdnbye.com/#/API
+                }
+            }
+        }
+    );
+</script>
+```
