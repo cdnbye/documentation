@@ -445,3 +445,35 @@
     );
 </script>
 ```
+
+## OpenPlayer
+[OpenPlayer介绍](https://www.openplayerjs.com/)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CDNBye OpenPlayer Demo</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/openplayerjs@latest/dist/openplayer.css">
+</head>
+<body>
+<video class="op-player__media" id="video" controls playsinline>
+    <source src="https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"></video>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+    <script src="//cdn.jsdelivr.net/npm/openplayerjs@latest"></script>
+</body>
+<script>
+    var player = new OpenPlayer('video', null, false, {
+        hls: {
+            debug: false,
+            // Other hlsjsConfig options provided by hls.js
+            p2pConfig: {
+                logLevel: 'debug',
+                // Other p2pConfig options provided by CDNBye
+            }
+        }
+    });
+    player.init();
+</script>
+</html>
+```
