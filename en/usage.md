@@ -78,8 +78,8 @@ Create hls.js instance passsing hlsjsConfig as param. Create P2PEngine instance 
 ```javascript
 var hlsjsConfig = {
     maxBufferSize: 0,       // Highly recommended setting
-    maxBufferLength: 30,    // Highly recommended setting
-    liveSyncDurationCount: 10,    // Highly recommended setting
+    maxBufferLength: 5,     // Highly recommended setting
+    liveSyncDuration: 30,   // Highly recommended setting
 };
 
 var p2pConfig = {

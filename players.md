@@ -240,7 +240,9 @@
             },
             playback: {
                 hlsjsConfig: {
-                    debug: false,
+                    maxBufferSize: 0,       // Highly recommended setting
+                    maxBufferLength: 5,     // Highly recommended setting
+                    liveSyncDuration: 30,   // Highly recommended setting
                     // Other hlsjsConfig options provided by hls.js
                     p2pConfig: {
                         logLevel: 'debug',
@@ -366,6 +368,9 @@
         kernels: {
             hls: {
                 handler: window.ChimeeKernelHls,
+                maxBufferSize: 0,       // Highly recommended setting
+                maxBufferLength: 5,     // Highly recommended setting
+                liveSyncDuration: 30,   // Highly recommended setting
                 p2pConfig: {
                     logLevel: 'debug',
                     // Other p2pConfig options provided by CDNBye
