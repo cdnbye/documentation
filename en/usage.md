@@ -44,7 +44,7 @@ That's it!
 
 
 ## Integrate to HTML5 Players
-See [Player Integration](players.md)
+See [Player Integration](/en/players.md)
 
 ## Include
 Include the pre-built script of latest version bundled with hls.js(recommended):
