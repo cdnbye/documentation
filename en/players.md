@@ -126,7 +126,6 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
 
 ## DPlayer
 [Introduction to DPlayer](https://github.com/MoePlayer/DPlayer)
-<br>See [P2P-DPlayer](https://github.com/cdnbye/P2P-DPlayer)
 ```html
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/p2p-dplayer@latest/dist/DPlayer.min.css">
@@ -138,38 +137,42 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
 </style>
 <div id="dplayer"></div>
 <div id="stats"></div>
-<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-<script src="//cdn.jsdelivr.net/npm/p2p-dplayer@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/dplayer@latest"></script>
 <script>
-    var dp = new DPlayer({
+    var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
+    const dp = new DPlayer({
         container: document.getElementById('dplayer'),
         autoplay: true,
         video: {
             url: 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8',
-            type: 'hls'
-        },
-        hlsjsConfig: {
-//            debug: false,
-            // Other hlsjsConfig options provided by hls.js
-            p2pConfig: {
-                logLevel: true,
-                // Other p2pConfig options provided by CDNBye
-                // https://docs.cdnbye.com/#/API
+            type: 'customHls',
+            customType: {
+                'customHls': function (video, player) {
+                    const hls = new Hls({
+                        debug: false,
+                        // Other hlsjsConfig options provided by hls.js
+                        p2pConfig: {
+                            logLevel: 'debug',
+                            // Other p2pConfig options provided by CDNBye
+                        }
+                    });
+                    hls.loadSource(video.src);
+                    hls.attachMedia(video);
+                    hls.p2pEngine.on('stats', function (stats) {
+                        _totalP2PDownloaded = stats.totalP2PDownloaded;
+                        _totalP2PUploaded = stats.totalP2PUploaded;
+                        updateStats();
+                    }).on('peerId', function (peerId) {
+                        _peerId = peerId;
+                    }).on('peers', function (peers) {
+                        _peerNum = peers.length;
+                        updateStats();
+                    });
+
+                }
             }
         }
-    });
-    var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
-    dp.on('stats', function (stats) {
-        _totalP2PDownloaded = stats.totalP2PDownloaded;
-        _totalP2PUploaded = stats.totalP2PUploaded;
-        updateStats();
-    });
-    dp.on('peerId', function (peerId) {
-        _peerId = peerId;
-    });
-    dp.on('peers', function (peers) {
-        _peerNum = peers.length;
-        updateStats();
     });
 
     function updateStats() {
