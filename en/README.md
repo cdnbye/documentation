@@ -27,5 +27,8 @@ WebRTC | ✔ | ✔ | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |
 Hls.js | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ❌ |
 CDNBye | ✔ | ✔ | ✔ | ✔ | ✔ | ❌ | ❌ | ❌ |
 
+## Console
+Bind your domain in `https://oms.cdnbye.com`, then you can view p2p-related information.
+
 ## Contact Us
 Email: service@cdnbye.com
