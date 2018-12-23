@@ -7,7 +7,7 @@
 - [CDN](/en/CDN.md)
 - Console<sup style="color:red;">new!</sup>
     - [Domain Binding](/en/bindings.md)
-    - [Data Visualization](/en/data-explain.md)
+    - [Data Analysis](/en/data-explain.md)
     - [P2P Control](/en/p2p-control.md)
 - [FAQ](/en/FAQ.md)
 - More

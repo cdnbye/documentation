@@ -7,7 +7,7 @@
 - [信令服务](signaling.md)
 - 控制台<sup style="color:red;">新!</sup>
     - [绑定域名](bindings.md)
-    - [数据可视化](data-explain.md)
+    - [数据分析](data-explain.md)
     - [P2P控制](p2p-control.md)
 - [常见问题](FAQ.md)
 - 更多
