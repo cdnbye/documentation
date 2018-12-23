@@ -1,4 +1,4 @@
 - language(语言)
   - [:uk: English](/en/)
   - [:cn: 中文](/)
-- [Console](/coming-soon)
+- [Console](https://oms.cdnbye.com)
