@@ -124,7 +124,7 @@
 </html>
 ```
 
-## DPlayer(推荐)
+## DPlayer
 [DPlayer介绍](https://github.com/MoePlayer/DPlayer)
 ```html
 <meta charset="UTF-8">
