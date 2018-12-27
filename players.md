@@ -34,6 +34,7 @@
                 // Other hlsjsConfig options provided by hls.js
                 p2pConfig: {
                     logLevel: true,
+                    live: false,        // 如果是直播设为true
                     // Other p2pConfig options provided by CDNBye
                 }
             }
@@ -71,6 +72,7 @@
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
                 logLevel: true,
+                live: false,        // 如果是直播设为true
                 // Other p2pConfig options provided by CDNBye
             }
         }
@@ -110,6 +112,7 @@
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
                 logLevel: true,
+                live: false,        // 如果是直播设为true
                 // Other p2pConfig options provided by CDNBye
             }
         },
@@ -154,6 +157,7 @@
                         // Other hlsjsConfig options provided by hls.js
                         p2pConfig: {
                             logLevel: 'debug',
+                            live: false,        // 如果是直播设为true
                             // Other p2pConfig options provided by CDNBye
                         }
                     });
@@ -204,6 +208,7 @@
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
                 logLevel: true,
+                live: false,        // 如果是直播设为true
                 // Other p2pConfig options provided by CDNBye
                 // https://docs.cdnbye.com/#/en/API
             }
@@ -249,6 +254,7 @@
                     // Other hlsjsConfig options provided by hls.js
                     p2pConfig: {
                         logLevel: 'debug',
+                        live: false,        // 如果是直播设为true
                         // Other p2pConfig options provided by CDNBye
                     }
                 }
@@ -284,6 +290,7 @@
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
                 logLevel: true,
+                live: false,        // 如果是直播设为true
                 // Other p2pConfig options provided by CDNBye
             }
         },
@@ -335,6 +342,7 @@
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
                 logLevel: true,
+                live: false,        // 如果是直播设为true
                 // Other p2pConfig options provided by CDNBye
             }
         }
@@ -376,6 +384,7 @@
                 liveSyncDuration: 30,   // Highly recommended setting
                 p2pConfig: {
                     logLevel: 'debug',
+                    live: false,        // 如果是直播设为true
                     // Other p2pConfig options provided by CDNBye
                 }
             }
@@ -445,6 +454,7 @@
                 // Other hlsjsConfig options provided by hls.js
                 p2pConfig: {
                     logLevel: true,
+                    live: false,        // 如果是直播设为true
                     // Other p2pConfig options provided by CDNBye
                     // https://docs.cdnbye.com/#/API
                 }
@@ -477,6 +487,7 @@
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
                 logLevel: 'debug',
+                live: false,        // 如果是直播设为true
                 // Other p2pConfig options provided by CDNBye
             }
         }
