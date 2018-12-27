@@ -426,7 +426,16 @@
         autoplay: true,
         playsinline: true,
         height: window.innerHeight,
-        width: window.innerWidth
+        width: window.innerWidth,
+        hlsOpts: {
+            debug: false,
+            // Other hlsjsConfig options provided by hls.js
+            p2pConfig: {
+                logLevel: true,
+                live: false,        // 如果是直播设为true
+                // Other p2pConfig options provided by CDNBye
+            }
+        }
     });
 </script>
 </body>

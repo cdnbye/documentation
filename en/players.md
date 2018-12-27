@@ -426,7 +426,16 @@ CDNBye can be integrated into any HTML5 video player that with hls.js built in.
         autoplay: true,
         playsinline: true,
         height: window.innerHeight,
-        width: window.innerWidth
+        width: window.innerWidth,
+        hlsOpts: {
+            debug: false,
+            // Other hlsjsConfig options provided by hls.js
+            p2pConfig: {
+                logLevel: true,
+                live: false,        // set to true in live mode
+                // Other p2pConfig options provided by CDNBye
+            }
+        }
     });
 </script>
 </body>
