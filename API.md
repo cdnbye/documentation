@@ -31,6 +31,7 @@ if (Hls.WEBRTC_SUPPORT) {
 | 字段 | 类型 | 默认值 | 描述 |
 | :-: | :-: | :-: | :-: |
 | `logLevel` | string or boolean | 'none' | log的等级，分为debug、info、warn、error、none，设为true等于debug，设为false等于none。
+| `live` | boolean | true | 直播或者点播模式，建议在点播模式下设为false，p2p插件会预缓存buffer以避免卡顿。
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com/wss' | 信令服务器地址。
 | `wsMaxRetries` | number | 3 |websocket连接重试次数。
 | `wsReconnectInterval` | number | 5 | websocket重连时间间隔。

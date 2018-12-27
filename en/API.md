@@ -32,6 +32,7 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | Field | Type | Default | Description |
 | :-: | :-: | :-: | :-: |
 | `logLevel` | string or boolean | 'none' | Print log level(debug, info, warn, error, none，false=none, true=debug).
+| `live` | boolean | true | tell engine whether in live or VOD mode, set to false will pre-buffer for smooth playing.
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com/wss' | The address of signal server.
 | `wsMaxRetries` | number | 3 | The maximum number of reconnection attempts that will be made by websocket before giving up.
 | `wsReconnectInterval` | number | 5 | The number of seconds to delay before attempting to reconnect by websocket.
