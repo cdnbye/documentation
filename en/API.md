@@ -43,6 +43,7 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | `segmentId` | function | - | Pass a function to generate segment Id.(See advanced usage)
 | `packetSize` | number | 64 * 1024 | The maximum package size sent by datachannel, 64KB should work with most of recent browsers. Set it to 16KB for older browsers support.
 | `webRTCConfig` | Object | {} | A [Configuration dictionary](https://github.com/feross/simple-peer) providing options to configure WebRTC connections.
+| `validateSegment` | function | - | Pass a function to check segment validity downloaded from peers.
 
 ## P2PEngine API
 
@@ -117,6 +118,22 @@ p2pConfig: {
                 { urls: 'stun:global.stun.twilio.com:3478?transport=udp' }
             ] 
         }
+    }
+}
+```
+
+### How to Check Segment Validity
+Sometimes we need to prevent a peer from sending a fake segment
+ (for example like in bittorrent with a hash function). 
+ CDNBye provide a validation callback with buffer of the 
+ downloaded segment, developer should implement the actual 
+ validator. If the callback returns false, then the segment 
+ is not valid. 
+ ```javascript
+p2pConfig: {
+    validateSegment: function (level, sn, buffer) {
+        var hash = hashFile.getHash(level,sn);
+        return hash === md5(buffer);
     }
 }
 ```

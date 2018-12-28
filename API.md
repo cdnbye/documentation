@@ -42,6 +42,7 @@ if (Hls.WEBRTC_SUPPORT) {
 | `segmentId` | function | - | 标识ts文件的字段，防止相同ts文件具有不同的路径。（参考高级用法）
 | `packetSize` | number | 64 * 1024 | 每次通过datachannel发送的包的大小，64KB适用于较新版本的浏览器，如果要兼容低版本浏览器可以设置成16KB。
 | `webRTCConfig` | Object | {} | 用于配置stun和datachannel的[字典](https://github.com/feross/simple-peer)。
+| `validateSegment` | function | - | 用于校验从其它节点下载的ts文件的合法性。
 
 
 ## P2PEngine API
@@ -117,6 +118,19 @@ p2pConfig: {
                 { urls: 'stun:global.stun.twilio.com:3478?transport=udp' }
             ] 
         }
+    }
+}
+```
+
+### 切片合法性校验
+有时候我们需要校验从节点下载的切片的合法性（类似bittorrent的哈希校验）。
+CDNBye提供了一个钩子函数，可以回调下载的切片供开发者进行校验。
+用于校验的哈希表建议直接从服务器下载，如果校验失败，直接在回调函数中返回false即可。
+ ```javascript
+p2pConfig: {
+    validateSegment: function (level, sn, buffer) {
+        var hash = hashFile.getHash(level,sn);
+        return hash === md5(buffer);
     }
 }
 ```
