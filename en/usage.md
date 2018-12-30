@@ -15,6 +15,7 @@ Put the the code below in your web page, run it. Wait for a few seconds，then o
         var hls = new Hls({
             p2pConfig: {
                 logLevel: true,
+                live: false,        // set to true in live mode
                 // Other p2pConfig options provided by CDNBye
             }
         });

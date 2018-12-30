@@ -215,7 +215,7 @@
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
                 logLevel: true,
-                live: false,        // set to true in live mode
+                live: false,        // 如果是直播设为true
                 // Other p2pConfig options provided by CDNBye
                 // https://docs.cdnbye.com/#/API
             }

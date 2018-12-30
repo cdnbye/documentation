@@ -15,6 +15,7 @@
         var hls = new Hls({
             p2pConfig: {
                 logLevel: true,
+                live: false,        // 如果是直播设为true
                 // Other p2pConfig options provided by CDNBye
             }
         });
@@ -82,9 +83,9 @@ var hls = new Hls(hlsjsConfig);
 实例化hls.js并将hlsjsConfig作为参数传入。然后实例化P2PEngine并将p2pConfig作为参数传入。调用hls.js的loadSource和attachMedia方法。
 ```javascript
 var hlsjsConfig = {
-    maxBufferSize: 0,       // Highly recommended setting
-    maxBufferLength: 5,     // Highly recommended setting
-    liveSyncDuration: 30,   // Highly recommended setting
+    maxBufferSize: 0,       // Highly recommended setting in live mode
+    maxBufferLength: 5,     // Highly recommended setting in live mode
+    liveSyncDuration: 30,   // Highly recommended setting in live mode
 };
 
 var p2pConfig = {
