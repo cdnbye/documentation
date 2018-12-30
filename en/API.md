@@ -132,7 +132,7 @@ Sometimes we need to prevent a peer from sending a fake segment
  ```javascript
 p2pConfig: {
     validateSegment: function (level, sn, buffer) {
-        var hash = hashFile.getHash(level,sn);
+        var hash = hashFile.getHash(level, sn);
         return hash === md5(buffer);
     }
 }

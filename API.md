@@ -129,7 +129,7 @@ CDNBye提供了一个钩子函数，可以回调下载的切片供开发者进�
  ```javascript
 p2pConfig: {
     validateSegment: function (level, sn, buffer) {
-        var hash = hashFile.getHash(level,sn);
+        var hash = hashFile.getHash(level, sn);
         return hash === md5(buffer);
     }
 }
