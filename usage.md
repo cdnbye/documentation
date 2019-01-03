@@ -38,7 +38,7 @@
 - 调试通过后部署到服务器
 - 访问[CDNBye后台系统OMS](https://oms.cdnbye.com)，按提示绑定域名后即可查看P2P效果
 
-## 原生hls.js集成
+## 使用原生hls.js项目
 如果您在项目中引入了hls.js的script标签，那么只需要将该标签如：
  ```javascript
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
