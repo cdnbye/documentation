@@ -127,8 +127,10 @@ Sometimes we need to prevent a peer from sending a fake segment
  (for example like in bittorrent with a hash function). 
  CDNBye provide a validation callback with buffer of the 
  downloaded segment, developer should implement the actual 
- validator. If the callback returns false, then the segment 
- is not valid. 
+ validator. For example, you can create a program that generates 
+ hashes for the segments and stores them in a specific file or 
+ injects into m3u8 playlist files the hashes information. If 
+ the callback returns false, then the segment is not valid. 
  ```javascript
 p2pConfig: {
     validateSegment: function (level, sn, buffer) {
