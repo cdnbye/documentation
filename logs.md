@@ -15,3 +15,6 @@
 ## 0.6.0
 - 修复播放卡顿的问题
 - 加入新字段`live`
+
+## 0.7.0
+- 新增[切片校验功能](https://docs.cdnbye.com/#/API?id=how-to-check-segment-validity)

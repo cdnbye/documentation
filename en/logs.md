@@ -14,3 +14,6 @@
 ## 0.6.0
 - pre-buffer for smooth playing
 - add new field `live`
+
+## 0.7.0
+- add `validateSegment` [funtion](https://docs.cdnbye.com/#/en/API?id=how-to-check-segment-validity)
