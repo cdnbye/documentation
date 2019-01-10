@@ -10,7 +10,7 @@
 
 # `hlsjs-p2p-engine`
 
-> 视频网站省流量`&`加速插件
+> 视频网站省流量`&`加速引擎
 <br>
 > <br>基于WebRTC datachannel技术
 
