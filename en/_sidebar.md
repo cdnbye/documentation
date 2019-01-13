@@ -1,3 +1,4 @@
+- [Notice<sup style="color:red;">!!!</sup>](notice.md)
 - [Introduction](/en/README.md)
 - [Usage](/en/usage.md)
 - [Player Integration](/en/players.md)

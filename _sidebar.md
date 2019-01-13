@@ -1,4 +1,4 @@
-- [重要公告<sup style="color:red;">!!</sup>](notice.md)
+- [重要公告<sup style="color:red;">!!!</sup>](notice.md)
 - [快速入门](README.md)
 - [使用方法](usage.md)
 - [第三方播放器](players.md)
