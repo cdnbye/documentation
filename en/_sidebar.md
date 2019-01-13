@@ -14,6 +14,6 @@
 - More
   - [Design](/en/design.md)
   - [Change Log](/en/logs.md)
-  - [Forum](/en/coming-soon)
+  - [Forum](/coming-soon)
   
 
