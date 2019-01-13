@@ -12,7 +12,7 @@
 
 > Save Your Bandwidth using WebRTC. 
 
-[Demo](https://demo.cdnbye.com/)
+[Online Demo](https://demo.cdnbye.com/)
 [Getting Started](/en/README.md)
 
 <!-- 背景色 -->
