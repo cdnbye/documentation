@@ -11,6 +11,9 @@
 - fix a bug may block p2p
 - max buffer size setting for mobile
 
+## 0.5.4
+- detect and report player
+
 ## 0.6.0
 - pre-buffer for smooth playing
 - add new field `live`
