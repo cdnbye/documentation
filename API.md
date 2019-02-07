@@ -35,7 +35,7 @@ if (Hls.WEBRTC_SUPPORT) {
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com/wss' | 信令服务器地址。
 | `wsMaxRetries` | number | 3 |websocket连接重试次数。
 | `wsReconnectInterval` | number | 5 | websocket重连时间间隔。
-| `loadTimeoutRate` | number | 0.7 | p2p下载的超时时间比率，用于计算超时时间。
+| `loadTimeoutRate` | number | 0.7 | p2p下载的超时时间比率，用于计算P2P下载的超时时间。调低改数值可以在P2P下载过慢时预留更多时间给HTTP下载
 | `maxBufferSize` | Object | {"pc": 1024 * 1024 * 200, "mobile": 1024 * 1024 * 100} | p2p缓存的最大数据量，mobile字段暂未实现。
 | `p2pEnabled` | boolean | true | 是否开启P2P。
 | `channelId` | function | - | 标识channel的字段，同一个channel的用户可以共享数据。（参考高级用法）
