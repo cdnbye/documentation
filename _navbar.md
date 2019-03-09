@@ -1,4 +1,4 @@
 - language(语言)
-  - [:uk: English](/en/)
-  - [:cn: 中文](/)
+  - [English](/en/)
+  - [中文](/)
 - [控制台](https://oms.cdnbye.com)
