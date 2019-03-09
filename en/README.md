@@ -36,9 +36,8 @@ Bind your domain in `https://oms.cdnbye.com`, then you can view p2p-related info
 ## Contact Us
 Email: service@cdnbye.com
 
-**[👉 Usage](/en/usage.md)**
-
 ## Github Stargazers over time
 
 [![Stargazers over time](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine.svg)](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine)
       
+**[👉 Usage](/en/usage.md)**

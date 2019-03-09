@@ -42,9 +42,8 @@ CDNBye | ✔ | ✔ | ✔ | ✔ | ✔ | ❌ | ❌ | ❌ |
 ## 技术交流
 QQ群：746163014
 
-**[👉 快速开始](/usage.md)**
-
 ## Github Star数趋势图
 
 [![Stargazers over time](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine.svg)](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine)
       
+**[👉 快速开始](/usage.md)**
