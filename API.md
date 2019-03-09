@@ -33,11 +33,15 @@ if (Hls.WEBRTC_SUPPORT) {
 | `logLevel` | string or boolean | 'none' | log的等级，分为debug、info、warn、error、none，设为true等于debug，设为false等于none。
 | `live` | boolean | true | 直播或者点播模式，建议在点播模式下设为false，p2p插件会预缓存buffer以避免卡顿。
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com/wss' | 信令服务器地址。
-| `wsMaxRetries` | number | 3 |websocket连接重试次数。
-| `wsReconnectInterval` | number | 5 | websocket重连时间间隔。
+| `wsMaxRetries` | number | 15 |websocket连接重试次数。
+| `wsReconnectInterval` | number | 30 | websocket重连时间间隔。
 | `loadTimeoutRate` | number | 0.7 | p2p下载的超时时间比率，用于计算P2P下载的超时时间。调低改数值可以在P2P下载过慢时预留更多时间给HTTP下载
+| `prefetchHttpSegments` | number | 5 | 强制前几个ts用HTTP下载，在CDN速度理想的情况下，可以缓存足够buffer以避免卡顿
 | `maxBufferSize` | Object | {"pc": 1024 * 1024 * 200, "mobile": 1024 * 1024 * 100} | p2p缓存的最大数据量，mobile字段暂未实现。
 | `p2pEnabled` | boolean | true | 是否开启P2P。
+| `getStats` | function | - | 获取p2p统计信息，包括totalP2PDownloaded、totalP2PUploaded和totalHTTPDownloaded。
+| `getPeerId` | function | - | 获取本节点的Id，当从服务端获取到peerId时回调该事件。
+| `getPeersInfo` | function | - | 获取成功连接的节点的信息，当与新的节点成功建立p2p连接时回调该事件。
 | `channelId` | function | - | 标识channel的字段，同一个channel的用户可以共享数据。（参考高级用法）
 | `segmentId` | function | - | 标识ts文件的字段，防止相同ts文件具有不同的路径。（参考高级用法）
 | `packetSize` | number | 64 * 1024 | 每次通过datachannel发送的包的大小，64KB适用于较新版本的浏览器，如果要兼容低版本浏览器可以设置成16KB。
@@ -84,6 +88,33 @@ stats.totalP2PDownloaded: 从P2P下载的数据量（单位KB）</br>
 stats.totalP2PUploaded: P2P上传的数据量（单位KB）
 
 ## 高级用法
+### 通过向p2pConfig传入getStats获取p2p下载信息
+```javascript
+p2pConfig: {
+    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+        // do something
+    }
+}
+```
+
+### 通过向p2pConfig传入getPeerId获取本节点的Id
+```javascript
+p2pConfig: {
+    getPeerId: function (peerId) {
+        // do something
+    }
+}
+```
+
+### 通过向p2pConfig传入getPeersInfo获取成功连接的节点的信息
+```javascript
+p2pConfig: {
+    getPeersInfo: function (peers) {
+        // do something
+    }
+}
+```
+
 ### 解决动态m3u8路径问题
 某些流媒体提供商的m3u8是动态生成的，不同节点的m3u8地址不一样，例如example.com/clientId1/file.m3u8和example.com/clientId2/file.m3u8,
 而本插件默认使用m3u8作为channelId。这时候就要构造一个共同的chanelId，使实际观看同一直播/视频的节点处在相同频道中。

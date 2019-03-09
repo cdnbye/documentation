@@ -34,11 +34,15 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | `logLevel` | string or boolean | 'none' | Print log level(debug, info, warn, error, none，false=none, true=debug).
 | `live` | boolean | true | tell engine whether in live or VOD mode, set to false will pre-buffer for smooth playing.
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com/wss' | The address of signal server.
-| `wsMaxRetries` | number | 3 | The maximum number of reconnection attempts that will be made by websocket before giving up.
-| `wsReconnectInterval` | number | 5 | The number of seconds to delay before attempting to reconnect by websocket.
+| `wsMaxRetries` | number | 15 | The maximum number of reconnection attempts that will be made by websocket before giving up.
+| `wsReconnectInterval` | number | 30 | The number of seconds to delay before attempting to reconnect by websocket.
 | `loadTimeoutRate` | number | 0.7 | Timeout rate used to calculate load timeout, a segment downloaded from a peer will be dropped if load time exceeded.
-| `maxBufferSize` | Object | {"pc": 1024 * 1024 * 200, "mobile": 1024 * 1024 * 100} | The max size of binary data that can be stored in the cache, property of mobile is not working for now.
+| `prefetchHttpSegments` | number | 5 | The number of segments that will be forced to download by HTTP at the beginning.
+| `maxBufferSize` | Object | {"pc": 1024 * 1024 * 200, "mobile": 1024 * 1024 * 100} | The max size of binary data that can be stored in the cache.
 | `p2pEnabled` | boolean | true | Enable or disable p2p engine.
+| `getStats` | function | - | Get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded.
+| `getPeerId` | function | - | Emitted when the peer Id of this client is obtained from server.
+| `getPeersInfo` | function | - | Emitted when successfully connected with new peer.
 | `channelId` | function | - | Pass a function to generate channel Id.(See advanced usage)
 | `segmentId` | function | - | Pass a function to generate segment Id.(See advanced usage)
 | `packetSize` | number | 64 * 1024 | The maximum package size sent by datachannel, 64KB should work with most of recent browsers. Set it to 16KB for older browsers support.
@@ -84,6 +88,33 @@ stats.totalP2PDownloaded: total data downloaded by P2P(KB).</br>
 stats.totalP2PUploaded: total data uploaded by P2P(KB).
 
 ## Advanced Usage
+### Another way to get the downloading statistics
+```javascript
+p2pConfig: {
+    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+        // do something
+    }
+}
+```
+
+### Another way to get peer Id
+```javascript
+p2pConfig: {
+    getPeerId: function (peerId) {
+        // do something
+    }
+}
+```
+
+### Another way to get peers information
+```javascript
+p2pConfig: {
+    getPeersInfo: function (peers) {
+        // do something
+    }
+}
+```
+
 ### Dynamic m3u8 path issue
 Some m3u8 urls play the same live/vod but have different paths on them. For example, 
 example.com/clientId1/file.m3u8 and example.com/clientId2/file.m3u8. In this case, you can format a common channelId for them.

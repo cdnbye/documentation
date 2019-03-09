@@ -21,3 +21,8 @@
 
 ## 0.7.0
 - 新增[切片校验功能](https://docs.cdnbye.com/#/API?id=how-to-check-segment-validity)
+
+## 0.8.0
+- 通过强制前几个ts采用HTTP下载来缓存足够的buffer，可以在p2pConfig配置
+- p2p策略优化
+- 可以在p2pConfig中监听下载信息

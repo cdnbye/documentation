@@ -72,6 +72,11 @@ var hlsjsConfig = {
 // Hls constructor is overriden by included bundle
 var hls = new Hls(hlsjsConfig);
 // Use `hls` just like the usual hls.js ...
+hls.loadSource(contentUrl);
+hls.attachMedia(video);
+hls.on(Hls.Events.MANIFEST_PARSED,function() {
+    video.play();
+});
 ```
 #### Engine(the library without hls.js)
 

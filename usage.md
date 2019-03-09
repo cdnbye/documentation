@@ -78,6 +78,11 @@ var hlsjsConfig = {
 // Hls constructor is overriden by included bundle
 var hls = new Hls(hlsjsConfig);
 // Use `hls` just like the usual hls.js ...
+hls.loadSource(contentUrl);
+hls.attachMedia(video);
+hls.on(Hls.Events.MANIFEST_PARSED,function() {
+    video.play();
+});
 ```
 #### Engine(没有打包hls.js的插件，需要自己引入hls.js)
 实例化hls.js并将hlsjsConfig作为参数传入。然后实例化P2PEngine并将p2pConfig作为参数传入。调用hls.js的loadSource和attachMedia方法。

@@ -16,7 +16,11 @@
 
 ## 0.6.0
 - pre-buffer for smooth playing
-- add new field `live`
+- Add new field `live`
 
 ## 0.7.0
-- add `validateSegment` [funtion](https://docs.cdnbye.com/#/en/API?id=how-to-check-segment-validity)
+- Add `validateSegment` [funtion](https://docs.cdnbye.com/#/en/API?id=how-to-check-segment-validity)
+
+## 0.8.0
+- Add `prefetchHttpSegments`: The number of segments that will be forced to download by HTTP at the beginning
+- Add `getStats`function in p2pConfig

@@ -8,7 +8,8 @@
 
 ### Advanced Data Analysis
 
-- Coming soon
+- P2P Traffic Trend
+- Online Viewers Trend
 
 ### Viewer Distribution
 
