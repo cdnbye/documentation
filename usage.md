@@ -51,7 +51,7 @@
 
 
 ## 第三方播放器集成
-参考[第三方播放器](players.md), 推荐已经打包P2P插件的[P2P-DPlayer](https://github.com/cdnbye/P2P-DPlayer)和[P2P-CKPlayer](https://github.com/cdnbye/P2P-CKPlayer)。
+参考[第三方播放器](players.md)。
 
 ## 引入插件
 通过script标签引入已经和hls.js打包的最新版本（推荐）：
