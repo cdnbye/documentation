@@ -24,8 +24,12 @@
         <source src="https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"
                 type="application/x-mpegURL"/>
     </video>
+    <p id="version"></p>
+    <h3>download info:</h3>
+    <p id="info"></p>
 </div>
 <script>
+    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
     var player = videojs('#player', {
         autoplay: true,
         html5: {
@@ -35,6 +39,10 @@
                 p2pConfig: {
                     logLevel: true,
                     live: false,        // 如果是直播设为true
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                    },
                     // Other p2pConfig options provided by CDNBye
                 }
             }
@@ -55,9 +63,15 @@
 <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hls.light.min.js"></script>
 <!-- flowplayer -->
 <script src="//releases.flowplayer.org/7.2.6/flowplayer.min.js"></script>
+
 <!-- body section -->
 <div id="player"></div>
+<p id="version"></p>
+<h3>download info:</h3>
+<p id="info"></p>
+
 <script>
+    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
     flowplayer('#player', {
         live: true,  // set if it's a live stream
         ratio: 9/16, // set the aspect ratio of the stream
@@ -73,6 +87,10 @@
             p2pConfig: {
                 logLevel: true,
                 live: false,        // 如果是直播设为true
+                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                    var total = totalHTTPDownloaded + totalP2PDownloaded;
+                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                },
                 // Other p2pConfig options provided by CDNBye
             }
         }
@@ -251,6 +269,8 @@
 <html>
 <body>
 <div id="video" style="width: 100%; height: 400px;max-width: 600px;"></div>
+<h3>download info:</h3>
+<p id="info"></p>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/p2p-ckplayer@latest/ckplayer/ckplayer.min.js" charset="UTF-8"></script>
 <script type="text/javascript">
     var videoObject = {
@@ -263,8 +283,12 @@
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                logLevel: true,
+                logLevel: 'debug',
                 live: false,        // 如果是直播设为true
+                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                    var total = totalHTTPDownloaded + totalP2PDownloaded;
+                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                },
                 // Other p2pConfig options provided by CDNBye
                 // https://docs.cdnbye.com/#/en/API
             }
@@ -293,6 +317,8 @@
 </head>
 <body>
 <div id="player"></div>
+<h3>download info:</h3>
+<p id="info"></p>
 <script>
     var player = new Clappr.Player(
         {
@@ -311,6 +337,10 @@
                     p2pConfig: {
                         logLevel: 'debug',
                         live: false,        // 如果是直播设为true
+                        getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                            var total = totalHTTPDownloaded + totalP2PDownloaded;
+                            document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                        },
                         // Other p2pConfig options provided by CDNBye
                     }
                 }
@@ -339,7 +369,11 @@
        class="mejs__player"
        controls>
 </video>
+<p id="version"></p>
+<h3>download info:</h3>
+<p id="info"></p>
 <script>
+    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
     var player = new MediaElementPlayer('player', {
         hls: {
             debug: false,
@@ -347,6 +381,10 @@
             p2pConfig: {
                 logLevel: true,
                 live: false,        // 如果是直播设为true
+                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                    var total = totalHTTPDownloaded + totalP2PDownloaded;
+                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                },
                 // Other p2pConfig options provided by CDNBye
             }
         },
@@ -384,9 +422,13 @@
 <body>
 <div id="video-container" style="margin: 0px auto;">
 </div>
+<p id="version"></p>
+<h3>download info:</h3>
+<p id="info"></p>
 <script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.3.js"></script>
 <script>
+    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
     var options = {
         m3u8: 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8' ,
         autoplay: true,
@@ -399,6 +441,10 @@
             p2pConfig: {
                 logLevel: true,
                 live: false,        // 如果是直播设为true
+                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                    var total = totalHTTPDownloaded + totalP2PDownloaded;
+                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                },
                 // Other p2pConfig options provided by CDNBye
             }
         }
@@ -427,6 +473,8 @@
 </head>
 <body>
 <div id="player"></div>
+<h3>download info:</h3>
+<p id="info"></p>
 <script>
     new Chimee({
         wrapper: '#player',  // video dom容器
@@ -441,6 +489,10 @@
                 p2pConfig: {
                     logLevel: 'debug',
                     live: false,        // 如果是直播设为true
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                    },
                     // Other p2pConfig options provided by CDNBye
                 }
             }
@@ -489,6 +541,9 @@
             p2pConfig: {
                 logLevel: true,
                 live: false,        // 如果是直播设为true
+                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                    console.log(`totalP2PDownloaded ${totalP2PDownloaded} totalP2PUploaded ${totalP2PUploaded} totalHTTPDownloaded ${totalHTTPDownloaded}`)
+                },
                 // Other p2pConfig options provided by CDNBye
             }
         }
@@ -507,7 +562,11 @@
 <video id='hls-video'>
     <source src='https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8' type='application/x-mpegURL'/>
 </video>
+<p id="version"></p>
+<h3>download info:</h3>
+<p id="info"></p>
 <script>
+    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
     fluidPlayer(
         'hls-video',
         {
@@ -520,6 +579,10 @@
                 p2pConfig: {
                     logLevel: true,
                     live: false,        // 如果是直播设为true
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                    },
                     // Other p2pConfig options provided by CDNBye
                     // https://docs.cdnbye.com/#/API
                 }
@@ -542,10 +605,14 @@
 <body>
 <video class="op-player__media" id="video" controls playsinline>
     <source src="https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"></video>
-    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-    <script src="//cdn.jsdelivr.net/npm/openplayerjs@latest"></script>
+<p id="version"></p>
+<h3>download info:</h3>
+<p id="info"></p>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="//cdn.jsdelivr.net/npm/openplayerjs@latest"></script>
 </body>
 <script>
+    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
     var player = new OpenPlayer('video', null, false, {
         hls: {
             debug: false,
@@ -553,6 +620,10 @@
             p2pConfig: {
                 logLevel: 'debug',
                 live: false,        // 如果是直播设为true
+                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                    var total = totalHTTPDownloaded + totalP2PDownloaded;
+                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                },
                 // Other p2pConfig options provided by CDNBye
             }
         }
@@ -570,10 +641,14 @@
 <div class="container">
     <video controls crossorigin playsinline></video>
 </div>
+<p id="version"></p>
+<h3>download info:</h3>
+<p id="info"></p>
 <link rel="stylesheet" href="//cdn.plyr.io/3.4.7/plyr.css">
 <script src="//cdn.plyr.io/3.4.7/plyr.js"></script>
 <script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 <script>
+    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
     document.addEventListener('DOMContentLoaded', () => {
         var source = 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8';
         var video = document.querySelector('video');
@@ -582,7 +657,7 @@
         // captions.update is required for captions to work with hls.js
         var player = new Plyr(video, {
             captions: {active: true, update: true, language: 'en'},
-            autoplay: true,
+            // autoplay: true,
         });
 
         if (!Hls.isSupported()) {
@@ -593,6 +668,10 @@
                 p2pConfig: {
                     logLevel: true,
                     live: false,        // 如果是直播设为true
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                    },
                     // Other p2pConfig options provided by CDNBye
                 }
             });
