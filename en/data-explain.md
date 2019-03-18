@@ -11,6 +11,7 @@
 - P2P Traffic Trend
 - Online Viewers Trend
 
-### Viewer Distribution
+### Viewer Geographical Distribution
 
-- Coming soon
+- China
+- Global
