@@ -24,3 +24,6 @@
 ## 0.8.0
 - Add `prefetchHttpSegments`: The number of segments that will be forced to download by HTTP at the beginning
 - Add `getStats`function in p2pConfig
+
+## 0.8.1
+- Restart P2P if the node expired
