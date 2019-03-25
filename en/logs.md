@@ -27,3 +27,4 @@
 
 ## 0.8.1
 - Restart P2P if the node expired
+- Increase buffer size
