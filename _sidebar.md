@@ -12,6 +12,7 @@
     - [P2P控制](p2p-control.md)
 - [常见问题](FAQ.md)
 - 更多
+  - [商业服务](commercial.md)
   - [技术原理](design.md)
   - [更新日志](logs.md)
   - [交流论坛](/coming-soon)
