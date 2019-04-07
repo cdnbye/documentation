@@ -6,12 +6,13 @@
 - [Signaling Service](/en/signaling.md)
 - [P2P Optimization](/en/m3u8.md)
 - [CDN](/en/CDN.md)
-- Console<sup style="color:red;">new!</sup>
+- Console
     - [Domain Binding](/en/bindings.md)
     - [Data Analysis](/en/data-explain.md)
     - [P2P Control](/en/p2p-control.md)
 - [FAQ](/en/FAQ.md)
 - More
+  - [Commercial Service<sup style="color:red;">new!</sup>](/en/commercial.md)
   - [Design](/en/design.md)
   - [Change Log](/en/logs.md)
   - [Forum](/coming-soon)

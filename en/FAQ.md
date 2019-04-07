@@ -17,7 +17,7 @@ secured WebSocket.
 A: No. P2P transmission is activated only after the user is authorized 
 by the publisher’s server. Importantly, decryption key isn't transferred 
 through the P2P network. The segments shared between peers are the same as 
-that peers receive from the CDN. Also, content is never uploaded or stored 
+what peers receive from the CDN. Also, content is never uploaded or stored 
  in our server.
  
 ### Will CDNBye bring a delay to a user's stream?
@@ -27,6 +27,6 @@ our scheduling algorithm will switch to CDN mode in time. That means CDNBye
 will never bring a delay to a video stream.
 
 ### What happens if a user‘s browser doesn't support WebRTC?
-A: If that happened, the user will seamlessly fallback to normal HTTP request 
+A: If that happens, the user will seamlessly fallback to normal HTTP request 
 without any side effect.
 

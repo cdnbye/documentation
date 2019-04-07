@@ -155,7 +155,7 @@ p2pConfig: {
 
 ### How to Check Segment Validity
 Sometimes we need to prevent a peer from sending a fake segment
- (for example like in bittorrent with a hash function). 
+ (such as the bittorrent with a hash function). 
  CDNBye provide a validation callback with buffer of the 
  downloaded segment, developer should implement the actual 
  validator. For example, you can create a program that generates 

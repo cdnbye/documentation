@@ -1,7 +1,7 @@
 
 ## Quick Start Demo
 
-Put the the code below in your web page, run it. Wait for a few seconds，then open the same page from another browser. Now you have a direct P2P connection between two browsers without plugin! The first web peer will serve as a seed, if no one else in the same channel.
+Copy the following code in your web page and run. Wait for a few seconds，and then open the same page from another browser. Now you have a direct P2P connection between two browsers without plugin! The first web peer will serve as a seed, if there is no one else in the same channel.
 ```javascript
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 <video id="video" controls></video>
@@ -80,7 +80,7 @@ hls.on(Hls.Events.MANIFEST_PARSED,function() {
 ```
 #### Engine(the library without hls.js)
 
-Create hls.js instance passsing hlsjsConfig as param. Create P2PEngine instance passing hls.js instance and p2pConfig as params. Call hls.js loadSource and attachMedia methods.
+Create hls.js instance passsing hlsjsConfig as parameter. Create P2PEngine instance passing hls.js instance and p2pConfig as parameters. Call hls.js loadSource and attachMedia methods.
 ```javascript
 var hlsjsConfig = {
     maxBufferSize: 0,       // Highly recommended setting
