@@ -75,21 +75,21 @@
         //     // 搜索标题的最大程级, 1 - 6
         //     // depth: 2
         // }
-        // plugins: [
-        //     function (hook) {
-        //         var footer = [
-        //             '<hr/>',
-        //             '<footer style="position:absolute; bottom:0;">',
-        //             '<span>CDNBye &copy;2018.</span>',
-        //             // '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</span>',
-        //             '</footer>'
-        //         ].join('')
-        //
-        //         hook.afterEach(function (html) {
-        //             return html + footer
-        //         })
-        //     }
-        // ]
+        plugins: [
+            function (hook) {
+                var footer = [
+                    '<hr/>',
+                    '<footer style="">',
+                    '<span>CDNBye &copy;2018.&nbsp;&nbsp;</span>',
+                    '<span><a href="https://www.maoyun.tv/" target="_blank">猫云</a>提供CDN支持</span>',
+                    '</footer>'
+                ].join('')
+
+                hook.afterEach(function (html) {
+                    return html + footer
+                })
+            }
+        ]
     }
   </script>
   <script src="docsify.min.js"></script>
