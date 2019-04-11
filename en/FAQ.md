@@ -13,6 +13,28 @@ which is secured by SCTP protocols and TLS encryption. Communication
 with the backend(tracker and signaling server) is done via HTTPS and 
 secured WebSocket.
 
+### Is it a must to pay for P2P services of CDNBye?
+Currently, CDNBye is being commercialized, but still offers free services to small streaming websites.The charge model is as follows.
+- P2P service will be no longer provided for those who do not bind domain names.
+- A daily free 10GB of P2P traffic will be provided after the domain name is bound in the console (https://oms.cdnbye.com). Please note that it will be cleared the next day.
+- A daily free 40GB of P2P traffic will be provided after signing in at the console. Please note that it will be cleared the next day.
+- P2P service will be stopped if the free quota is exceeded. If you want to continue to use it, you need to buy a traffic package.
+
+### How to buy a traffic package?
+Log on to https://oms.cdnbye.com and click the `Traffic Package` on the left side. At present, Alipay and Paypal are supported to pay for the order. Please note that Alipay pays in RMB and Paypal in US dollars.
+
+### How to deduct the traffic after buying the traffic package if multiple domain names are bound?
+If you bind multiple domain names in one account, those which open P2P services share traffic packets together. You can save on packet consumption by shutting down P2P services of one or several domain names in `P2P Config`.
+
+### Will the shutdown of P2P service affect the normal play of video?
+No. Videos will still play normally without P2P streaming.
+
+### Why does the official signalling service seem unstable at peak times？ 
+It is not recommended to use the default signaling service. You can deploy your own signaling services or use third-party free signaling services. Please refer to [here](/en/signaling.md)
+
+### Are there any requirements for websites accessing P2P services? 
+CDNBye does not provide P2P services for illegal content such as pornography.Please ensure that your website complies with legal norms.
+
 ### Does CDNBye interfere with DRM(Digital Right Management)?
 A: No. P2P transmission is activated only after the user is authorized 
 by the publisher’s server. Importantly, decryption key isn't transferred 
