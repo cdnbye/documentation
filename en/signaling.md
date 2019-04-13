@@ -4,8 +4,10 @@ To communicate with another peer you simply need to exchange contact information
 ## Deploy by Yourself
 Deploy your own Signaling Server (Recommended)
 - [gosignaler](https://github.com/cdnbye/gosignaler) (written by Golang)
+- [node-signaler](https://github.com/cdnbye/node-signaler) (written by nodejs)
     
 ## Use free Signaling Server
+- 'wss://signalcloud.cdnbye.com:9002'
 - 'wss://webp2p.egame.qq.com/ws'
 
 ## Example
