@@ -4,8 +4,8 @@
 
 ## 自行部署
 推荐自行部署信令服务器，以下为开源参考：
-- [gosignaler](https://github.com/cdnbye/gosignaler) (Go语言版)
 - [node-signaler](https://github.com/cdnbye/node-signaler) (nodejs版)
+- [gosignaler](https://github.com/cdnbye/gosignaler) (Go语言版)
 
 ## 第三方免费信令服务
 - 'wss://opensignal.cdnbye.com' （香港节点）

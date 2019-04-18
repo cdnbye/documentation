@@ -3,8 +3,8 @@ To communicate with another peer you simply need to exchange contact information
 
 ## Deploy by Yourself
 Deploy your own Signaling Server (Recommended)
-- [gosignaler](https://github.com/cdnbye/gosignaler) (written by Golang)
 - [node-signaler](https://github.com/cdnbye/node-signaler) (written by nodejs)
+- [gosignaler](https://github.com/cdnbye/gosignaler) (written by Golang)
     
 ## Use free Signaling Server
 - 'wss://opensignal.cdnbye.com'  (Hongkong)
