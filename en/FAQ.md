@@ -35,6 +35,9 @@ It is not recommended to use the default signaling service. You can deploy your 
 ### Are there any requirements for websites accessing P2P services? 
 CDNBye does not provide P2P services for illegal content such as pornography.Please ensure that your website complies with legal norms.
 
+### Is it possible to run CDNBye on iOS in browsers?
+No, web P2P solutions request Apple Media Source Extensions supported on iOS. This is the limitation of all existing P2P video streaming solutions.
+
 ### Does CDNBye interfere with DRM(Digital Right Management)?
 A: No. P2P transmission is activated only after the user is authorized 
 by the publisher’s server. Importantly, decryption key isn't transferred 

@@ -9,7 +9,6 @@ Deploy your own Signaling Server (Recommended)
 ## Use free Signaling Server
 - 'wss://opensignal.cdnbye.com'  (Hongkong)
 - 'wss://signalcloud.cdnbye.com:9002'  (China mainland)
-- 'wss://webp2p.egame.qq.com/ws'  (China mainland)
 
 ## Example
 ```javascript
