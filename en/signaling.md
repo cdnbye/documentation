@@ -7,7 +7,7 @@ Deploy your own Signaling Server (Recommended)
 - [node-signaler](https://github.com/cdnbye/node-signaler) (written by nodejs)
     
 ## Use free Signaling Server
-- 'wss://opensignal.cdnbye.com/wss'
+- 'wss://opensignal.cdnbye.com'
 - 'wss://signalcloud.cdnbye.com:9002'
 - 'wss://webp2p.egame.qq.com/ws'
 
