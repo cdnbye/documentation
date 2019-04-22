@@ -1,5 +1,5 @@
 ## CDNBye :id=head
-> A free hls.js plugin to offload bandwidth from expensive traditional CDNs，while also maximizing a user’s viewing experience. 
+> A hls.js plugin to offload bandwidth from expensive traditional CDNs，while also maximizing a user’s viewing experience. 
 
 ## Video Delivery Technology for Next Generation
 CDNBye hlsjs-p2p-engine implements WebRTC datachannel to scale live/vod video streaming by peer-to-peer network using bittorrent-like protocol. The forming peer network can be layed over other CDNs or on top of the origin server. Powered by hls.js, it can play HLS on any platform with many popular HTML5 players such as video.js, JWPlayer and Flowplayer.
