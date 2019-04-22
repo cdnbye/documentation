@@ -35,9 +35,9 @@ if (Hls.WEBRTC_SUPPORT) {
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com/wss' | 信令服务器地址。
 | `wsMaxRetries` | number | 15 |websocket连接重试次数。
 | `wsReconnectInterval` | number | 30 | websocket重连时间间隔。
-| `loadTimeoutRate` | number | 0.7 | p2p下载的超时时间比率，用于计算P2P下载的超时时间。调低改数值可以在P2P下载过慢时预留更多时间给HTTP下载
+| `loadTimeoutRate` | number | 0.6 | p2p下载的超时时间比率，用于计算P2P下载的超时时间。调低改数值可以在P2P下载过慢时预留更多时间给HTTP下载
 | `prefetchHttpSegments` | number | 5 | 强制前几个ts用HTTP下载，在CDN速度理想的情况下，可以缓存足够buffer以避免卡顿
-| `maxBufferSize` | Object | {"pc": 1024 * 1024 * 200, "mobile": 1024 * 1024 * 100} | p2p缓存的最大数据量，mobile字段暂未实现。
+| `maxBufferSize` | Object | {"pc": 1024 * 1024 * 300, "mobile": 1024 * 1024 * 150} | p2p缓存的最大数据量，mobile字段暂未实现。
 | `p2pEnabled` | boolean | true | 是否开启P2P。
 | `getStats` | function | - | 获取p2p统计信息，包括totalP2PDownloaded、totalP2PUploaded和totalHTTPDownloaded。
 | `getPeerId` | function | - | 获取本节点的Id，当从服务端获取到peerId时回调该事件。

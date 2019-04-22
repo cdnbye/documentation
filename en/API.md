@@ -36,9 +36,9 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com/wss' | The address of signal server.
 | `wsMaxRetries` | number | 15 | The maximum number of reconnection attempts that will be made by websocket before giving up.
 | `wsReconnectInterval` | number | 30 | The number of seconds to delay before attempting to reconnect by websocket.
-| `loadTimeoutRate` | number | 0.7 | Timeout rate used to calculate load timeout, a segment downloaded from a peer will be dropped if load time exceeded.
+| `loadTimeoutRate` | number | 0.6 | Timeout rate used to calculate load timeout, a segment downloaded from a peer will be dropped if load time exceeded.
 | `prefetchHttpSegments` | number | 5 | The number of segments that will be forced to download by HTTP at the beginning.
-| `maxBufferSize` | Object | {"pc": 1024 * 1024 * 200, "mobile": 1024 * 1024 * 100} | The max size of binary data that can be stored in the cache.
+| `maxBufferSize` | Object | {"pc": 1024 * 1024 * 300, "mobile": 1024 * 1024 * 150} | The max size of binary data that can be stored in the cache.
 | `p2pEnabled` | boolean | true | Enable or disable p2p engine.
 | `getStats` | function | - | Get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded.
 | `getPeerId` | function | - | Emitted when the peer Id of this client is obtained from server.
