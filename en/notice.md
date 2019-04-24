@@ -1,4 +1,7 @@
 
+### v0.9.0 released
+The best version so far
+
 ### Charging Scheme
 - P2P service will be no longer provided for those who do not bind domain names.
 - A daily free 10GB of P2P traffic will be provided after the domain name is bound in the console (https://oms.cdnbye.com). Please note that it will be cleared the next day.
