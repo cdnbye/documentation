@@ -1,5 +1,5 @@
 ## Introduction
-To communicate with another peer you simply need to exchange contact information and the rest will be done by WebRTC. The process of connecting to the other peers is also known as signaling.
+To communicate with another peer you simply need to exchange contact information and the rest will be done by WebRTC. The process of connecting to the other peers is also known as signaling. Please note that peers with different signaling address can not connect to each other. 
 
 ## Deploy by Yourself
 Deploy your own Signaling Server (Recommended)
