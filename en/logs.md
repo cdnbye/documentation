@@ -28,3 +28,7 @@
 ### 0.8.1
 - Restart P2P if the node expired
 - Increase buffer size
+
+### 0.9.0
+- Optimized P2P algorithm
+- Solved the buffer stall problem in live
