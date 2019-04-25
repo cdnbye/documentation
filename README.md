@@ -38,7 +38,7 @@ CDNBye | ✔ | ✔ | ✔ | ✔ | ✔ | ❌ | ❌ | ❌ |
 ## 联系我们
 邮箱：service@cdnbye.com
 
-## 技术交流
+## 技术支持
 QQ群：746163014
 
 ## Github Star数趋势图
