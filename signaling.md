@@ -10,9 +10,11 @@
 - [gosignaler](https://github.com/cdnbye/gosignaler) (Go语言编写，单机版)
 - [gosignaler-cluster](https://github.com/cdnbye/gosignaler-cluster) (Go语言编写，集群版)
 
+<!--
 ## 第三方免费信令服务
 - 'wss://opensignal.cdnbye.com' （香港节点）
 - 'wss://signalcloud.cdnbye.com:9002' （中国大陆节点）
+-->
 
 ## 使用示例
 ```javascript
