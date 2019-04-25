@@ -3,15 +3,14 @@ To communicate with another peer you simply need to exchange contact information
 
 ## Deploy by Yourself
 Deploy your own Signaling Server (Recommended)
-<!--
 - [node-signaler](https://github.com/cdnbye/node-signaler) (Written by nodejs, recommended)
--->
 - [gosignaler](https://github.com/cdnbye/gosignaler) (Written by Golang, stand-alone version)
 - [gosignaler-cluster](https://github.com/cdnbye/gosignaler-cluster) (Written by Golang, cluster version)
  
 
 ## Use free Signaling Server
 - 'wss://signalcloud.cdnbye.com:9002'
+
 <!--
 - 'wss://opensignal.cdnbye.com'  (Hongkong)
 - 'wss://signalcloud.cdnbye.com:9002'  (China mainland)
