@@ -6,14 +6,14 @@
 
 ## 自行部署
 推荐自行部署信令服务器，以下为开源参考：
-<!--
 - [node-signaler](https://github.com/cdnbye/node-signaler) (nodejs版，推荐)
--->
 - [gosignaler](https://github.com/cdnbye/gosignaler) (Go语言编写，单机版)
 - [gosignaler-cluster](https://github.com/cdnbye/gosignaler-cluster) (Go语言编写，集群版)
 
-<!--
+
 ## 第三方免费信令服务
+- 'wss://signalcloud.cdnbye.com:9002'
+<!--
 - 'wss://opensignal.cdnbye.com' （香港节点）
 - 'wss://signalcloud.cdnbye.com:9002' （中国大陆节点）
 -->
