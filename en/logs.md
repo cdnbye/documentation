@@ -32,3 +32,7 @@
 ### 0.9.0
 - Optimized P2P algorithm
 - Solved the buffer stall problem in live
+
+### 0.9.1
+- fix data reporting bug
+- remove `prefetchHttpSegments`
