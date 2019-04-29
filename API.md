@@ -35,7 +35,7 @@ if (Hls.WEBRTC_SUPPORT) {
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com/wss' | 信令服务器地址。
 | `wsMaxRetries` | number | 15 |websocket连接重试次数。
 | `wsReconnectInterval` | number | 30 | websocket重连时间间隔。
-| `maxBufferSize` | Object | {"pc": 1024 * 1024 * 300, "mobile": 1024 * 1024 * 150} | p2p缓存的最大数据量，mobile字段暂未实现。
+| `maxBufferSize` | Object | {"pc": 1024 * 1024 * 300, "mobile": 1024 * 1024 * 150} | p2p缓存的最大数据量，分为PC和mobile。
 | `p2pEnabled` | boolean | true | 是否开启P2P。
 | `getStats` | function | - | 获取p2p统计信息，包括totalP2PDownloaded、totalP2PUploaded和totalHTTPDownloaded。
 | `getPeerId` | function | - | 获取本节点的Id，当从服务端获取到peerId时回调该事件。
