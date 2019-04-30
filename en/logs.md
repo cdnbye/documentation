@@ -34,5 +34,8 @@
 - Solved the buffer stall problem in live
 
 ### 0.9.1
-- fix data reporting bug
-- remove `prefetchHttpSegments`
+- Fix data reporting bug
+- Remove `prefetchHttpSegments`
+
+### 0.9.2
+- Parameter optimization

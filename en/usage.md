@@ -2,7 +2,7 @@
 ## Quick Start Demo
 
 Copy the following code in your web page and run. Wait for a few seconds，and then open the same page from another browser. Now you have a direct P2P connection between two browsers without plugin! The first web peer will serve as a seed, if there is no one else in the same channel.
-```javascript
+```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 <video id="video" controls></video>
 <p id="version"></p>
@@ -34,11 +34,11 @@ Copy the following code in your web page and run. Wait for a few seconds，and t
 
 ## Integrate to existing hls.js Project
 Simply replace the hls.js script tag like:
- ```javascript
+ ```html
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 ```
 with
- ```javascript
+ ```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 ```
 That's it!
@@ -49,11 +49,11 @@ See [Player Integration](/en/players.md)
 
 ## Include
 Include the pre-built script of latest version bundled with hls.js(recommended):
-```javascript
+```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 ```
 Or include the latest version without hls.js:
-```javascript
+```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
 ```
 
@@ -104,5 +104,19 @@ hls.attachMedia(video);
 hls.on(Hls.Events.MANIFEST_PARSED,function() {
     video.play();
 });
+```
+
+## Support for IE
+CDNBye use ES6 API which make it not supported for IE. @babel/polyfill can emulate a full ES2015+ environment. You can use CommonJS style to include required packages. First install these packages:
+```bash
+npm install --save @babel/polyfill
+```
+Then insert the code into the beginning of your entry file:
+```javascript
+require("@babel/polyfill");
+```
+Or include it in a `<script>` before the script of cdnbye:
+```html
+<script src="https://cdn.bootcss.com/babel-polyfill/7.4.4/polyfill.min.js"></script>
 ```
 

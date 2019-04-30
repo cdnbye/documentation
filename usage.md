@@ -1,7 +1,7 @@
 
 ## 快速入门Demo
 将以下拷贝到您的网页中并运行。再打开另一个相同的网页。见证奇迹的时候到了！您已在两个网页之间建立了一个P2P连接，在不安装任何插件的情况下。如果在这个频道中（一个m3u8标识了一个频道）没有其它参与者，那么您打开的第一个网页将作为种子为第二个网页提供数据。
-```javascript
+```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 <video id="video" controls></video>
 <p id="version"></p>
@@ -40,11 +40,11 @@
 
 ## 使用原生hls.js项目
 如果您在项目中引入了hls.js的script标签，那么只需要将该标签如：
- ```javascript
+ ```html
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 ```
 替换为
- ```javascript
+ ```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 ```
 就是这么简单！
@@ -55,11 +55,11 @@
 
 ## 引入插件
 通过script标签引入已经和hls.js打包的最新版本（推荐）：
-```javascript
+```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 ```
 或者引入没有与hls.js打包的独立版本：
-```javascript
+```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
 ```
 
@@ -109,5 +109,19 @@ hls.attachMedia(video);
 hls.on(Hls.Events.MANIFEST_PARSED,function() {
     video.play();
 });
+```
+
+## 兼容IE浏览器
+由于插件使用了ES6的API，会导致在IE浏览器下报错，可以在项目中引入polyfill来解决这个问题，首先通过npm安装：
+```bash
+npm install --save @babel/polyfill
+```
+然后在相应模块中引入：
+```javascript
+require("@babel/polyfill");
+```
+或者可以在html中引入插件之前加入一行script标签：
+```html
+<script src="https://cdn.bootcss.com/babel-polyfill/7.4.4/polyfill.min.js"></script>
 ```
 
