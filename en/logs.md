@@ -39,3 +39,4 @@
 
 ### 0.9.2
 - Parameter optimization
+- Fixed bugs in clappr-plugin

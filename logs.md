@@ -41,3 +41,4 @@
 
 ### 0.9.2
 - 参数优化
+- 修复clappr-plugin的bug
