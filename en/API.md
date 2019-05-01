@@ -49,18 +49,18 @@ If `opts` is specified, then the default options (shown below) will be overridde
 
 ## P2PEngine API
 
+### `P2PEngine.version` (static method)
+Get the version of `P2PEngine`.
+
+### `P2PEngine.isSupported()` (static method)
+Returns true if WebRTC data channel is supported by the browser.
+
 ### `var engine = new P2PEngine(hlsjs, p2pConfig);`
 Create a new `P2PEngine` instance. Or you can get `P2PEngine` instance from hlsjs:
 ```javascript
 var hls = new Hls();
 var engine = hls.p2pEngine;
 ```
-
-### `engine.version`
-Get the version of `P2PEngine`.
-
-### `engine.isSupported()`
-Returns true if WebRTC data channel is supported by the browser.
 
 ### `engine.enableP2P()`
 Resume P2P if it has been stopped.

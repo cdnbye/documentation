@@ -49,18 +49,18 @@ if (Hls.WEBRTC_SUPPORT) {
 
 ## P2PEngine API
 
+### `P2PEngine.version` (static method)
+获取`P2PEngine`的版本号。
+
+### `P2PEngine.isSupported()` (static method)
+判断当前浏览器是否支持WebRTC data channel。
+
 ### `var engine = new P2PEngine(hlsjs, p2pConfig);`
 实例化`P2PEngine`。也可以从`Hls`实例获取`P2PEngine`实例：
 ```javascript
 var hls = new Hls();
 var engine = hls.p2pEngine;
 ```
-
-### `engine.version`
-获取`P2PEngine`的版本号。
-
-### `engine.isSupported()`
-判断当前浏览器是否支持WebRTC data channel。
 
 ### `engine.enableP2P()`
 在p2p暂停或未启动情况下启动p2p。

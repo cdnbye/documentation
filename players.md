@@ -198,7 +198,7 @@
     });
 
     function updateStats() {
-        var text = 'CDNBye P2P正在为您加速' + (_totalP2PDownloaded/1024).toFixed(2)
+        var text = 'P2P正在为您加速' + (_totalP2PDownloaded/1024).toFixed(2)
             + 'MB 已分享' + (_totalP2PUploaded/1024).toFixed(2) + 'MB' + ' 连接节点' + _peerNum + '个';
         document.getElementById('stats').innerText = text
     }
@@ -254,7 +254,7 @@
     });
 
     function updateStats() {
-        var text = 'CDNBye P2P正在为您加速' + (_totalP2PDownloaded/1024).toFixed(2)
+        var text = 'P2P正在为您加速' + (_totalP2PDownloaded/1024).toFixed(2)
             + 'MB 已分享' + (_totalP2PUploaded/1024).toFixed(2) + 'MB' + ' 连接节点' + _peerNum + '个';
         document.getElementById('stats').innerText = text
     }
