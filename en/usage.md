@@ -60,7 +60,7 @@ Or include the latest version without hls.js:
 ```
 
 ### File
-Available from the dist/*.min.js file within a cdnbye npm release or [github](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/dist). This needs to be included before your player code. You can either prepend it to your compiled code or include it in a <script> before it.
+Available from the dist/*.min.js file within a cdnbye npm release or [github](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/dist). This needs to be included before your player code. You can either prepend it to your compiled code or include it in a `<script>` before it.
 
 ### Browserify / Webpack
 ```shell
