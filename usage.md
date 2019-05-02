@@ -54,6 +54,8 @@
 参考[第三方播放器](players.md)。
 
 ## 引入插件
+
+### Script标签引入
 通过script标签引入已经和hls.js打包的最新版本（推荐）：
 ```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
@@ -61,6 +63,14 @@
 或者引入没有与hls.js打包的独立版本：
 ```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+```
+
+### 文件引入
+可以在cdnbye npm包中或者[github](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/dist)的dist文件夹中找到相关文件。注意js代码需要放在播放器代码之前执行，可以在引入播放器代码的script标签之前引入。
+
+### Browserify / Webpack
+```shell
+npm install --save cdnbye
 ```
 
 ## 使用插件

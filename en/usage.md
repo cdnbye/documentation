@@ -21,7 +21,7 @@ Copy the following code in your web page and run. Wait for a few seconds，and t
         });
         hls.loadSource('https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8');
         hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function(event, data) {
+        hls.on(Hls.Events.MANIFEST_PARSED, function(event, data) {
             video.play();
         });
         hls.p2pEngine.on('stats', function ({totalHTTPDownloaded, totalP2PDownloaded, totalP2PUploaded}) {
@@ -48,13 +48,23 @@ That's it!
 See [Player Integration](/en/players.md)
 
 ## Include
-Include the pre-built script of latest version bundled with hls.js(recommended):
+
+### Script
+Include the pre-built script of latest version bundled with hls.js:
 ```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 ```
 Or include the latest version without hls.js:
 ```html
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+```
+
+### File
+Available from the dist/*.min.js file within a cdnbye npm release or [github](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/dist). This needs to be included before your player code. You can either prepend it to your compiled code or include it in a <script> before it.
+
+### Browserify / Webpack
+```shell
+npm install --save cdnbye
 ```
 
 ## Usage
