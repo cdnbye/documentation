@@ -66,6 +66,14 @@ Available from the dist/*.min.js file within a cdnbye npm release or [github](ht
 ```shell
 npm install --save cdnbye
 ```
+To include cdnbye you need to require it in the player module:
+```javascript
+var Hls = require('cdnbye');
+```
+If you are using ES6's import syntax:
+```javascript
+import Hls from 'cdnbye';
+```
 
 ## Usage
 #### Bundle

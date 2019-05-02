@@ -72,6 +72,14 @@
 ```shell
 npm install --save cdnbye
 ```
+在播放器模块中通过`require`引入cdnbye：
+```javascript
+var Hls = require('cdnbye');
+```
+或者使用ES6的`import`语法：
+```javascript
+import Hls from 'cdnbye';
+```
 
 ## 使用插件
 #### Bundle
