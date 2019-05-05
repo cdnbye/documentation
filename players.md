@@ -264,6 +264,7 @@
 ## CKPlayer
 [CKPlayer介绍](http://www.ckplayer.com/)
 <br>本示例基于嵌入hlsjs-p2p-engine的[P2P-CKPlayer](https://github.com/cdnbye/P2P-CKPlayer)
+<br>只能使用P2P-CKPlayer，不能使用官方的，否则无P2P效果
 ```html
 <!DOCTYPE html>
 <html>
