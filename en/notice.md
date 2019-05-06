@@ -1,5 +1,5 @@
 
-### v0.9.0 released
+### v0.9.2 released
 The best version so far
 
 ### Charging Scheme
