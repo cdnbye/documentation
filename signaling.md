@@ -12,7 +12,7 @@
 
 
 ## 第三方免费信令服务
-- 'wss://opensignal.cdnbye.com' （香港节点）
+- 'wss://opensignal.cdnbye.com' （中国大陆节点）
 - 'wss://signalcloud.cdnbye.com:9002' （中国大陆节点）
 
 ## 使用示例
