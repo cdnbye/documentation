@@ -2,6 +2,7 @@
 - [快速入门](README.md)
 - [使用方法](usage.md)
 - [第三方播放器](players.md)
+- [CMS快速集成](CMS.md)
 - [API文档](API.md)
 - [P2P优化](m3u8.md)
 - [CDN](CDN.md)
