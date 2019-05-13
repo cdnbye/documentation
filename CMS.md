@@ -4,6 +4,6 @@
 <br>
 目前支持windows和linux系统，[下载地址](http://www.ppvod.com/dianbo/xiazai/440.html)。
 <br>
-安装完成后，将安装目录中的hls.mim.js（linux下路径一般是/home/work/public/dplayer/hls.mim.js）替换成CDNBye的[hls.min.js](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/dist)即可。在控制台绑定域名后即可开启P2P服务并查看实时数据。
+安装完成后，将安装目录中的hls.mim.js（linux下路径一般是/home/work/public/dplayer/hls.mim.js）替换成CDNBye的[hls.min.js](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/dist)，同时将share.js（linux下路径一般是/home/work/public/js/share.js）替换成CDNBye提供的[share.js](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/demo/ppvod)即可。在控制台绑定域名后即可开启P2P服务并查看实时数据。
 <br>
-注意：PPVOD的防盗链功能会导致P2P失效，请在PPVOD系统的`防盗设置`中将失效时间设置为0。
+注意：PPVOD的视频加密设置会导致P2P失效，请在PPVOD系统的`系统设置`->`转码设置`中将`视频加密`取消。
