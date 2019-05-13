@@ -8,7 +8,7 @@
   <a href="https://github.com/cdnbye/hlsjs-p2p-engine"><img src="https://img.shields.io/github/stars/cdnbye/hlsjs-p2p-engine.svg?style=social&label=Star" alt="stars"></a>
 </p>
 
-# `hlsjs-p2p-engine`
+# `Cross-platform P2P Streaming Engine`
 
 > Save Your Bandwidth using WebRTC. 
 

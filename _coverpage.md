@@ -8,11 +8,9 @@
   <a href="https://github.com/cdnbye/hlsjs-p2p-engine"><img src="https://img.shields.io/github/stars/cdnbye/hlsjs-p2p-engine.svg?style=social&label=Star" alt="stars"></a>
 </p>
 
-# `hlsjs-p2p-engine`
+# `跨平台P2P流媒体加速引擎`
 
-> 视频网站省流量`&`加速引擎
-<br>
-> <br>基于WebRTC datachannel技术
+> 基于WebRTC Datachannel技术
 
 [产品演示](https://demo.cdnbye.com/)
 [快速入门](/README.md)
