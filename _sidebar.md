@@ -1,21 +1,26 @@
 - [重要公告<sup style="color:red;">!!!</sup>](notice.md)
 - [快速入门](README.md)
-- [使用方法](usage.md)
-- [第三方播放器](players.md)
-- [CMS集成](CMS.md)
-- [API文档](API.md)
-- [P2P优化](m3u8.md)
-- [CDN](CDN.md)
+- Web
+    - [使用方法](/web/usage.md)
+    - [第三方播放器](web/players.md)
+    - [CMS集成](/web/CMS.md)
+    - [API文档](/web/API.md)
+    - [CDN](/web/CDN.md)
+- iOS
+    - [快速入门](/ios/README.md)
+- 安卓
+    - [快速入门](/android/README.md)
 - [信令服务](signaling.md)
+- [P2P优化](m3u8.md)
 - 控制台
     - [绑定域名](bindings.md)
     - [数据分析](data-explain.md)
     - [P2P控制](p2p-control.md)
 - [常见问题](FAQ.md)
 - 更多
-  - [商业服务<sup style="color:red;">新!</sup>](commercial.md)
-  - [技术原理](design.md)
-  - [更新日志](logs.md)
-  - [交流论坛](/coming-soon)
+    - [商业服务<sup style="color:red;">新!</sup>](commercial.md)
+    - [技术原理](design.md)
+    - [更新日志](logs.md)
+    - [交流论坛](/coming-soon)
   
 

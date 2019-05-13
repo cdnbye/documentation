@@ -45,7 +45,7 @@ That's it!
 
 
 ## Integrate to HTML5 Players
-See [Player Integration](/en/players.md)
+See [Player Integration](/en/web/players.md)
 
 ## Include
 

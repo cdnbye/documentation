@@ -45,4 +45,4 @@ QQ群：746163014
 
 [![Stargazers over time](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine.svg)](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine)
       
-**[👉 快速开始](/usage.md)**
+**[👉 快速开始](/web/usage.md)**

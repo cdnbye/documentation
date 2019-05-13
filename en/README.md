@@ -40,4 +40,4 @@ Email: service@cdnbye.com
 
 [![Stargazers over time](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine.svg)](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine)
       
-**[👉 Usage](/en/usage.md)**
+**[👉 Usage](/en/web/usage.md)**
