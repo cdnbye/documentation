@@ -1,13 +1,18 @@
 - [重要公告<sup style="color:red;">!!!</sup>](notice.md)
 - [快速入门](README.md)
 - Web
+    - [简介](/web/introduction.md)
     - [使用方法](/web/usage.md)
     - [第三方播放器](web/players.md)
     - [CMS集成](/web/CMS.md)
     - [API文档](/web/API.md)
     - [CDN](/web/CDN.md)
+    - [更新日志](/web/logs.md)
 - iOS
-    - [快速入门](/ios/README.md)
+    - [简介](/ios/introduction.md)
+    - [使用方法](/ios/usage.md)
+    - [API文档](/ios/API.md)
+    - [更新日志](/ios/logs.md)
 - 安卓
     - [快速入门](/android/README.md)
 - [信令服务](signaling.md)
@@ -20,7 +25,6 @@
 - 更多
     - [商业服务<sup style="color:red;">新!</sup>](commercial.md)
     - [技术原理](design.md)
-    - [更新日志](logs.md)
     - [交流论坛](/coming-soon)
   
 

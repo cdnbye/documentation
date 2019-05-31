@@ -1,12 +1,17 @@
 - [Notice<sup style="color:red;">!!!</sup>](/en/notice.md)
 - [Introduction](/en/README.md)
 - Web
+    - [Introduction](/en/web/introduction.md)
     - [Usage](/en/web/usage.md)
     - [Player Integration](/en/web/players.md)
     - [API & Config](/en/web/API.md)
     - [CDN](/en/web/CDN.md)
+    - [Change Log](/en/web/logs.md)
 - iOS
-    - [Introduction](/en/ios/README.md)
+    - [Introduction](/en/ios/introduction.md)
+    - [Usage](/en/ios/usage.md)
+    - [API & Config](/en/ios/API.md)
+    - [Change Log](/en/ios/logs.md)
 - Android
     - [Introduction](/en/android/README.md)
 - [Signaling Service](/en/signaling.md)
@@ -19,7 +24,6 @@
 - More
     - [Commercial Service<sup style="color:red;">new!</sup>](/en/commercial.md)
     - [Design](/en/design.md)
-    - [Change Log](/en/logs.md)
     - [Forum](/coming-soon)
   
 
