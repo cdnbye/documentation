@@ -1,4 +1,8 @@
 
+### iOS SDK is released!
+- Support any players
+- Interconnect with CDNBye hlsjs-p2p-engine
+
 ### v0.9.2 released
 The best version so far
 

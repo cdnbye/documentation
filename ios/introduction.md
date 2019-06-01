@@ -1,3 +1,5 @@
+### iOS SDK :id=head
+> 集成极其简单，支持任何播放器，完全免费，与高昂的CDN流量费Say Goodbye!
 
 <a href="https://cocoapods.org/pods/CDNByeSDK"><img src="https://img.shields.io/cocoapods/v/CDNByeSDK.svg?style=flat" alt="version"></a>
 <a href="https://cocoapods.org/pods/CDNByeSDK"><img src="https://img.shields.io/cocoapods/p/CDNByeSDK.svg?style=flat" alt="platform"></a>

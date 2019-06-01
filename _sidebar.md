@@ -8,7 +8,7 @@
     - [API文档](/web/API.md)
     - [CDN](/web/CDN.md)
     - [更新日志](/web/logs.md)
-- iOS
+- iOS<sup style="color:red;">新!</sup>
     - [简介](/ios/introduction.md)
     - [使用方法](/ios/usage.md)
     - [API文档](/ios/API.md)
@@ -23,7 +23,7 @@
     - [P2P控制](p2p-control.md)
 - [常见问题](FAQ.md)
 - 更多
-    - [商业服务<sup style="color:red;">新!</sup>](commercial.md)
+    - [商业服务](commercial.md)
     - [技术原理](design.md)
     - [交流论坛](/coming-soon)
   

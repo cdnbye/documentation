@@ -33,7 +33,7 @@ Add a observer to observe downloading statistics:
 ```
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMsg:) name:kP2pEngineDidReceiveStatistics object:nil];
 ```
-The get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded from dictionary:
+The get the downloading statistics, including p2pDownloaded, p2pUploaded and httpDownloaded from dictionary:
 ```
 - (void)didReceiveMsg:(NSNotification *)note {
     NSDictionary *dict = (NSDictionary *)note.object;

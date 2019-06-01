@@ -33,7 +33,7 @@ NSURL *parsedURL = [engine parseStreamURL:ORIGINAL_URL];
 ```
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMsg:) name:kP2pEngineDidReceiveStatistics object:nil];
 ```
-在回调的字典中获取totalP2PDownloaded、totalP2PUploaded、totalHTTPDownloaded等：
+在回调的字典中获取p2pDownloaded、p2pUploaded、httpDownloaded等：
 ```
 - (void)didReceiveMsg:(NSNotification *)note {
     NSDictionary *dict = (NSDictionary *)note.object;

@@ -1,4 +1,4 @@
-## CDNBye :id=head
+## CDNBye Cross-platform P2P Engine :id=head
 > A hls.js plugin to offload bandwidth from expensive traditional CDNs，while also maximizing a user’s viewing experience. 
 
 ## Video Delivery Technology for Next Generation
