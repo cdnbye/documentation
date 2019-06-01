@@ -4,6 +4,7 @@
 ## Video Delivery Technology for Next Generation
 CDNBye hlsjs-p2p-engine implements WebRTC datachannel to scale live/vod video streaming by peer-to-peer network using bittorrent-like protocol. The forming peer network can be layed over other CDNs or on top of the origin server. Powered by hls.js, it can play HLS on any platform with many popular HTML5 players such as video.js, JWPlayer and Flowplayer.
 
+<img width="600" src="pics/p2p.jpg" alt="p2p">
 
 ## Console
 Bind your domain in `https://oms.cdnbye.com`, then you can view p2p-related information.
