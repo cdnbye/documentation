@@ -19,5 +19,5 @@ CDNBye iOS P2P Engine implements [WebRTC](https://en.wikipedia.org/wiki/WebRTC) 
 
 ### Requirements
 This library requires iOS 9.0+.
-
+<br>NOTICE: This framework doesn’t support bitcode currently.
 

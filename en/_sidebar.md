@@ -7,7 +7,7 @@
     - [API & Config](/en/web/API.md)
     - [CDN](/en/web/CDN.md)
     - [Change Log](/en/web/logs.md)
-- iOS
+- iOS<sup style="color:red;">new!</sup>
     - [Introduction](/en/ios/introduction.md)
     - [Usage](/en/ios/usage.md)
     - [API & Config](/en/ios/API.md)
@@ -22,7 +22,7 @@
     - [P2P Control](/en/p2p-control.md)
 - [FAQ](/en/FAQ.md)
 - More
-    - [Commercial Service<sup style="color:red;">new!</sup>](/en/commercial.md)
+    - [Commercial Service](/en/commercial.md)
     - [Design](/en/design.md)
     - [Forum](/coming-soon)
   
