@@ -1,8 +1,11 @@
 
 ## P2P Configuration
 Create `CBP2pConfig` instance.
-```
+```ObjC
 CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
+```
+```Swift
+let config = CBP2pConfig.defaultConfiguration()
 ```
 
 The default fields (shown below) can be overridden.
@@ -20,24 +23,37 @@ The default fields (shown below) can be overridden.
 
 ## P2P Engine
 Initialize `CBP2pEngine` to an instance or static variable:
-```
+```ObjC
 CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:config];
 ```
-Get parsed local stream url by passing the original stream url(m3u8) to `CBP2pEngine` instance:
+```Swift
+let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
 ```
+Get parsed local stream url by passing the original stream url(m3u8) to `CBP2pEngine` instance:
+```ObjC
 NSURL *parsedURL = [engine parseStreamURL:ORIGINAL_URL];
+```
+```Swift
+let parsedURL = engine.parse(streamURL: ORIGINAL_URL)
 ```
 
 ## P2P Statistics
 Add a observer to observe downloading statistics:
-```
+```ObjC
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMsg:) name:kP2pEngineDidReceiveStatistics object:nil];
 ```
-The get the downloading statistics, including p2pDownloaded, p2pUploaded and httpDownloaded from dictionary:
+```Swift
+NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMsg), name: NSNotification.Name(rawValue: kP2pEngineDidReceiveStatistics), object: nil)
 ```
+The get the downloading statistics, including p2pDownloaded, p2pUploaded and httpDownloaded from dictionary:
+```ObjC
 - (void)didReceiveMsg:(NSNotification *)note {
     NSDictionary *dict = (NSDictionary *)note.object;
     NSLog(@"didReceiveMsg %@", dict);
+}
+```
+```Swift
+@objc func didReceiveMsg(note:NSNotification) {
 }
 ```
 

@@ -1,8 +1,11 @@
 
 ## P2P配置
 实例化`CBP2pConfig`：
-```
+```ObjC
 CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
+```
+```Swift
+let config = CBP2pConfig.defaultConfiguration()
 ```
 覆盖相应的字段：
 
@@ -19,30 +22,43 @@ CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
 
 ## P2P Engine
 实例化`CBP2pEngine`：
-```
+```ObjC
 CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:config];
+```
+```Swift
+let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
 ```
 Get parsed local stream url by passing the original stream url(m3u8) to `CBP2pEngine` instance:
 将原始播放地址(m3u8)传给`CBP2pEngine`，从而获取本地播放地址：
-```
+```ObjC
 NSURL *parsedURL = [engine parseStreamURL:ORIGINAL_URL];
+```
+```Swift
+let parsedURL = engine.parse(streamURL: ORIGINAL_URL)
 ```
 
 ## P2P统计
 通过`NSNotificationCenter`来监听P2P下载信息：
-```
+```ObjC
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMsg:) name:kP2pEngineDidReceiveStatistics object:nil];
 ```
-在回调的字典中获取p2pDownloaded、p2pUploaded、httpDownloaded等：
+```Swift
+NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMsg), name: NSNotification.Name(rawValue: kP2pEngineDidReceiveStatistics), object: nil)
 ```
+在回调的字典中获取p2pDownloaded、p2pUploaded、httpDownloaded等：
+```ObjC
 - (void)didReceiveMsg:(NSNotification *)note {
     NSDictionary *dict = (NSDictionary *)note.object;
     NSLog(@"didReceiveMsg %@", dict);
 }
 ```
+```Swift
+@objc func didReceiveMsg(note:NSNotification) {
+}
+```
 
 ## 完整的例子
-```
+```ObjC
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
