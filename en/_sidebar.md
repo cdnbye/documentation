@@ -1,4 +1,4 @@
-- [Notice<sup style="color:red;">!!!</sup>](/en/notice.md)
+- [Notice](/en/notice.md)
 - [Introduction](/en/README.md)
 - Web
     - [Introduction](/en/web/introduction.md)

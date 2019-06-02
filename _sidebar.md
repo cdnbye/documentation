@@ -1,4 +1,4 @@
-- [重要公告<sup style="color:red;">!!!</sup>](notice.md)
+- [重要公告](notice.md)
 - [快速入门](README.md)
 - Web
     - [简介](/web/introduction.md)
