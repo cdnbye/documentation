@@ -13,6 +13,8 @@ $ sudo gem install cocoapods
 
 ```ruby
 target 'TargetName' do
+# Uncomment the next line if you're using Swift
+# use_frameworks!
 pod 'CDNByeSDK'
 end
 ```

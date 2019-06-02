@@ -45,7 +45,7 @@ Add a observer to observe downloading statistics:
 ```Swift
 NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMsg), name: NSNotification.Name(rawValue: kP2pEngineDidReceiveStatistics), object: nil)
 ```
-The get the downloading statistics, including p2pDownloaded, p2pUploaded and httpDownloaded from dictionary:
+Then get the downloading statistics, including p2pDownloaded, p2pUploaded and httpDownloaded from dictionary:
 ```ObjC
 - (void)didReceiveMsg:(NSNotification *)note {
     NSDictionary *dict = (NSDictionary *)note.object;
