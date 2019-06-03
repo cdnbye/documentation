@@ -97,3 +97,13 @@ Then get the downloading statistics, including p2pDownloaded, p2pUploaded and ht
 }
 @end
 ```
+
+## Advanced Usage
+### Switch Stream URL
+When Switching to a new stream URL, before passing new stream url(m3u8) to the player, pass that URL through `CBP2pEngine` instance:
+```ObjC
+NSURL *newParsedURL = [engine parseStreamURL:NEW_ORIGINAL_URL];
+```
+```Swift
+let newParsedURL = engine.parse(streamURL: NEW_ORIGINAL_URL)
+```

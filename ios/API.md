@@ -97,3 +97,13 @@ NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMsg),
 }
 @end
 ```
+
+## 高级用法
+### 切换源
+但播放器切换到新的播放地址时，只需要将新的播放地址(m3u8)传给`CBP2pEngine`，从而获取新的本地播放地址：
+```ObjC
+NSURL *newParsedURL = [engine parseStreamURL:NEW_ORIGINAL_URL];
+```
+```Swift
+let newParsedURL = engine.parse(streamURL: NEW_ORIGINAL_URL)
+```
