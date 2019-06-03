@@ -3,4 +3,7 @@
 - First release
 
 ### 0.2.2
-- Optimization for Swift 
+- Optimization for Swift
+
+### 0.3.0
+- new API: stopP2p, restartP2p 
