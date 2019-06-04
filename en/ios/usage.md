@@ -10,7 +10,6 @@ $ gem install cocoapods
 #### Podfile
 
 To integrate CDNByeSDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
-
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
@@ -23,9 +22,13 @@ end
 ```
 
 Then, run the following command:
-
 ```bash
 $ pod install
+```
+
+If can not find CDNByeSDK in repo, run command:
+```bash
+$ pod repo update
 ```
 
 ## Integration

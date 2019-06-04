@@ -10,7 +10,6 @@ $ sudo gem install cocoapods
 #### Podfile
 
 为了使用 CoacoaPods 集成 CDNByeSDK 到你的 Xcode 工程当中，你需要编写你的 `Podfile`
-
 ```ruby
 target 'TargetName' do
 # Uncomment the next line if you're using Swift
@@ -20,9 +19,13 @@ end
 ```
 
 然后，运行如下的命令：
-
 ```bash
 $ pod install
+```
+
+如果提示找不到CDNByeSDK，执行以下命令：
+```bash
+$ pod repo update
 ```
 
 ## 集成方法
