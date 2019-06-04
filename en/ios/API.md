@@ -56,7 +56,7 @@ Then get the downloading statistics, including p2pDownloaded, p2pUploaded, httpD
 @objc func didReceiveMsg(note:NSNotification) {
 }
 ```
-Unit: KB
+PS: The unit of download and upload is KB.
 
 ## Complete Example
 ```
