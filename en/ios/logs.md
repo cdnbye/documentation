@@ -7,3 +7,7 @@
 
 ### 0.3.0
 - new API: stopP2p, restartP2p 
+
+### 0.3.1
+- fix bugs
+- customized channel id

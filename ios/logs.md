@@ -7,3 +7,7 @@
 
 ### 0.3.0
 - 新的API: stopP2p, restartP2p 
+
+### 0.3.1
+- 修复已知bug
+- 允许开发者修改channel id

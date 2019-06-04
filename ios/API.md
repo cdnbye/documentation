@@ -108,3 +108,11 @@ NSURL *newParsedURL = [engine parseStreamURL:NEW_ORIGINAL_URL];
 ```Swift
 let newParsedURL = engine.parse(streamURL: NEW_ORIGINAL_URL)
 ```
+### 解决动态m3u8路径问题
+某些流媒体提供商的m3u8是动态生成的，不同节点的m3u8地址不一样，例如example.com/clientId1/file.m3u8和example.com/clientId2/file.m3u8, 而本插件默认使用m3u8作为channelId。这时候就要构造一个共同的chanelId，使实际观看同一直播/视频的节点处在相同频道中。
+```ObjC
+engine.channelId = ^NSString * _Nonnull(NSString * _Nonnull urlString) {
+    NSString *formatedUrl = [Formater convert:urlString];
+    return formatedUrl;
+};
+```
