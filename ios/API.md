@@ -45,7 +45,7 @@ let parsedURL = engine.parse(streamURL: ORIGINAL_URL)
 ```Swift
 NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMsg), name: NSNotification.Name(rawValue: kP2pEngineDidReceiveStatistics), object: nil)
 ```
-在回调的字典中获取p2pDownloaded、p2pUploaded、httpDownloaded等：
+在回调的字典中获取p2pDownloaded、p2pUploaded、httpDownloaded、peers等：
 ```ObjC
 - (void)didReceiveMsg:(NSNotification *)note {
     NSDictionary *dict = (NSDictionary *)note.object;
@@ -56,6 +56,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMsg),
 @objc func didReceiveMsg(note:NSNotification) {
 }
 ```
+PS：下载和上传数据量的单位是KB。
 
 ## 完整的例子
 ```ObjC
