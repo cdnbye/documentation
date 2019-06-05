@@ -1,5 +1,5 @@
 
-## Introduction
+### Introduction
 CDNBye can be integrated into any HTML5 video player with hls.js built in.
 
 ## videojs
