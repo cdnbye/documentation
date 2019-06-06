@@ -14,4 +14,9 @@
 
 ### 0.3.2
 - fix crash
-- 优化调度算法
+- optimize scheduling algorithm
+
+### 0.3.3
+- fix bug when switching url
+- optimize p2p download
+- optimize p2p performance in live mode
