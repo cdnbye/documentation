@@ -60,7 +60,10 @@ CDNBye不对色情等非法内容提供P2P服务，请确保您的网站符合�
 注：以上所列出均是安卓平台，目前iOS平台还未支持，不断完善中...
 
 ### iOS浏览器是否不支持P2P？
-由于iOS的浏览器内核不支持MSE(Media Source Extension)，因此所有iOS系统的手机均不支持P2P，这也是其他Web P2P方案共同的局限性。
+由于iOS的浏览器内核不支持MSE(Media Source Extension)，因此所有iOS系统的手机均不支持P2P，这也是其他Web P2P方案共同的局限性，建议使用原生APP集成iOS端SDK来实现P2P。
+
+### 使用过程中出现异常如何反馈？
+如果是Web端插件的异常请在p2p配置中开启log并截图浏览器console出错信息发送到service@cdnbye.com，或者在QQ群里反馈。如果是原生SDK出现异常请在p2p配置中开启log并保存日志文件发送到官方邮箱，建议在APP中集成[Bugly](https://bugly.qq.com)，有助于收集crash日志并上传到云端。
 
 ### CDNBye的效果如何？如果使用过程效果不如预期，应该怎么调整？
 从目前后台记录的数据来看，理想情况下，在直播中P2P分享率可以达到60%以上，点播中在有冷流存在的情况下综合分享率也可以达到30%以上。
