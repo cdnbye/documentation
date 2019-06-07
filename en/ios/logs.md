@@ -20,3 +20,8 @@
 - fix bug when switching url
 - optimize p2p download
 - optimize p2p performance in live mode
+
+### 0.3.4
+- fix bugs
+- optimize p2p performance in background
+- limit the max p2p connections
