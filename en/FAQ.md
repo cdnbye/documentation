@@ -19,6 +19,7 @@ Currently, CDNBye is being commercialized, but still offers free services to sma
 - A daily free 10GB of P2P traffic will be provided after the domain name is bound in the console (https://oms.cdnbye.com). Please note that it will be cleared the next day.
 - A daily free 40GB of P2P traffic will be provided after signing in at the console. Please note that it will be cleared the next day.
 - P2P service will be stopped if the free quota is exceeded. If you want to continue to use it, you need to buy a traffic package.
+- iOS and android SDK will not charge a fee for use of the service.
 
 ### How to buy a traffic package?
 Log on to https://oms.cdnbye.com and click the `Traffic Package` on the left side. At present, Alipay and Paypal are supported to pay for the order. Please note that Alipay pays in RMB and Paypal in US dollars.
