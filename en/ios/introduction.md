@@ -16,6 +16,9 @@ CDNBye iOS P2P Engine scales live/vod video streaming by peer-to-peer network us
 - Highly configurable
 - Use IP database to group up peers by ISP and regions
 
+### Example
+[Simple Example](https://github.com/cdnbye/ios-p2p-engine/blob/master/Example/CDNByeSDK/CBViewController.m)
+
 ### Requirements
 This library requires iOS 9.0+.
 <br>NOTICE: This framework doesn’t support bitcode currently.

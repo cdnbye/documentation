@@ -18,6 +18,9 @@ P2P技术使观看相同内容的用户之间可以相互分享数据，不仅�
 - 通过有效的调度策略来保证用户的播放体验以及p2p分享率
 - Tracker服务器根据访问IP的ISP、地域等进行智能调度
 
+### Example
+[简单示例](https://github.com/cdnbye/ios-p2p-engine/blob/master/Example/CDNByeSDK/CBViewController.m)
+
 ### 系统要求
 支持iOS 9.0以上系统。
 <br>注意：本SDK暂时不支持bitcode，在发布前请在xcode关闭bitcode。
