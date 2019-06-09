@@ -25,3 +25,7 @@
 - fix bugs
 - optimize p2p performance in background
 - limit the max p2p connections
+
+### 0.3.5
+- fix bugs
+- optimize log
