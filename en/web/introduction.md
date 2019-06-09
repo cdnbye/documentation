@@ -1,4 +1,4 @@
-### CDNBye :id=head
+### Web SDK :id=head
 > A hls.js plugin to offload bandwidth from expensive traditional CDNs，while also maximizing a user’s viewing experience. 
 
 <a href="https://www.npmjs.com/package/cdnbye"><img src="https://img.shields.io/npm/v/cdnbye.svg?style=flat" alt="npm"></a>

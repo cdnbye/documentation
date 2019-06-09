@@ -1,4 +1,4 @@
-### CDNBye :id=head
+### Web SDK :id=head
 > 基于WebRTC技术的视频网站省流量&加速引擎，无需安装任何浏览器插件，与高昂的CDN流量费Say Goodbye!
 
 <a href="https://www.npmjs.com/package/cdnbye"><img src="https://img.shields.io/npm/v/cdnbye.svg?style=flat" alt="npm"></a>
