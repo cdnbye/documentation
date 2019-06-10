@@ -29,3 +29,7 @@
 ### 0.3.5
 - fix bugs
 - optimize log
+
+### 0.3.6
+- fix bugs
+- optimize caching
