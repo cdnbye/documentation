@@ -33,12 +33,10 @@ let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
 ```
 Get parsed local stream url by passing the original stream url(m3u8) to `CBP2pEngine` instance:
 ```ObjC
-NSURL *originalUrl = [NSURL URLWithString:@"https://your_stream.m3u8"];
-NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
+NSURL *parsedUrl = [engine parseStreamURL:ORIGINAL_URL];
 ```
 ```Swift
-let orginalUrl = URL.init(string: "https://your_stream.m3u8")
-let parsedUrl = engine.parse(streamURL: orginalUrl!)
+let parsedUrl = engine.parse(streamURL: ORIGINAL_URL)
 ```
 
 ## P2P Statistics
@@ -83,8 +81,9 @@ PS: The unit of download and upload is KB.
     config.logLevel =  CBLogLevelDebug;
     config.tag = @"avplayer";
     CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:config];
-    NSURL *url = [engine parseStreamURL:@"https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"];
-    self.player.player = [[AVPlayer alloc] initWithURL:url];
+    NSURL *originalUrl = [NSURL URLWithString:@"https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"];
+    NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
+    self.player.player = [[AVPlayer alloc] initWithURL:parsedUrl];
     
     self.player.view.frame = CGRectMake(0, 100, 400, 400);
     [self.view addSubview:self.player.view];

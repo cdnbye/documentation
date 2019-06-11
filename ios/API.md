@@ -32,12 +32,10 @@ let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
 ```
 将原始播放地址(m3u8)传给`CBP2pEngine`，从而获取本地播放地址：
 ```ObjC
-NSURL *originalUrl = [NSURL URLWithString:@"https://your_stream.m3u8"];
-NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
+NSURL *parsedUrl = [engine parseStreamURL:ORIGINAL_URL];
 ```
 ```Swift
-let orginalUrl = URL.init(string: "https://your_stream.m3u8")
-let parsedUrl = engine.parse(streamURL: orginalUrl!)
+let parsedUrl = engine.parse(streamURL: ORIGINAL_URL)
 ```
 
 ## P2P统计
@@ -82,8 +80,9 @@ PS：下载和上传数据量的单位是KB。
     config.logLevel =  CBLogLevelDebug;
     config.tag = @"avplayer";
     CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:config];
-    NSURL *url = [engine parseStreamURL:@"https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"];
-    self.player.player = [[AVPlayer alloc] initWithURL:url];
+    NSURL *originalUrl = [NSURL URLWithString:@"https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"];
+    NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
+    self.player.player = [[AVPlayer alloc] initWithURL:parsedUrl];
     
     self.player.view.frame = CGRectMake(0, 100, 400, 400);
     [self.view addSubview:self.player.view];
@@ -93,7 +92,7 @@ PS：下载和上传数据量的单位是KB。
     [self.player.player play];
 }
 /*
- 通过观察者模式获取P2P下载信息
+ Get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded.
  */
 - (void)didReceiveMsg:(NSNotification *)note {
     NSDictionary *dict = (NSDictionary *)note.object;
