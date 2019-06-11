@@ -33,3 +33,7 @@
 ### 0.3.6
 - fix bugs
 - optimize caching
+
+### 0.4.0
+- optimize API
+- optimize performance

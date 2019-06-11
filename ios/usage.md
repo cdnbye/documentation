@@ -49,12 +49,14 @@ Swift项目需要在统一的bridge头文件（xxx-Bridging-Header.h）里面imp
 在代码中实例化AVPlayer之后（也可以是其他任何视频播放器），先将URL传给CBP2pEngine，之后将转化的本地URL传给播放器：
 ```ObjC
 CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:nil];
-NSURL *url = [engine parseStreamURL:@"https://your_stream.m3u8"];   
-_player = [[AVPlayer alloc] initWithURL:url];
+NSURL *originalUrl = [NSURL URLWithString:@"https://your_stream.m3u8"];
+NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
+_player = [[AVPlayer alloc] initWithURL:parsedUrl];
 ```
 ```Swift
 let engine = CBP2pEngine.init(token: "free", p2pConfig: nil)
-let url = engine.parse(streamURL: "https://your_stream.m3u8")
-_player = AVPlayer.init(url: url)
+let orginalUrl = URL.init(string: "https://your_stream.m3u8")
+let parsedUrl = engine.parse(streamURL: orginalUrl!)
+_player = AVPlayer.init(url: parsedUrl)
 ```
 就这么简单，你的播放器已经具备P2P能力了！

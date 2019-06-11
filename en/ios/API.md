@@ -33,10 +33,12 @@ let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
 ```
 Get parsed local stream url by passing the original stream url(m3u8) to `CBP2pEngine` instance:
 ```ObjC
-NSURL *parsedURL = [engine parseStreamURL:ORIGINAL_URL];
+NSURL *originalUrl = [NSURL URLWithString:@"https://your_stream.m3u8"];
+NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
 ```
 ```Swift
-let parsedURL = engine.parse(streamURL: ORIGINAL_URL)
+let orginalUrl = URL.init(string: "https://your_stream.m3u8")
+let parsedUrl = engine.parse(streamURL: orginalUrl!)
 ```
 
 ## P2P Statistics

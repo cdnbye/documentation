@@ -52,13 +52,15 @@ If you want to use CDNByeSDK in your Swift app, then you need to create a bridgi
 When initializing an AVPlayer (or any other video player) instance, before passing it a URL, pass that URL through CDNBye P2P Engine:
 ```ObjC
 CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:nil];
-NSURL *url = [engine parseStreamURL:@"https://your_stream.m3u8"];   
-_player = [[AVPlayer alloc] initWithURL:url];
+NSURL *originalUrl = [NSURL URLWithString:@"https://your_stream.m3u8"];
+NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
+_player = [[AVPlayer alloc] initWithURL:parsedUrl];
 ```
 ```Swift
 let engine = CBP2pEngine.init(token: "free", p2pConfig: nil)
-let url = engine.parse(streamURL: "https://your_stream.m3u8")
-_player = AVPlayer.init(url: url)
+let orginalUrl = URL.init(string: "https://your_stream.m3u8")
+let parsedUrl = engine.parse(streamURL: orginalUrl!)
+_player = AVPlayer.init(url: parsedUrl)
 ```
 That’s it! CDNBye should now be integrated into your app.
 
