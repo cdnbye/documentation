@@ -37,3 +37,6 @@
 ### 0.4.0
 - optimize API
 - optimize performance
+
+### 0.4.1
+- live mode optimization
