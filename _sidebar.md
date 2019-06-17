@@ -23,7 +23,7 @@
     - [P2P控制](p2p-control.md)
 - [常见问题](FAQ.md)
 - 更多
-    - [商业服务<sup style="color:red;">Hot!</sup>](commercial.md)
+    - [商业服务<sup style="color:red;">hot!</sup>](commercial.md)
     - [技术原理](design.md)
     - [交流论坛](/coming-soon)
   
