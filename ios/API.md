@@ -17,9 +17,9 @@ let config = CBP2pConfig.defaultConfiguration()
 | `maxBufferSize` | NSUInteger | 1024 * 1024 * 1024 | 点播模式下P2P在磁盘缓存的最大数据量。
 | `p2pEnabled` | BOOL | YES | 开启或关闭p2p engine。
 | `packetSize` | NSUInteger | 64 * 1024 | 每次通过datachannel发送的包的大小，64KB适用于与浏览器进行P2P。
-| `downloadTimeout` | NSTimeInterval | 10 | HTTP下载ts文件超时时间。
-| `dcDownloadTimeout` | NSTimeInterval | 4 | datachannel下载二进制数据的超时时间。
-| `dcUploadTimeout` | NSTimeInterval | 6 | datachannel上传二进制数据的超时时间。
+| `downloadTimeout` | NSTimeInterval | 10 | HTTP下载ts文件超时时间（单位：秒）。
+| `dcDownloadTimeout` | NSTimeInterval | 4 | datachannel下载二进制数据的超时时间（单位：秒）。
+| `dcUploadTimeout` | NSTimeInterval | 6 | datachannel上传二进制数据的超时时间（单位：秒）。
 | `tag` | NSString | @"unknown" | 用户自定义的标签，可以在控制台查看分布图。
 
 ## P2P Engine
