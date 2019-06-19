@@ -40,3 +40,6 @@
 
 ### 0.4.1
 - live mode optimization
+
+### 0.4.2
+- support http range request
