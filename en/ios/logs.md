@@ -43,3 +43,6 @@
 
 ### 0.4.2
 - support http range request
+
+### 0.4.3
+- optimize p2p scheduling algorithm
