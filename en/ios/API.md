@@ -19,7 +19,7 @@ The default fields (shown below) can be overridden.
 | `p2pEnabled` | BOOL | YES | Enable or disable p2p engine.
 | `packetSize` | NSUInteger | 64 * 1024 | The maximum package size sent by datachannel, 64KB should work with most of recent browsers.
 | `downloadTimeout` | NSTimeInterval | 10 | TS file download timeout by HTTP.
-| `dcDownloadTimeout` | NSTimeInterval | 4 | Download timeout for WebRTC datachannel.
+| `dcDownloadTimeout` | NSTimeInterval | 3 | Download timeout for WebRTC datachannel.
 | `dcUploadTimeout` | NSTimeInterval | 6 | Upload timeout for WebRTC datachannel.
 | `tag` | NSString | @"unknown" | User defined tag which is presented in console.
 
@@ -31,6 +31,7 @@ CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:co
 ```Swift
 let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
 ```
+Where `token` is your Customer ID. Currently this SDK is free of charge, set it to "free" is ok.
 Get parsed local stream url by passing the original stream url(m3u8) to `CBP2pEngine` instance:
 ```ObjC
 NSURL *parsedUrl = [engine parseStreamURL:ORIGINAL_URL];

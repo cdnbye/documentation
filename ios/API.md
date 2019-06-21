@@ -18,7 +18,7 @@ let config = CBP2pConfig.defaultConfiguration()
 | `p2pEnabled` | BOOL | YES | 开启或关闭p2p engine。
 | `packetSize` | NSUInteger | 64 * 1024 | 每次通过datachannel发送的包的大小，64KB适用于与浏览器进行P2P。
 | `downloadTimeout` | NSTimeInterval | 10 | HTTP下载ts文件超时时间（单位：秒）。
-| `dcDownloadTimeout` | NSTimeInterval | 4 | datachannel下载二进制数据的超时时间（单位：秒）。
+| `dcDownloadTimeout` | NSTimeInterval | 3 | datachannel下载二进制数据的超时时间（单位：秒）。
 | `dcUploadTimeout` | NSTimeInterval | 6 | datachannel上传二进制数据的超时时间（单位：秒）。
 | `tag` | NSString | @"unknown" | 用户自定义的标签，可以在控制台查看分布图。
 
@@ -30,7 +30,7 @@ CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:co
 ```Swift
 let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
 ```
-将原始播放地址(m3u8)传给`CBP2pEngine`，从而获取本地播放地址：
+其中token是用于标识用户的字符串，目前SDK是免费使用的，因此token设为"free"即可。将原始播放地址(m3u8)传给`CBP2pEngine`，从而获取本地播放地址：
 ```ObjC
 NSURL *parsedUrl = [engine parseStreamURL:ORIGINAL_URL];
 ```
