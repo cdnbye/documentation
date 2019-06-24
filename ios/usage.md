@@ -28,6 +28,11 @@ $ pod install
 $ pod repo update
 ```
 
+如果需要更新SDK到最新版本，执行：
+```bash
+pod update CDNByeSDK --verbose --no-repo-update
+```
+
 ## 集成方法
 CDNBye通过本地代理服务器拦截数据请求的方式来进行P2P缓存和传输，所以需要在项目的info.plist中允许HTTP请求：
 ```xml

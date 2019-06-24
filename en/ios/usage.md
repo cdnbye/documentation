@@ -31,6 +31,11 @@ If can not find CDNByeSDK in repo, run command:
 $ pod repo update
 ```
 
+Update SDK if needed:
+```bash
+pod update CDNByeSDK --verbose --no-repo-update
+```
+
 ## Integration
 In order to allow the loading of distributed content via the local proxy, enable loading data from HTTP in your app by opening your info.plist file as source code and adding the following values below the </dict> tag:
 ```xml
