@@ -14,7 +14,10 @@
     - [API文档](/ios/API.md)
     - [更新日志](/ios/logs.md)
 - 安卓
-    - [快速入门](/android/README.md)
+    - [快速入门](/android/introduction.md)
+    - [使用方法](/android/usage.md)
+    - [API文档](/android/API.md)
+    - [更新日志](/android/logs.md)
 - [信令服务](signaling.md)
 - [P2P优化](m3u8.md)
 - 控制台

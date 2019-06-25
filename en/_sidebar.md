@@ -13,7 +13,10 @@
     - [API & Config](/en/ios/API.md)
     - [Change Log](/en/ios/logs.md)
 - Android
-    - [Introduction](/en/android/README.md)
+    - [Introduction](/en/android/introduction.md)
+    - [Usage](/en/android/usage.md)
+    - [API & Config](/en/android/API.md)
+    - [Change Log](/en/android/logs.md)
 - [Signaling Service](/en/signaling.md)
 - [P2P Optimization](/en/m3u8.md)
 - Console
