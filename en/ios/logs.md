@@ -46,3 +46,6 @@
 
 ### 0.4.3
 - optimize p2p scheduling algorithm
+
+### 0.4.4
+- add new public method `sharedInstance`
