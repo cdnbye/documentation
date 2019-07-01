@@ -48,20 +48,20 @@ In order to allow the loading of distributed content via the local proxy, enable
 
 #### Include
 Import CDNByeSDK into your Objective-C app:
-```
+```objectivec
 #import <CDNByeKit/CBP2pEngine.h>
 ```
 If you want to use CDNByeSDK in your Swift app, then you need to create a bridging header that allows your Swift code to work with it.
 
 #### Usage
 When initializing an AVPlayer (or any other video player) instance, before passing it a URL, pass that URL through CDNBye P2P Engine:
-```ObjC
+```objectivec
 CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:nil];
 NSURL *originalUrl = [NSURL URLWithString:@"https://your_stream.m3u8"];
 NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
 _player = [[AVPlayer alloc] initWithURL:parsedUrl];
 ```
-```Swift
+```swift
 let engine = CBP2pEngine.init(token: "free", p2pConfig: nil)
 let orginalUrl = URL.init(string: "https://your_stream.m3u8")
 let parsedUrl = engine.parse(streamURL: orginalUrl!)

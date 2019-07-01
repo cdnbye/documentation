@@ -1,10 +1,10 @@
 
 ## P2P配置
 实例化`CBP2pConfig`：
-```ObjC
+```objectivec
 CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
 ```
-```Swift
+```swift
 let config = CBP2pConfig.defaultConfiguration()
 ```
 覆盖相应的字段：
@@ -24,43 +24,43 @@ let config = CBP2pConfig.defaultConfiguration()
 
 ## P2P Engine
 实例化`CBP2pEngine`：
-```ObjC
+```objectivec
 CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:config];
 ```
-```Swift
+```swift
 let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
 ```
 其中token是用于标识用户的字符串，目前SDK是免费使用的，因此token设为"free"即可。将原始播放地址(m3u8)传给`CBP2pEngine`，从而获取本地播放地址：
-```ObjC
+```objectivec
 NSURL *parsedUrl = [engine parseStreamURL:ORIGINAL_URL];
 ```
-```Swift
+```swift
 let parsedUrl = engine.parse(streamURL: ORIGINAL_URL)
 ```
 
 ## P2P统计
 通过`NSNotificationCenter`来监听P2P下载信息：
-```ObjC
+```objectivec
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMsg:) name:kP2pEngineDidReceiveStatistics object:nil];
 ```
-```Swift
+```swift
 NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMsg), name: NSNotification.Name(rawValue: kP2pEngineDidReceiveStatistics), object: nil)
 ```
 在回调的字典中获取p2pDownloaded、p2pUploaded、httpDownloaded、peers等：
-```ObjC
+```objectivec
 - (void)didReceiveMsg:(NSNotification *)note {
     NSDictionary *dict = (NSDictionary *)note.object;
     NSLog(@"didReceiveMsg %@", dict);
 }
 ```
-```Swift
+```swift
 @objc func didReceiveMsg(note:NSNotification) {
 }
 ```
 PS：下载和上传数据量的单位是KB。
 
 ## 完整的例子
-```ObjC
+```objectivec
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
@@ -104,15 +104,15 @@ PS：下载和上传数据量的单位是KB。
 ## 高级用法
 ### 切换源
 但播放器切换到新的播放地址时，只需要将新的播放地址(m3u8)传给`CBP2pEngine`，从而获取新的本地播放地址：
-```ObjC
+```objectivec
 NSURL *newParsedURL = [engine parseStreamURL:NEW_ORIGINAL_URL];
 ```
-```Swift
+```swift
 let newParsedURL = engine.parse(streamURL: NEW_ORIGINAL_URL)
 ```
 ### 解决动态m3u8路径问题
 某些流媒体提供商的m3u8是动态生成的，不同节点的m3u8地址不一样，例如example.com/clientId1/file.m3u8和example.com/clientId2/file.m3u8, 而本插件默认使用m3u8作为channelId。这时候就要构造一个共同的chanelId，使实际观看同一直播/视频的节点处在相同频道中。
-```ObjC
+```objectivec
 engine.channelId = ^NSString * _Nonnull(NSString * _Nonnull urlString) {
     NSString *formatedUrl = [Formater convert:urlString];
     return formatedUrl;

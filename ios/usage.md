@@ -45,20 +45,21 @@ CDNBye通过本地代理服务器拦截数据请求的方式来进行P2P缓存�
 
 #### 引入CBP2pEngine
 Objective-C项目可以直接引用：
-```ObjC
+```objectivec
 #import <CDNByeKit/CBP2pEngine.h>
 ```
+
 Swift项目需要在统一的bridge头文件（xxx-Bridging-Header.h）里面import。
 
 #### 开始使用
 在代码中实例化AVPlayer之后（也可以是其他任何视频播放器），先将URL传给CBP2pEngine，之后将转化的本地URL传给播放器：
-```ObjC
+```objectivec
 CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:nil];
 NSURL *originalUrl = [NSURL URLWithString:@"https://your_stream.m3u8"];
 NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
 _player = [[AVPlayer alloc] initWithURL:parsedUrl];
 ```
-```Swift
+```swift
 let engine = CBP2pEngine.init(token: "free", p2pConfig: nil)
 let orginalUrl = URL.init(string: "https://your_stream.m3u8")
 let parsedUrl = engine.parse(streamURL: orginalUrl!)
