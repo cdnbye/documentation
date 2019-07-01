@@ -110,6 +110,16 @@ NSURL *newParsedURL = [engine parseStreamURL:NEW_ORIGINAL_URL];
 ```swift
 let newParsedURL = engine.parse(streamURL: NEW_ORIGINAL_URL)
 ```
+### 自行配置stun服务器地址
+```objectivec
+#import <WebRTC/RTCIceServer.h>
+
+NSMutableArray *ICEServers = [NSMutableArray array];
+RTCIceServer *server = [[RTCIceServer alloc] initWithURLStrings:@[@"YOUR_STUN_SERVER"]];
+[ICEServers addObject:server];
+config.webRTCConfig = [[RTCConfiguration alloc] init];
+config.webRTCConfig.iceServers = ICEServers;
+```
 ### 解决动态m3u8路径问题
 某些流媒体提供商的m3u8是动态生成的，不同节点的m3u8地址不一样，例如example.com/clientId1/file.m3u8和example.com/clientId2/file.m3u8, 而本插件默认使用m3u8作为channelId。这时候就要构造一个共同的chanelId，使实际观看同一直播/视频的节点处在相同频道中。
 ```objectivec
