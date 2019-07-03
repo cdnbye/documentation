@@ -16,6 +16,8 @@ Deploy your own Signaling Server (Recommended)
 - 'wss://signalcloud.cdnbye.com:9002'  (China mainland)
 
 ## Example
+
+### Web SDK
 ```javascript
 var hlsjsConfig = {
     p2pConfig: {
@@ -26,4 +28,11 @@ var hlsjsConfig = {
 // Hls constructor is overriden by included bundle
 var hls = new Hls(hlsjsConfig);
 // Use `hls` just like the usual hls.js ...
+```
+
+### iOS SDK
+```objectivec
+CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
+config.wsSignalerAddr = @"ws://your.signalservice.com";
+self.engine = [[CBP2pEngine alloc] initWithToken:YOUR_TOKEN andP2pConfig:config];
 ```
