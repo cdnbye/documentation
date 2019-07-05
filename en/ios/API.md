@@ -17,6 +17,7 @@ The default fields (shown below) can be overridden.
 | `wsSignalerAddr` | NSString | @"wss://signal.cdnbye.com/wss" | The address of signal server.
 | `maxBufferSize` | NSUInteger | 1024 * 1024 * 1024 | The max size of binary data that can be stored in the cache for VOD.
 | `p2pEnabled` | BOOL | YES | Enable or disable p2p engine.
+| `localPort` | NSUInteger | 52019 | The port for local http server.
 | `packetSize` | NSUInteger | 64 * 1024 | The maximum package size sent by datachannel, 64KB should work with most of recent browsers.
 | `downloadTimeout` | NSTimeInterval | 10 | TS file download timeout by HTTP.
 | `dcDownloadTimeout` | NSTimeInterval | 3 | Download timeout for WebRTC datachannel.

@@ -14,6 +14,7 @@
 
 
 ## 第三方免费信令服务
+- 'wss://signal.cdnbye.com/wss' (香港节点，默认)
 - 'wss://opensignal.cdnbye.com' （中国大陆节点）
 - 'wss://signalcloud.cdnbye.com:9002' （中国大陆节点）
 

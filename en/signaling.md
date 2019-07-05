@@ -12,6 +12,7 @@ Deploy your own Signaling Server (Recommended)
  
 
 ## Use free Signaling Server
+- 'wss://signal.cdnbye.com/wss' (Hong Kong，default)
 - 'wss://opensignal.cdnbye.com'  (China mainland)
 - 'wss://signalcloud.cdnbye.com:9002'  (China mainland)
 
