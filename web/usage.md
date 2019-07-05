@@ -66,7 +66,7 @@
 ```
 
 #### 文件引入
-可以在cdnbye npm包中或者[github](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/dist)的dist文件夹中找到相关文件。注意js代码需要放在播放器代码之前执行，可以在引入播放器代码的script标签之前引入。
+[点击下载](https://cdnbye.oss-cn-beijing.aliyuncs.com/web_sdk/dist.zip)<br>注意js代码需要放在播放器代码之前执行，可以在引入播放器代码的script标签之前引入。
 
 #### Browserify / Webpack
 ```shell
