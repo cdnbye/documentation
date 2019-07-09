@@ -8,7 +8,7 @@ P2P技术使观看相同内容的用户之间可以相互分享数据，不仅�
 
 ### 特性
 - 完全免费
-- 可与CDNBye Web端[P2P插件](https://github.com/cdnbye/hlsjs-p2p-engine)互联互通
+- 可与CDNBye Web端[P2P插件](https://github.com/cdnbye/hlsjs-p2p-engine)和iOS端[SDK](https://github.com/cdnbye/ios-p2p-engine)互联互通
 - 支持基于HLS流媒体协议(m3u8)的直播和点播场景
 - 支持加密HLS传输
 - 几行代码即可在现有项目中快速集成
@@ -22,4 +22,4 @@ P2P技术使观看相同内容的用户之间可以相互分享数据，不仅�
 安卓5.0以上版本(API level 21)
 
 ### 技术支持
-欢迎加入移动端SDK技术支持QQ群：`901641535`
+移动端SDK技术支持QQ群：`901641535`
