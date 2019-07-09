@@ -49,3 +49,7 @@
 
 ### 0.4.4
 - add new public method `sharedInstance`
+
+### 0.4.5
+- fix bugs
+- optimize performance
