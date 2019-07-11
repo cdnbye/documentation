@@ -66,7 +66,7 @@ var engine = hls.p2pEngine;
 Resume P2P if it has been stopped.
 
 ### `engine.disableP2P()`
-Disable P2P to stop p2p and free used resources.
+Disable engine to stop p2p and free used resources.
 
 ### `engine.destroy()`
 Stop p2p and free used resources, it will be called automatically before hls.js is destroyed.  

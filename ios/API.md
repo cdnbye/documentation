@@ -13,6 +13,7 @@ let config = CBP2pConfig.defaultConfiguration()
 | :-: | :-: | :-: | :-: |
 | `logLevel` | CBLogLevel | CBLogLevelWarn | 打印日志的级别(CBLogLevelNone, CBLogLevelDebug, CBLogLevelInfo, CBLogLevelWarn, CBLogLevelError)。                                                                                      
 | `webRTCConfig` | RTCConfiguration | - | 通过RTCConfiguration来修改WebRTC默认配置。
+| `announce` | NSString | @"https://api.cdnbye.com/v1" | tracker服务器地址。
 | `wsSignalerAddr` | NSString | @"wss://signal.cdnbye.com/wss" | 信令服务器地址。
 | `maxBufferSize` | NSUInteger | 1024 * 1024 * 1024 | 点播模式下P2P在磁盘缓存的最大数据量。
 | `p2pEnabled` | BOOL | YES | 开启或关闭p2p engine。
@@ -103,7 +104,7 @@ PS：下载和上传数据量的单位是KB。
 
 ## 高级用法
 ### 切换源
-但播放器切换到新的播放地址时，只需要将新的播放地址(m3u8)传给`CBP2pEngine`，从而获取新的本地播放地址：
+当播放器切换到新的播放地址时，只需要将新的播放地址(m3u8)传给`CBP2pEngine`，从而获取新的本地播放地址：
 ```objectivec
 NSURL *newParsedURL = [engine parseStreamURL:NEW_ORIGINAL_URL];
 ```
