@@ -15,11 +15,41 @@ android {
 }
 ```
 
-### 手动导入
-#### 导入 SDK
-下载最新版本的[安卓SDK]()，将文件夹中的cdnbye.jar拷贝到工程的`libs`目录下。
+### 添加相关权限
+在`app/src/main`目录中的`AndroidManifest.xml`中增加如下权限声明:
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
 
-#### 修改 build.gradle
+### 允许HTTP请求
+从Android P系统开始，如果应用使用的是非加密的明文流量的http网络请求，则会导致该应用无法进行网络请求，https则不会受影响。由于本地代理服务需要使用http协议访问，针对这个问题，有以下两种解决方法：
+<br>
+（1） `targetSdkVersion` 降到27以下
+<br>
+（2） 更改网络安全配置，在`app/src/main`目录中的`AndroidManifest.xml`的<application>标签中直接插入：
+```xml
+<application
+  ...
+  android:usesCleartextTraffic="true"
+  ...
+    />
+```
+
+
+### 混淆配置
+为了保证正常使用 SDK ，请在 proguard-rules.pro 文件中添加以下代码：
+```
+
+```
+
+### 手动导入 SDK
+##### 下载 SDK
+下载最新版本的[安卓SDK](https://github.com/cdnbye/android-p2p-engine/tree/master/app/libs)，将文件夹中的cdnbye.jar拷贝到工程的`libs`目录下。
+
+##### 修改 build.gradle
 双击打开您的工程目录下的`app/build.gradle`，添加如下依赖：
 ```
 dependencies {
@@ -32,21 +62,6 @@ dependencies {
     implementation 'com.jakewharton:disklrucache:2.0.2'
     implementation files('libs/cdnbye.jar')
 }
-```
-
-#### 添加相关权限
-在`app/src/main`目录中的`AndroidManifest.xml`中增加如下权限声明:
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-```
-
-#### 混淆配置
-为了保证正常使用 SDK ，请在 proguard-rules.pro 文件中添加以下代码：
-```
-
 ```
 
 ## 快速开始
@@ -62,7 +77,7 @@ public class MyApplication extends android.app.Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        P2pEngine.initEngine(this, "YOUR_TOKEN", null);
+        P2pEngine.initEngine(this, YOUR_TOKEN, null);
     }
 }
 ```
@@ -71,9 +86,9 @@ public class MyApplication extends android.app.Application {
 ### 获取播放地址
 使用加速功能，必须通过SDK把地址转换成加速地址
 ```java
- private void onPlay(){
-      String parsedUrl = P2pEngine.getInstance().parseStreamUrl("https://your_stream.m3u8");
-      mediaPlayer.play(parsedUrl);
- }
+private void onPlay(){
+  String parsedUrl = P2pEngine.getInstance().parseStreamUrl("https://your_stream.m3u8");
+  mediaPlayer.play(parsedUrl);
+}
 ```
 就这么简单，你的播放器已经具备P2P能力了！

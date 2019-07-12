@@ -15,9 +15,38 @@ android {
 }
 ```
 
-### Manually
-#### Import SDK
-Download the latest version [SDK]()，then copy `cdnbye.jar` to `app/libs`. 
+### Add Uses Permission
+Add relevant uses permissions in `app/src/main/AndroidManifest.xml`:
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
+
+### Allow HTTP Request
+Starting with Android 9 (API level 28), cleartext support is disabled by default. There are 2 solutions:
+<br>
+（1） set `targetSdkVersion` under 27
+<br>
+（2） Add the attribute below in `app/src/main/AndroidManifest.xml` to indicate that the app intends to use cleartext HTTP:
+```xml
+<application
+  ...
+  android:usesCleartextTraffic="true"
+  ...
+    />
+```
+
+### Proguard Configuration
+Please add the following code in proguard-rules.pro:
+```
+
+```
+
+### Import SDK Manually
+#### Download SDK
+Download the latest version [SDK](https://github.com/cdnbye/android-p2p-engine/tree/master/app/libs)，then copy `cdnbye.jar` to `app/libs`. 
 
 #### Modify build.gradle
 Add new dependencies to your application's build.gradle `app/build.gradle` as shown below:
@@ -34,21 +63,6 @@ dependencies {
 }
 ```
 
-#### Add Uses Permission
-Add relevant uses permissions in `app/src/main/AndroidManifest.xml`:
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-```
-
-#### Proguard Configuration
-Please add the following code in proguard-rules.pro:
-```
-
-```
-
 ## Quick Start
 It is recommended to initialize `P2pEngine` in Application.OnCreate().
 ### Import P2pEngine
@@ -62,7 +76,7 @@ public class MyApplication extends android.app.Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        P2pEngine.initEngine(this, "YOUR_TOKEN", null);
+        P2pEngine.initEngine(this, YOUR_TOKEN, null);
     }
 }
 ```
@@ -71,9 +85,9 @@ Where `token` is your Customer ID. Currently this SDK is free of charge, set it 
 ### Playback Address
 When initializing a media player (or any other video player) instance, before passing it a URL, pass that URL through CDNBye P2P Engine.
 ```java
- private void onPlay(){
-      String parsedUrl = P2pEngine.getInstance().parseStreamUrl("https://your_stream.m3u8");
-      mediaPlayer.play(parsedUrl);
- }
+private void onPlay(){
+  String parsedUrl = P2pEngine.getInstance().parseStreamUrl("https://your_stream.m3u8");
+  mediaPlayer.play(parsedUrl);
+}
 ```
 That’s it! CDNBye should now be integrated into your app.
