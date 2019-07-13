@@ -34,6 +34,14 @@ var hls = new Hls(hlsjsConfig);
 // Use `hls` just like the usual hls.js ...
 ```
 
+### 安卓SDK
+```java
+P2pConfig config = new P2pConfig.Builder()
+    .wsSignalerAddr("ws://your.signalservice.com")
+    .build();
+P2pEngine.initEngine(ctx, token, config);
+```
+
 ### iOS SDK
 ```objectivec
 CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
