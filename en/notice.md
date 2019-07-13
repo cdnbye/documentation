@@ -1,4 +1,8 @@
 
+### Android SDK is released!
+- Support any players
+- Interconnect with CDNBye hlsjs-p2p-engine
+
 ### iOS SDK is released!
 - Support any players
 - Interconnect with CDNBye hlsjs-p2p-engine
