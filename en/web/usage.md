@@ -138,3 +138,17 @@ Or include it in a `<script>` before the script of cdnbye:
 <script src="https://cdn.bootcss.com/babel-polyfill/7.4.4/polyfill.min.js"></script>
 ```
 
+## Electron
+CDNBye also supports [Electron](https://electronjs.org/)(CDNBye version>=0.10.0), you just need to get a token from console:
+```javascript
+var hlsjsConfig = {
+    p2pConfig: {
+        token: YOUR_TOKEN,
+        appName: YOUR_APP_NAME,
+        appId: YOUR_APP_ID,
+        // Other p2pConfig options if applicable
+    }
+};
+```
+
+

@@ -38,11 +38,13 @@ Starting with Android 9 (API level 28), cleartext support is disabled by default
     />
 ```
 
+<!--
 ### Proguard Configuration
 Please add the following code in proguard-rules.pro:
 ```
 
 ```
+-->
 
 ### Import SDK Manually
 #### Download SDK

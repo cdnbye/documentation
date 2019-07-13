@@ -143,3 +143,15 @@ require("@babel/polyfill");
 <script src="https://cdn.bootcss.com/babel-polyfill/7.4.4/polyfill.min.js"></script>
 ```
 
+## Electron
+本插件同样支持[Electron](https://electronjs.org/)平台（CDNBye版本>=0.10.0），只需求将从控制台获取的token等信息传进config中即可，如下所示：
+```javascript
+var hlsjsConfig = {
+    p2pConfig: {
+        token: YOUR_TOKEN,
+        appName: YOUR_APP_NAME,    // 应用的名称
+        appId: YOUR_APP_ID,        // 需要与控制台输入的保持一致
+        // Other p2pConfig options if applicable
+    }
+};
+```
