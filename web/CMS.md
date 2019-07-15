@@ -9,7 +9,7 @@
 注意：PPVOD的视频加密设置会导致P2P失效，请在PPVOD系统的`系统设置`->`转码设置`中将`视频加密`取消。
 
 ## 苹果CMS集成
-为苹果CMSV10播放器增加记忆+P2P播放+自动下一集功能，用以下代码替换static/player目录dplayer.html全部内容即可。
+为苹果CMSV10播放器增加记忆+P2P播放+自动下一集功能，用以下代码替换`static/player/dplayer.html`全部内容即可。
 ```html
 <html>
 <head>
