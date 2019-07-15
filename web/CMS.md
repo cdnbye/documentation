@@ -7,3 +7,105 @@
 安装完成后，将安装目录中的hls.mim.js（linux下路径一般是/home/work/public/dplayer/hls.mim.js）替换成CDNBye的[hls.min.js](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/dist)，同时将share.js（linux下路径一般是/home/work/public/js/share.js）替换成CDNBye提供的[share.js](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/demo/ppvod)即可。在控制台绑定域名后即可开启P2P服务并查看实时数据。
 <br>
 注意：PPVOD的视频加密设置会导致P2P失效，请在PPVOD系统的`系统设置`->`转码设置`中将`视频加密`取消。
+
+## 苹果CMS集成
+为苹果CMSV10播放器增加记忆+P2P播放+自动下一集功能，用以下代码替换static/player目录dplayer.html全部内容即可。
+```html
+<html>
+<head>
+    <title>dplayer播放器p2p加速+记忆播放</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta http-equiv="content-language" content="zh-CN"/>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta name="referrer" content="never"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="x5-page-mode" content="app"/>
+    <meta name="Viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/p2p-dplayer@latest/dist/DPlayer.min.css">
+    <style type="text/css">
+        body,html{width:100%;height:100%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}
+        *{margin:0;border:0;padding:0;text-decoration:none}
+        #stats{position:fixed;top:5px;left:8px;font-size:12px;color:#fdfdfd;text-shadow:1px 1px 1px #000, 1px 1px 1px #000}
+        #dplayer{position:inherit}
+    </style>
+</head>
+<body style="background:#000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" oncontextmenu=window.event.returnValue=false>
+<div id="dplayer"></div>
+<div id="stats"></div>
+<script language="Javascript">
+    document.oncontextmenu=new Function("event.returnValue=false");
+    document.onselectstart=new Function("event.returnValue=false");
+</script>
+<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flv.js@latest"></script>
+<script src="//cdn.jsdelivr.net/npm/p2p-dplayer@latest"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@latest"></script>
+<script>
+    var webdata = {
+        set:function(key,val){
+            window.sessionStorage.setItem(key,val);
+        },
+        get:function(key){
+            return window.sessionStorage.getItem(key);
+        },
+        del:function(key){
+            window.sessionStorage.removeItem(key);
+        },
+        clear:function(key){
+            window.sessionStorage.clear();
+        }
+    };
+    var dp = new DPlayer({
+        autoplay: true,
+        container: document.getElementById('dplayer'),
+        video: {
+            url: parent.MacPlayer.PlayUrl,
+            type: 'hls',
+        },
+        volume: 1.0,
+        preload: 'auto',
+        screenshot: true,
+        theme: '#28FF28',
+        hlsjsConfig: {
+            p2pConfig: {
+                logLevel: false,                   // 调试时设为true
+                live: false,
+            }
+        }
+    });
+    dp.seek(webdata.get('pay'+parent.MacPlayer.PlayUrl));
+    setInterval(function(){
+        webdata.set('pay'+parent.MacPlayer.PlayUrl,dp.video.currentTime);
+    },1000);
+    var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
+    dp.on('stats', function (stats) {
+        _totalP2PDownloaded = stats.totalP2PDownloaded;
+        _totalP2PUploaded = stats.totalP2PUploaded;
+        updateStats();
+    });
+    dp.on('peerId', function (peerId) {
+        _peerId = peerId;
+    });
+    dp.on('peers', function (peers) {
+        _peerNum = peers.length;
+        updateStats();
+    });
+    dp.on('ended', function (){
+        if(parent.MacPlayer.PlayLinkNext!=''){
+            top.location.href = parent.MacPlayer.PlayLinkNext;
+        }
+    });
+
+    function updateStats() {
+        var text = 'P2P已开启 共享' + (_totalP2PUploaded/1024).toFixed(2) + 'MB' + ' 已加速' + (_totalP2PDownloaded/1024).toFixed(2)
+            + 'MB' + ' 此片有 ' + _peerNum + ' 位影迷正在观看';
+        document.getElementById('stats').innerText = text
+    }
+</script>
+</body>
+</html>
+```

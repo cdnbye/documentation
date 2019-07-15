@@ -4,7 +4,7 @@ A `P2pConfig` can be obtained via its builder, the parameters below is the defau
 ```java
 P2pConfig config = new P2pConfig.Builder()
     .enableLog(false)                                 // Enable or disable log
-    .logLevel(Log.WARN)                               // Print log level
+    .logLevel(LogLevel.WARN)                          // Print log level
     .announce("https://api.cdnbye.com/v1")            // The address of tracker server
     .wsSignalerAddr("wss://signal.cdnbye.com/wss")    // The address of signal server
     .downloadTimeout(10_000, TimeUnit.MILLISECONDS)   // TS file download timeout by HTTP

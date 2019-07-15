@@ -4,7 +4,7 @@
 ```java
 P2pConfig config = new P2pConfig.Builder()
     .enableLog(false)                                 // 是否开启debug模式
-    .logLevel(Log.WARN)                               // 打印日志的级别
+    .logLevel(LogLevel.WARN)                          // 打印日志的级别
     .announce("https://api.cdnbye.com/v1")            // tracker服务器地址
     .wsSignalerAddr("wss://signal.cdnbye.com/wss")    // 信令服务器地址
     .downloadTimeout(10_000, TimeUnit.MILLISECONDS)   // HTTP下载ts文件超时时间

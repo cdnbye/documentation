@@ -53,3 +53,7 @@
 ### 0.4.5
 - fix bugs
 - optimize performance
+
+### 0.5.0
+- new API `peerId`
+- fix crash in GCDWebServer

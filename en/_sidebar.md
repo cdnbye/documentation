@@ -7,12 +7,12 @@
     - [API & Config](/en/web/API.md)
     - [CDN](/en/web/CDN.md)
     - [Change Log](/en/web/logs.md)
-- iOS<sup style="color:red;">new!</sup>
+- iOS
     - [Introduction](/en/ios/introduction.md)
     - [Usage](/en/ios/usage.md)
     - [API & Config](/en/ios/API.md)
     - [Change Log](/en/ios/logs.md)
-- Android
+- Android<sup style="color:red;">new!</sup>
     - [Introduction](/en/android/introduction.md)
     - [Usage](/en/android/usage.md)
     - [API & Config](/en/android/API.md)

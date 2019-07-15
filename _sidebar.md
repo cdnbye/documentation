@@ -8,12 +8,12 @@
     - [API文档](/web/API.md)
     - [CDN](/web/CDN.md)
     - [更新日志](/web/logs.md)
-- iOS<sup style="color:red;">新!</sup>
+- iOS
     - [简介](/ios/introduction.md)
     - [使用方法](/ios/usage.md)
     - [API文档](/ios/API.md)
     - [更新日志](/ios/logs.md)
-- 安卓
+- 安卓<sup style="color:red;">新!</sup>
     - [快速入门](/android/introduction.md)
     - [使用方法](/android/usage.md)
     - [API文档](/android/API.md)
