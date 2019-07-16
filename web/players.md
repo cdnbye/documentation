@@ -206,7 +206,7 @@
 ```
 
 ## P2P-DPlayer(推荐)
-增加了右键P2P信息统计的[改进版DPlayer](https://github.com/cdnbye/P2P-DPlayer)
+增加了记忆播放和右键P2P信息统计的[改进版DPlayer](https://github.com/cdnbye/P2P-DPlayer)
 ```html
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/p2p-dplayer@latest/dist/DPlayer.min.css">
@@ -221,11 +221,26 @@
 <script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 <script src="//cdn.jsdelivr.net/npm/p2p-dplayer@latest"></script>
 <script>
+    var webdata = {
+        set:function(key,val){
+            window.sessionStorage.setItem(key,val);
+        },
+        get:function(key){
+            return window.sessionStorage.getItem(key);
+        },
+        del:function(key){
+            window.sessionStorage.removeItem(key);
+        },
+        clear:function(key){
+            window.sessionStorage.clear();
+        }
+    };
+    var url = 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8';
     var dp = new DPlayer({
         container: document.getElementById('dplayer'),
         autoplay: true,
         video: {
-            url: 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8',
+            url: url,
             type: 'hls'
         },
         hlsjsConfig: {
@@ -233,12 +248,16 @@
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
                 logLevel: true,
-                live: false,        // 如果是直播设为true
+                live: false,        // set to true in live mode
                 // Other p2pConfig options provided by CDNBye
                 // https://docs.cdnbye.com/#/API
             }
         }
     });
+    dp.seek(webdata.get('vod'+url));
+    setInterval(function(){
+        webdata.set('vod'+url,dp.video.currentTime);
+    },1000);
     var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
     dp.on('stats', function (stats) {
         _totalP2PDownloaded = stats.totalP2PDownloaded;
