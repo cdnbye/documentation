@@ -65,6 +65,7 @@
         video: {
             url: parent.MacPlayer.PlayUrl,
             type: 'hls',
+            // pic: './loading.jpg',           // 视频封面
         },
         volume: 1.0,
         preload: 'auto',
