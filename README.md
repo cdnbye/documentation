@@ -33,12 +33,3 @@ QQ群：746163014
 [![Stargazers over time](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine.svg)](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine)
       
 **快速开始 👉[Web](/web/introduction.md)   👉[iOS](/ios/introduction.md)   👉[安卓](/android/introduction.md)** 
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<span><a href="https://www.maoyun.tv/" target="_blank">猫云</a>提供CDN支持</span>
