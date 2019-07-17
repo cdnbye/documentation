@@ -41,7 +41,6 @@
     document.onselectstart=new Function("event.returnValue=false");
 </script>
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flv.js@latest"></script>
 <script src="//cdn.jsdelivr.net/npm/p2p-dplayer@latest"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@latest"></script>
 <script>
