@@ -75,7 +75,7 @@ CDNBye不对色情等非法内容提供P2P服务，请确保您的网站符合�
 
 ### Web端插件P2P无效问题排查步骤
 - 同时打开2个以上网页播放同一个视频
-- 视频播放后打开console查看debug信息
+- 视频播放后打开网页调试窗口查看debug信息
 - 如果有红色的报错信息一般是代码逻辑问题，请根据提示修改
 - 如果显示类似 "CDNBye 0.X.X is deprecated, please update to latest version(0.X.X已停止支持，请更新至最新版本)" 说明版本已过期，请升级至最新版
 - 如果显示类似 "P2P service is deactivated(P2P服务已停止，请先绑定域名或检查流量是否已用完)" 有以下四种可能：
