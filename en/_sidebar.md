@@ -23,7 +23,7 @@
     - [Domain Binding](/en/bindings.md)
     - [Data Analysis](/en/data-explain.md)
     - [P2P Control](/en/p2p-control.md)
-- [FAQ](/en/FAQ.md)
+- [FAQ<sup style="color:red;">hot!</sup>](/en/FAQ.md)
 - More
     - [Commercial Service](/en/commercial.md)
     - [Design](/en/design.md)

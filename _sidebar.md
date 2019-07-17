@@ -24,7 +24,7 @@
     - [绑定域名](bindings.md)
     - [数据分析](data-explain.md)
     - [P2P控制](p2p-control.md)
-- [常见问题](FAQ.md)
+- [常见问题<sup style="color:red;">hot!</sup>](FAQ.md)
 - 更多
     - [商业服务<sup style="color:red;">hot!</sup>](commercial.md)
     - [技术原理](design.md)
