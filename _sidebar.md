@@ -14,7 +14,7 @@
     - [API文档](/ios/API.md)
     - [更新日志](/ios/logs.md)
 - 安卓<sup style="color:red;">新!</sup>
-    - [快速入门](/android/introduction.md)
+    - [简介](/android/introduction.md)
     - [使用方法](/android/usage.md)
     - [API文档](/android/API.md)
     - [更新日志](/android/logs.md)

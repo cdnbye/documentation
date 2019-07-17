@@ -32,7 +32,7 @@ QQ群：746163014
 
 [![Stargazers over time](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine.svg)](https://starcharts.herokuapp.com/cdnbye/hlsjs-p2p-engine)
       
-**快速开始 👉[Web](/web/usage.md)   👉[iOS](/ios/usage.md)   👉[安卓](/android/usage.md)** 
+**快速开始 👉[Web](/web/introduction.md)   👉[iOS](/ios/introduction.md)   👉[安卓](/android/introduction.md)** 
 
 <br/>
 <br/>
