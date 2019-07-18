@@ -3,7 +3,7 @@
 用建造者模式实例化`CBP2pConfig`，以下的参数是默认值：
 ```java
 P2pConfig config = new P2pConfig.Builder()
-    .enableLog(false)                                 // 是否开启debug模式
+    .logEnabled(false)                                // 是否开启debug模式
     .logLevel(LogLevel.WARN)                          // 打印日志的级别
     .announce("https://api.cdnbye.com/v1")            // tracker服务器地址
     .wsSignalerAddr("wss://signal.cdnbye.com/wss")    // 信令服务器地址

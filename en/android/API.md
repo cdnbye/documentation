@@ -3,7 +3,7 @@
 A `P2pConfig` can be obtained via its builder, the parameters below is the default values:
 ```java
 P2pConfig config = new P2pConfig.Builder()
-    .enableLog(false)                                 // Enable or disable log
+    .logEnabled(false)                                // Enable or disable log
     .logLevel(LogLevel.WARN)                          // Print log level
     .announce("https://api.cdnbye.com/v1")            // The address of tracker server
     .wsSignalerAddr("wss://signal.cdnbye.com/wss")    // The address of signal server
