@@ -20,3 +20,6 @@ CDNBye Android P2P Engine scales live/vod video streaming by peer-to-peer networ
 ### Requirements
 Android Version Support: Lollipop 5.0(API level 21)
 
+### Players Support
+The CDNBye Android SDK works with any Android player although we recommend [ExoPlayer](https://github.com/google/ExoPlayer) which we've found to give good playback results.
+

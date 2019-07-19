@@ -66,3 +66,6 @@ let parsedUrl = engine.parse(streamURL: orginalUrl!)
 _player = AVPlayer.init(url: parsedUrl)
 ```
 就这么简单，你的播放器已经具备P2P能力了！
+
+#### 示例
+获取完整的[示例程序](https://github.com/cdnbye/ios-p2p-engine)。

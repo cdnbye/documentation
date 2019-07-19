@@ -69,3 +69,5 @@ _player = AVPlayer.init(url: parsedUrl)
 ```
 That’s it! CDNBye should now be integrated into your app.
 
+#### Demo
+A completed example can be found [here](https://github.com/cdnbye/ios-p2p-engine)

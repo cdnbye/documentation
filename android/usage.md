@@ -93,3 +93,6 @@ private void onPlay(){
 }
 ```
 就这么简单，你的播放器已经具备P2P能力了！
+
+#### 示例
+获取完整的[示例程序](https://github.com/cdnbye/android-p2p-engine)。
