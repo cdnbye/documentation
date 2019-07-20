@@ -38,13 +38,15 @@ android {
     />
 ```
 
-<!--
 ### 混淆配置
 为了保证正常使用 SDK ，请在 proguard-rules.pro 文件中添加以下代码：
 ```
-
+-dontwarn com.cdnbye.**
+-keep class com.cdnbye.**{*;}
+-keep interface com.cdnbye.**{*;}
+-dontwarn org.webrtc.**
+-keep class org.webrtc.**{*;}
 ```
--->
 
 ### 手动导入 SDK
 ##### 下载 SDK

@@ -38,13 +38,15 @@ Starting with Android 9 (API level 28), cleartext support is disabled by default
     />
 ```
 
-<!--
 ### Proguard Configuration
 Please add the following code in proguard-rules.pro:
 ```
-
+-dontwarn com.cdnbye.**
+-keep class com.cdnbye.**{*;}
+-keep interface com.cdnbye.**{*;}
+-dontwarn org.webrtc.**
+-keep class org.webrtc.**{*;}
 ```
--->
 
 ### Import SDK Manually
 #### Download SDK
