@@ -10,7 +10,7 @@ P2pConfig config = new P2pConfig.Builder()
     .downloadTimeout(10_000, TimeUnit.MILLISECONDS)   // TS file download timeout by HTTP
     .dcDownloadTimeout(4_000, TimeUnit.MILLISECONDS)  // Download timeout for WebRTC datachannel
     .localPort(52019)                                 // The port for local http server
-    .maxBufferSize(1024*1024*1024)                    // The max size of binary data that can be stored in the cache for VOD
+    .maxBufferSize(1024*1024*1024)                    // The max size of binary data that can be stored in the disk cache for VOD(Set to 0 will disable disk cache)
     .p2pEnabled(true)                                 // Enable or disable p2p engine
     .packetSize(64*1024)                              // The maximum package size sent by datachannel, 64KB should work with most of recent browsers
     .withTag("unknown")                               // User defined tag which is presented in console

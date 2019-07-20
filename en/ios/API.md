@@ -16,7 +16,7 @@ The default fields (shown below) can be overridden.
 | `webRTCConfig` | RTCConfiguration | - | Providing options to configure WebRTC connections.
 | `announce` | NSString | @"https://api.cdnbye.com/v1" | The address of tracker server.
 | `wsSignalerAddr` | NSString | @"wss://signal.cdnbye.com/wss" | The address of signal server.
-| `maxBufferSize` | NSUInteger | 1024 * 1024 * 1024 | The max size of binary data that can be stored in the cache for VOD.
+| `maxBufferSize` | NSUInteger | 1024 * 1024 * 1024 | The max size of binary data that can be stored in the cache for VOD(Set to 0 will disable disk cache).
 | `p2pEnabled` | BOOL | YES | Enable or disable p2p engine.
 | `localPort` | NSUInteger | 52019 | The port for local http server.
 | `packetSize` | NSUInteger | 64 * 1024 | The maximum package size sent by datachannel, 64KB should work with most of recent browsers.

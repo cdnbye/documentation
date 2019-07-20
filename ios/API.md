@@ -15,7 +15,7 @@ let config = CBP2pConfig.defaultConfiguration()
 | `webRTCConfig` | RTCConfiguration | - | 通过RTCConfiguration来修改WebRTC默认配置。
 | `announce` | NSString | @"https://api.cdnbye.com/v1" | tracker服务器地址。
 | `wsSignalerAddr` | NSString | @"wss://signal.cdnbye.com/wss" | 信令服务器地址。
-| `maxBufferSize` | NSUInteger | 1024 * 1024 * 1024 | 点播模式下P2P在磁盘缓存的最大数据量。
+| `maxBufferSize` | NSUInteger | 1024 * 1024 * 1024 | 点播模式下P2P在磁盘缓存的最大数据量(设为0可以禁用磁盘缓存)。
 | `p2pEnabled` | BOOL | YES | 开启或关闭p2p engine。
 | `localPort` | NSUInteger | 52019 | 本地代理服务器的端口号。
 | `packetSize` | NSUInteger | 64 * 1024 | 每次通过datachannel发送的包的大小，64KB适用于与浏览器进行P2P。
