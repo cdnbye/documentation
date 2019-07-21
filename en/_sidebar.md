@@ -20,7 +20,7 @@
 - [Signaling Service](/en/signaling.md)
 - [P2P Optimization](/en/m3u8.md)
 - Console
-    - [Domain Binding](/en/bindings.md)
+    - [Domain/AppId Binding](/en/bindings.md)
     - [Data Analysis](/en/data-explain.md)
     - [P2P Control](/en/p2p-control.md)
 - [FAQ<sup style="color:red;">hot!</sup>](/en/FAQ.md)

@@ -21,7 +21,7 @@
 - [信令服务](signaling.md)
 - [P2P优化](m3u8.md)
 - 控制台
-    - [绑定域名](bindings.md)
+    - [绑定域名/AppId](bindings.md)
     - [数据分析](data-explain.md)
     - [P2P控制](p2p-control.md)
 - [常见问题<sup style="color:red;">hot!</sup>](FAQ.md)
