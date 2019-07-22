@@ -50,7 +50,7 @@ Please add the following code in proguard-rules.pro:
 
 ### Import SDK Manually
 #### Download SDK
-Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/sdk-0.2.0.zip)，then copy `cdnbye.jar` to `app/libs`. 
+Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/sdk-0.3.1.zip)，then copy `cdnbye.jar` to `app/libs`. 
 
 #### Modify build.gradle
 Add new dependencies to your application's build.gradle `app/build.gradle` as shown below:

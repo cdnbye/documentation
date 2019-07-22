@@ -95,7 +95,7 @@ Hls.js, JWPlayer, Video.js, Clappr, Flowplayer和TCPlayer等。
  
 ## 原生SDK
 ### 安卓SDK可以用于机顶盒吗？
-当然可以，只要是安卓5.0以上系统的机顶盒都支持。经过实测，exoplayer的兼容性最好，推荐采用。
+当然可以，只要是安卓5.0以上系统的机顶盒都支持。
 
 ### iOS SDK可以用于APPLE TV吗？
 暂时还不兼容APPLE TV。
