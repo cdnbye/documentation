@@ -84,8 +84,8 @@ PS：下载和上传数据量的单位是KB。
 ```java
 String newParsedURL = P2pEngine.getInstance().parseStreamUrl(url);
 ```
-### 自行配置stun和turn服务器地址
-stun用于p2p连接过程中获取公网IP地址，turn则可以在p2p连接不通时用于中转数据。本SDK已内置公开的stun服务，开发者可以通过P2pConfig来更换stun地址。turn服务器则需要开发者自行搭建，可以参考[coturn](https://github.com/coturn/coturn)。
+### 自行配置 STUN 和 TURN 服务器地址
+STUN用于p2p连接过程中获取公网IP地址，TURN则可以在p2p连接不通时用于中转数据。本SDK已内置公开的STUN服务，开发者可以通过P2pConfig来更换STUN地址。TURN服务器则需要开发者自行搭建，可以参考[coturn](https://github.com/coturn/coturn)。
 ```java
 import org.webrtc.PeerConnection;
 import org.webrtc.PeerConnection.RTCConfiguration;
