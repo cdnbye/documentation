@@ -95,8 +95,11 @@ Hls.js, JWPlayer, Video.js, Clappr, Flowplayer和TCPlayer等。
  
 ## 原生SDK
 ### 安卓SDK可以用于机顶盒吗？
-当然可以，只要是安卓5.0以上系统的机顶盒都支持。
+当然可以，只要是安卓5.0以上系统的机顶盒都支持。经过实测，exoplayer的兼容性最好，推荐采用。
 
 ### iOS SDK可以用于APPLE TV吗？
 暂时还不兼容APPLE TV。
+
+### SDK除了P2P还有其他附加功能吗？
+有的。SDK还具备智能缓存能力，用于避免文件重复下载问题，从而有效节省带宽消耗，而且本功能是完全免费的。
 

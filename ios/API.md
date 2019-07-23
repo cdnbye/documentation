@@ -111,12 +111,13 @@ NSURL *newParsedURL = [engine parseStreamURL:NEW_ORIGINAL_URL];
 ```swift
 let newParsedURL = engine.parse(streamURL: NEW_ORIGINAL_URL)
 ```
-### 自行配置stun服务器地址
+### 自行配置stun和turn服务器地址
+stun用于p2p连接过程中获取公网IP地址，turn则可以在p2p连接不通时用于中转数据。本SDK已内置公开的stun服务，开发者可以通过P2pConfig来更换stun地址。turn服务器则需要开发者自行搭建，可以参考[coturn](https://github.com/coturn/coturn)。
 ```objectivec
 #import <WebRTC/RTCIceServer.h>
 
 NSMutableArray *ICEServers = [NSMutableArray array];
-RTCIceServer *server = [[RTCIceServer alloc] initWithURLStrings:@[@"YOUR_STUN_SERVER"]];
+RTCIceServer *server = [[RTCIceServer alloc] initWithURLStrings:@[YOUR_STUN_OR_TURN_SERVER]];
 [ICEServers addObject:server];
 config.webRTCConfig = [[RTCConfiguration alloc] init];
 config.webRTCConfig.iceServers = ICEServers;

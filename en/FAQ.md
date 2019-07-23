@@ -60,3 +60,8 @@ without any side effect.
 No, web P2P solutions request Apple Media Source Extensions supported on iOS. This is the limitation of all existing P2P video streaming solutions.
 
 ## Native SDK
+### Is Android TV supported?
+Yes, Android TV is a supported platform for the SDK. CDNBye Android SDK works with any Android player although we recommend ExoPlayer which we've found to give good playback results.
+
+### Is Apple TV supported?
+No, Apple TV is not supported currently.

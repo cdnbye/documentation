@@ -113,12 +113,13 @@ NSURL *newParsedURL = [engine parseStreamURL:NEW_ORIGINAL_URL];
 ```swift
 let newParsedURL = engine.parse(streamURL: NEW_ORIGINAL_URL)
 ```
-### Use Your Own Stun Server
+### Use Your Own STUN or TURN Server
+STUN (Session Traversal Utilities for NAT) allows clients to discover their public IP address and the type of NAT they are behind. This information is used to establish the media connection. Although there are default STUN servers in this SDK, you can replace them with your own via P2PConfig. TURN (Traversal Using Relays around NAT) server is used to relay traffic if direct connection fails. You can config your [TURN](https://github.com/coturn/coturn) server in the same way as STUN.
 ```objectivec
 #import <WebRTC/RTCIceServer.h>
 
 NSMutableArray *ICEServers = [NSMutableArray array];
-RTCIceServer *server = [[RTCIceServer alloc] initWithURLStrings:@[@"YOUR_STUN_SERVER"]];
+RTCIceServer *server = [[RTCIceServer alloc] initWithURLStrings:@[YOUR_STUN_OR_TURN_SERVER]];
 [ICEServers addObject:server];
 config.webRTCConfig = [[RTCConfiguration alloc] init];
 config.webRTCConfig.iceServers = ICEServers;

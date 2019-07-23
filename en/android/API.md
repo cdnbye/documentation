@@ -84,13 +84,14 @@ When Switching to a new stream URL, before passing new stream url(m3u8) to the p
 ```java
 String newParsedURL = P2pEngine.getInstance().parseStreamUrl(url);
 ```
-### Use Your Own Stun Server
+### Use Your Own STUN or TURN Server
+STUN (Session Traversal Utilities for NAT) allows clients to discover their public IP address and the type of NAT they are behind. This information is used to establish the media connection. Although there are default STUN servers in this SDK, you can replace them with your own via P2PConfig. TURN (Traversal Using Relays around NAT) server is used to relay traffic if direct connection fails. You can config your [TURN](https://github.com/coturn/coturn) server in the same way as STUN.
 ```java
 import org.webrtc.PeerConnection;
 import org.webrtc.PeerConnection.RTCConfiguration;
 
 List<PeerConnection.IceServer> iceServers = new ArrayList<>();
-iceServers.add(PeerConnection.IceServer.builder("YOUR_STUN_SERVER").createIceServer());
+iceServers.add(PeerConnection.IceServer.builder(YOUR_STUN_OR_TURN_SERVER).createIceServer());
 RTCConfiguration rtcConfig = new RTCConfiguration(iceServers);
 P2pConfig config = new P2pConfig.Builder()
     .webRTCConfig(rtcConfig)
