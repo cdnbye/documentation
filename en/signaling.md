@@ -15,9 +15,6 @@ Deploy your own Signaling Service (Recommended)
 - 'wss://signal.cdnbye.com/wss' (Hong Kong，default)
 - 'wss://opensignal.cdnbye.com'  (America)
 - 'wss://signalcloud.cdnbye.com'  (Germany)
-<!--
-- 'wss://webp2p.egame.qq.com/ws' (China)
--->
 
 ## Example
 
