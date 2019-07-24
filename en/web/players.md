@@ -39,6 +39,7 @@ CDNBye can be integrated into any HTML5 video player with hls.js built in.
                 p2pConfig: {
                     logLevel: true,
                     live: false,        // set to true in live mode
+                    wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                     getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                         var total = totalHTTPDownloaded + totalP2PDownloaded;
                         document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
@@ -87,6 +88,7 @@ CDNBye can be integrated into any HTML5 video player with hls.js built in.
             p2pConfig: {
                 logLevel: true,
                 live: false,        // set to true in live mode
+                wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     var total = totalHTTPDownloaded + totalP2PDownloaded;
                     document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
@@ -131,6 +133,7 @@ CDNBye can be integrated into any HTML5 video player with hls.js built in.
             p2pConfig: {
                 logLevel: true,
                 live: false,        // set to true in live mode
+                wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                 // Other p2pConfig options provided by CDNBye
             }
         },
@@ -176,6 +179,7 @@ CDNBye can be integrated into any HTML5 video player with hls.js built in.
                         p2pConfig: {
                             logLevel: 'debug',
                             live: false,        // set to true in live mode
+                            wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                             // Other p2pConfig options provided by CDNBye
                         }
                     });
@@ -234,6 +238,7 @@ A modified DPlayer with p2p information, see [introduction](https://github.com/c
             p2pConfig: {
                 logLevel: true,
                 live: false,        // set to true in live mode
+                wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                 // Other p2pConfig options provided by CDNBye
                 // https://docs.cdnbye.com/#/API
             }
@@ -285,6 +290,7 @@ A modified DPlayer with p2p information, see [introduction](https://github.com/c
             p2pConfig: {
                 logLevel: 'debug',
                 live: false,        // set to true in live mode
+                wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     var total = totalHTTPDownloaded + totalP2PDownloaded;
                     document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
@@ -337,6 +343,7 @@ A modified DPlayer with p2p information, see [introduction](https://github.com/c
                     p2pConfig: {
                         logLevel: 'debug',
                         live: false,        // set to true in live mode
+                        wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                         getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                             var total = totalHTTPDownloaded + totalP2PDownloaded;
                             document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
@@ -381,6 +388,7 @@ A modified DPlayer with p2p information, see [introduction](https://github.com/c
             p2pConfig: {
                 logLevel: true,
                 live: false,        // set to true in live mode
+                wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     var total = totalHTTPDownloaded + totalP2PDownloaded;
                     document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
@@ -441,6 +449,7 @@ A modified DPlayer with p2p information, see [introduction](https://github.com/c
             p2pConfig: {
                 logLevel: true,
                 live: false,        // set to true in live mode
+                wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     var total = totalHTTPDownloaded + totalP2PDownloaded;
                     document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
@@ -489,6 +498,7 @@ A modified DPlayer with p2p information, see [introduction](https://github.com/c
                 p2pConfig: {
                     logLevel: 'debug',
                     live: false,        // set to true in live mode
+                    wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                     getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                         var total = totalHTTPDownloaded + totalP2PDownloaded;
                         document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
@@ -541,6 +551,7 @@ A modified DPlayer with p2p information, see [introduction](https://github.com/c
             p2pConfig: {
                 logLevel: true,
                 live: false,        // set to true in live mode
+                wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     console.log(`totalP2PDownloaded ${totalP2PDownloaded} totalP2PUploaded ${totalP2PUploaded} totalHTTPDownloaded ${totalHTTPDownloaded}`)
                 },
@@ -579,6 +590,7 @@ A modified DPlayer with p2p information, see [introduction](https://github.com/c
                 p2pConfig: {
                     logLevel: true,
                     live: false,        // set to true in live mode
+                    wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                     getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                         var total = totalHTTPDownloaded + totalP2PDownloaded;
                         document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
@@ -620,6 +632,7 @@ A modified DPlayer with p2p information, see [introduction](https://github.com/c
             p2pConfig: {
                 logLevel: 'debug',
                 live: false,        // set to true in live mode
+                wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     var total = totalHTTPDownloaded + totalP2PDownloaded;
                     document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
@@ -668,6 +681,7 @@ A modified DPlayer with p2p information, see [introduction](https://github.com/c
                 p2pConfig: {
                     logLevel: true,
                     live: false,        // set to true in live mode
+                    wsSignalerAddr: 'wss://opensignal.cdnbye.com',
                     getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                         var total = totalHTTPDownloaded + totalP2PDownloaded;
                         document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
