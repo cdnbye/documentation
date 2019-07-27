@@ -17,7 +17,7 @@
 - 'wss://signal.cdnbye.com/wss' (香港节点，默认，高峰期会过载，不推荐)
 - 'wss://opensignal.cdnbye.com' （美国节点）
 - 'wss://signalcloud.cdnbye.com' （德国节点）
-- 'wss://opensignal.320072.top' (中国节点，由猫云赞助)
+- 'wss://opensignal.320072.top'  (中国节点，由猫云赞助)
 
 ## 使用示例
 
@@ -39,7 +39,7 @@ var hls = new Hls(hlsjsConfig);
 P2pConfig config = new P2pConfig.Builder()
     .wsSignalerAddr("ws://your.signalservice.com")
     .build();
-P2pEngine.initEngine(ctx, token, config);
+P2pEngine.initEngine(ctx, YOUR_TOKEN, config);
 ```
 
 ### iOS SDK

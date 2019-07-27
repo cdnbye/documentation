@@ -37,7 +37,7 @@ var hls = new Hls(hlsjsConfig);
 P2pConfig config = new P2pConfig.Builder()
     .wsSignalerAddr("ws://your.signalservice.com")
     .build();
-P2pEngine.initEngine(ctx, token, config);
+P2pEngine.initEngine(ctx, YOUR_TOKEN, config);
 ```
 
 ### iOS SDK

@@ -50,7 +50,7 @@ android {
 
 ### 手动导入 SDK
 ##### 下载 SDK
-下载最新版本的[安卓SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/sdk-0.3.1.zip)，将文件夹中的cdnbye.jar拷贝到工程的`libs`目录下。
+下载最新版本的[安卓SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/sdk-0.3.2.zip)，将文件夹中的cdnbye.jar拷贝到工程的`libs`目录下。
 
 ##### 修改 build.gradle
 双击打开您的工程目录下的`app/build.gradle`，添加如下依赖：
