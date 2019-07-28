@@ -1,14 +1,14 @@
 ### CDNBye跨平台流媒体加速引擎 :id=head
 > 基于WebRTC Datachannel标准协议，无缝打通Web、iOS、Android与PC，实现全平台流媒体加速，与高昂的CDN流量费Say Goodbye!
 
-<img width="300" src="pics/newlogo.png" alt="p2p">
+<img width="300" src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/newlogo.png" alt="p2p">
 
 ### 面向未来的P2P流媒体技术
 随着5G技术的普及，包括直播在内的在线视频娱乐已经逐渐成为主流娱乐方式。然而，CDN部署成本极高，成本增速超过收入增速，落后的技术无法满足各大视频厂商扩张业务和降低成本的需求。对于终端用户而言，由于多数CDN服务商不能覆盖全部ISP和网络边缘，导致用户在观看视频时都无法避免地遭受二次缓冲、卡顿等不良体验。
 "P2P+CDN"的视频传输模型有效的解决了服务器带宽不足的问题，在提升用户观看体验的同时为视频厂商节省带宽成本。
 然而，传统的P2P技术由于自身的局限性（大多采用私有协议），无法实现跨平台的端到端传输，这极大的限制了P2P的利用率。CDNBye采用WebRTC Datachannel标准协议，实现了Web、iOS、Android与PC的全平台P2P互联，充分利用网络中每个节点的上行带宽，解决了P2P无法跨平台以及利用率不高的痛点。
 
-<img width="600" src="pics/p2p.jpg" alt="p2p">
+<img width="600" src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/p2p.jpg" alt="p2p">
 
 ### 先进的P2P+CDN架构
 CDN与P2P在流媒体分发中存在非常强的互补性，CDNBye的P2P分发网络与CDN技术深度融合，视频观看者首次点开播放器一律到CDN边缘节点获取资源，在已经能够正常观看视频的过程中同时连入P2P网络，在保证足够剩余缓冲时间的前提下从对等端获取资源。一旦对等端下线或者网络抖动，再无缝切换回CDN边缘节点取片，保证视频的流畅播放，从而解决了P2P网络可用性不可控的问题。

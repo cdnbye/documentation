@@ -1,4 +1,4 @@
-<img width="250" src="pics/cdnbye.png" alt="cdnbye logo">
+<img width="250" src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/cdnbye.png" alt="cdnbye logo">
 
 # `Cross-platform P2P Streaming Engine`
 

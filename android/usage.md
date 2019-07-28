@@ -84,7 +84,7 @@ public class MyApplication extends android.app.Application {
     }
 }
 ```
-其中token是用于标识用户的字符串，目前SDK是免费使用的，因此token设为"free"即可。
+其中token是用于标识用户的字符串，在调试阶段将token设为"free"即可。在上线前请替换成从控制台获取的token。
 
 ### 获取播放地址
 使用加速功能，必须通过SDK把地址转换成加速地址

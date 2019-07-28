@@ -32,7 +32,7 @@ CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:co
 ```swift
 let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
 ```
-Where `token` is your Customer ID. Currently this SDK is free of charge, set it to "free" is ok.
+Where `token` is your Customer ID. You can set it to "free" when debugging. Please replace it by your own token obtained from console before release.
 Get parsed local stream url by passing the original stream url(m3u8) to `CBP2pEngine` instance:
 ```objectivec
 NSURL *parsedUrl = [engine parseStreamURL:ORIGINAL_URL];

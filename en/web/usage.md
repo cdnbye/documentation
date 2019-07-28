@@ -139,7 +139,7 @@ Or include it in a `<script>` before the script of cdnbye:
 ```
 
 ## Electron
-CDNBye also supports [Electron](https://electronjs.org/)(CDNBye version>=0.10.0), you just need to get a token from console:
+CDNBye also supports [Electron](https://electronjs.org/)(CDNBye version>=0.10.0), you just need to register AppId and get a token from console:
 ```javascript
 var hlsjsConfig = {
     p2pConfig: {
@@ -150,5 +150,6 @@ var hlsjsConfig = {
     }
 };
 ```
+Learn more [here](/en/bindings.md?id=app-id-and-token)
 
 

@@ -31,7 +31,7 @@ CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:co
 ```swift
 let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
 ```
-其中token是用于标识用户的字符串，目前SDK是免费使用的，因此token设为"free"即可。将原始播放地址(m3u8)传给`CBP2pEngine`，从而获取本地播放地址：
+其中token是用于标识用户的字符串，在调试阶段将token设为"free"即可。在上线前请替换成从控制台获取的token。将原始播放地址(m3u8)传给`CBP2pEngine`，从而获取本地播放地址：
 ```objectivec
 NSURL *parsedUrl = [engine parseStreamURL:ORIGINAL_URL];
 ```

@@ -155,3 +155,4 @@ var hlsjsConfig = {
     }
 };
 ```
+参考[如何获取token](/bindings.md?id=绑定-app-id-并获取token)

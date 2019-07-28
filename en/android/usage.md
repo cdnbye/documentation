@@ -84,7 +84,7 @@ public class MyApplication extends android.app.Application {
     }
 }
 ```
-Where `token` is your Customer ID. Currently this SDK is free of charge, set it to "free" is ok. 
+Where `token` is your Customer ID. You can set it to "free" when debugging. Please replace it by your own token obtained from console before release. 
 
 ### Playback Address
 When initializing a media player (or any other video player) instance, before passing it a URL, pass that URL through CDNBye P2P Engine.

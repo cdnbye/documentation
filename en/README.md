@@ -1,11 +1,11 @@
 ### CDNBye Cross-platform P2P Engine :id=head
 > CDNBye makes it possible to interconnect all users in different platforms with the same p2p network.
 
-<img width="300" src="pics/newlogo.png" alt="p2p">
+<img width="300" src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/newlogo.png" alt="p2p">
 
 ### Video Delivery Technology for Next Generation
 
-<img width="600" src="pics/p2p.jpg" alt="p2p">
+<img width="600" src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/p2p.jpg" alt="p2p">
 
 ### Console
 Bind your domain in `https://oms.cdnbye.com`, then you can view p2p-related information.

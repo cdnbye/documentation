@@ -25,5 +25,8 @@ P2P技术使观看相同内容的用户之间可以相互分享数据，不仅�
 支持iOS 9.0以上系统。
 <br>注意：本SDK暂时不支持bitcode，在发布前请在xcode关闭bitcode。
 
+### 获取Token
+参考[如何获取token](/bindings.md?id=绑定-app-id-并获取token)
+
 ### 技术支持
 移动端SDK技术支持QQ群：`901641535`
