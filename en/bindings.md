@@ -3,7 +3,7 @@
 Websites which integrate CDNBye SDK should register domain to activate P2P service. Please note that CDNBye identifies domain by HTTP Origin, player in iFrame may cause domain name inconsistency.
 - Visit `https://oms.cdnbye.com` and register
 
-- After the registration is completed, the website will prompt `You have not yet bound your domain name, are you bounding now?`, click `go to bind ` to jump to the domain name binding interface
+- After the registration is completed, the website will prompt `You have not bound domain name or created app, are you going now?`, click `Bind your domain` to jump to the domain name binding interface
 
 - Click `Bind Domain` button and input your domain, eg: `demo.cdnbye.com`
 
@@ -15,7 +15,7 @@ Websites which integrate CDNBye SDK should register domain to activate P2P servi
 Before release iOS, Android and Electron APP, you should register AppId and obtain token from `console`:
 - Visit `https://oms.cdnbye.com` and register
 
-- Click `APP Management` button, if it's the first time you enter this page, please click `Obtain Token` button
+- Click `APP Management` button, if it's the first time you enter this page, please click `Create Token` button
 
 - Copy the obtained token to the initiator of the SDK
 
