@@ -29,7 +29,7 @@ P2pEngine engine = P2pEngine.initEngine(Context context, String token, P2pConfig
 
 | 参数 | 类型 | 是否必须 | 说明 |
 | :-: | :-: | :-: | :-: |
-| `context` | Context | 是 | 建议使用Application 的Context对象。                                                                                      
+| `context` | Context | 是 | 建议使用Application 的 Context 对象。                                                                                      
 | `token` | String | 是 | CDNBye分配的token。
 | `config` | P2pConfig | 否 | 自定义配置。
 
