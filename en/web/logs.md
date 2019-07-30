@@ -30,7 +30,7 @@
 - Increase buffer size
 
 ### 0.9.0
-- Optimized P2P algorithm
+- Optimize P2P algorithm
 - Solved the buffer stall problem in live
 
 ### 0.9.1
@@ -44,3 +44,7 @@
 ### 0.9.4
 - live mode optimization
 - fix known bug
+
+### 0.10.1
+- Optimize P2P algorithm
+- fix data report bug

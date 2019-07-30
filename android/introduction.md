@@ -1,5 +1,5 @@
 ### Android SDK :id=head
-> 集成极其简单，支持任何播放器，支持安卓手机和机顶盒，与高昂的CDN流量费Say Goodbye!
+> 安卓手机&机顶盒省流量加速神器，与高昂的CDN流量费Say Goodbye!
 
 <a href="https://android-arsenal.com/api?level=21"><img src="https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat" alt="api"></a>
 <a href="https://github.com/cdnbye/android-p2p-engine"><img src="https://img.shields.io/github/stars/cdnbye/android-p2p-engine.svg?style=social&label=Star" alt="stars"></a>
