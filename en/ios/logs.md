@@ -57,3 +57,6 @@
 ### 0.5.0
 - new API `peerId`
 - fix crash in GCDWebServer
+
+### 0.5.1
+- optimize performance while switching video
