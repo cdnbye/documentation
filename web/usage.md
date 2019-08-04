@@ -31,7 +31,7 @@
 </script>
 ```
 
-## 小白站长快速集成
+## 集成步骤
 - 访问[CDNBye后台系统OMS](https://oms.cdnbye.com)，按提示绑定域名
 - 选择一个网站目前在用的[播放器](players.md)（例如DPlayer）
 - 将播放器部分代码替换成demo的代码，修改播放地址

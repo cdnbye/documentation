@@ -32,6 +32,9 @@ Copy the following code in your web page and run. Wait for a few seconds，and t
 </script>
 ```
 
+## Register Domain
+[Register](/en/bindings.md) your domain to activate P2P service.
+
 ## Integrate to existing hls.js Project
 Simply replace the hls.js script tag like:
  ```html

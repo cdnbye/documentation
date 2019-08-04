@@ -45,6 +45,6 @@
 - live mode optimization
 - fix known bug
 
-### 0.10.1
+### 0.10.2
 - Optimize P2P algorithm
 - fix data report bug
