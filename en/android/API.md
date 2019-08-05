@@ -16,7 +16,7 @@ P2pConfig config = new P2pConfig.Builder()
     .withTag("unknown")                               // User defined tag which is presented in console
     .webRTCConfig(null)                               // Providing options to configure WebRTC connections
     .build();  
-P2pEngine.initEngine(context, token, config);
+P2pEngine.initEngine(getApplicationContext(), token, config);
 ```
 
 ## P2P Engine

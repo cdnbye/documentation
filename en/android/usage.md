@@ -49,13 +49,13 @@ Please add the following code in proguard-rules.pro:
 
 ### Import SDK Manually
 #### Download SDK
-Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/sdk-0.4.0.zip)，then copy `cdnbye.jar` to `app/libs`. 
+Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.5.0.jar)，then copy it to `app/libs`. 
 
 #### Modify build.gradle
 Add new dependencies to your application's build.gradle `app/build.gradle` as shown below:
 ```
 dependencies {
-    implementation 'org.webrtc:google-webrtc:1.0.21982'
+    implementation 'org.webrtc:google-webrtc:1.0.28513'
     implementation 'com.alibaba:fastjson:1.2.58'
     implementation 'org.java-websocket:Java-WebSocket:1.4.0'
     implementation 'com.orhanobut:logger:2.2.0'
@@ -67,7 +67,7 @@ dependencies {
 ```
 
 ## Quick Start
-It is recommended to initialize `P2pEngine` in Application.OnCreate().
+It is recommended to initialize `P2pEngine` in `Application.OnCreate()`.
 ### Import P2pEngine
 ```java
 import com.cdnbye.sdk.P2pEngine;

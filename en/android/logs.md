@@ -10,3 +10,7 @@
 - Change system requirement to Android 4.3
 - Optimize performance while switching video
 - Fix known bugs that cause crash
+
+### 0.5.0
+- Update WebRTC lib
+- Fix known bugs that cause crash

@@ -16,7 +16,7 @@ P2pConfig config = new P2pConfig.Builder()
     .withTag("unknown")                               // 用户自定义的标签，可以在控制台查看分布图
     .webRTCConfig(null)                               // 通过webRTCConfig来修改WebRTC默认配置
     .build();  
-P2pEngine.initEngine(context, token, config);
+P2pEngine.initEngine(getApplicationContext(), token, config);
 ```
 
 ## P2P Engine

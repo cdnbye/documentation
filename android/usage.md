@@ -49,13 +49,13 @@ android {
 
 ### 手动导入 SDK
 ##### 下载 SDK
-下载最新版本的[安卓SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/sdk-0.4.0.zip)，将文件夹中的cdnbye.jar拷贝到工程的`libs`目录下。
+下载最新版本的[安卓SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.5.0.jar)，并拷贝到工程的`libs`目录下。
 
 ##### 修改 build.gradle
 双击打开您的工程目录下的`app/build.gradle`，添加如下依赖：
 ```
 dependencies {
-    implementation 'org.webrtc:google-webrtc:1.0.21982'
+    implementation 'org.webrtc:google-webrtc:1.0.28513'
     implementation 'com.alibaba:fastjson:1.2.58'
     implementation 'org.java-websocket:Java-WebSocket:1.4.0'
     implementation 'com.orhanobut:logger:2.2.0'
@@ -67,7 +67,7 @@ dependencies {
 ```
 
 ## 快速开始
-推荐在Application.OnCreate()中启动P2P加速服务。在播放之前使用parseStreamUrl()方法去转换播放地址开始播放。
+推荐在`Application.OnCreate()`中启动P2P加速服务。在播放之前使用parseStreamUrl()方法去转换播放地址开始播放。
 ### 导入 P2pEngine
 ```java
 import com.cdnbye.sdk.P2pEngine;
