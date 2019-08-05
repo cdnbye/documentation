@@ -62,7 +62,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
     implementation 'com.koushikdutta.async:androidasync:2.2.1'
     implementation 'com.jakewharton:disklrucache:2.0.2'
-    implementation files('libs/cdnbye.jar')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
 ```
 
