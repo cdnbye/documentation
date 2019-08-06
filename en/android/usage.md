@@ -1,5 +1,5 @@
 
-## Integration
+## Environment Configuration
 ### Developing Environment
 
 - Android Studio，[download](http://developer.android.com/intl/zh-cn/sdk/index.html)
@@ -47,7 +47,15 @@ Please add the following code in proguard-rules.pro:
 -keep class org.webrtc.**{*;}
 ```
 
-### Import SDK Manually
+## Import SDK
+### Import by Gradle
+```
+dependencies {
+  implementation 'com.cdnbye:sdk:0.5.0'
+}
+```
+
+### Import Manually
 #### Download SDK
 Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.5.0.jar)，then copy it to `app/libs`. 
 

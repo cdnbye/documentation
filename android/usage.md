@@ -1,5 +1,5 @@
 
-## 集成指南
+## 环境配置
 ### 开发环境
 
 - Android Studio 开发工具，[下载地址](http://developer.android.com/intl/zh-cn/sdk/index.html)
@@ -47,7 +47,16 @@ android {
 -keep class org.webrtc.**{*;}
 ```
 
-### 手动导入 SDK
+## 导入SDK
+### Gradle方式导入
+添加Jcenter仓库 Gradle依赖：
+```
+dependencies {
+  implementation 'com.cdnbye:sdk:0.5.0'
+}
+```
+
+### 手动导入
 ##### 下载 SDK
 下载最新版本的[安卓SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.5.0.jar)，并拷贝到工程的`libs`目录下。
 

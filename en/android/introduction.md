@@ -1,4 +1,5 @@
 
+<a href="https://bintray.com/cdnbye/maven/sdk/_latestVersion"><img src="https://api.bintray.com/packages/cdnbye/maven/sdk/images/download.svg?style=flat" alt="jcenter"></a>
 <a href="https://android-arsenal.com/api?level=19"><img src="https://img.shields.io/badge/API-19%2B-brightgreen.svg?style=flat" alt="api"></a>
 <a href="https://github.com/cdnbye/android-p2p-engine"><img src="https://img.shields.io/github/stars/cdnbye/android-p2p-engine.svg?style=social&label=Star" alt="stars"></a>
 
