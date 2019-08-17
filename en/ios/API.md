@@ -16,13 +16,15 @@ The default fields (shown below) can be overridden.
 | `webRTCConfig` | RTCConfiguration | - | Providing options to configure WebRTC connections.
 | `announce` | NSString | @"https://api.cdnbye.com/v1" | The address of tracker server.
 | `wsSignalerAddr` | NSString | @"wss://signal.cdnbye.com/wss" | The address of signal server.
-| `maxBufferSize` | NSUInteger | 1024 * 1024 * 1024 | The max size of binary data that can be stored in the cache for VOD(Set to 0 will disable disk cache).
+| `diskCacheLimit` | NSUInteger | 1024 * 1024 * 1024 | The max size of binary data that can be stored in the cache for VOD(Set to 0 will disable disk cache).
+| `memoryCacheLimit` | NSUInteger | 100 * 1024 * 1024 | The max size of binary data that can be stored in the memory cache.
 | `p2pEnabled` | BOOL | YES | Enable or disable p2p engine.
 | `localPort` | NSUInteger | 52019 | The port for local http server.
 | `packetSize` | NSUInteger | 64 * 1024 | The maximum package size sent by datachannel, 64KB should work with most of recent browsers.
 | `downloadTimeout` | NSTimeInterval | 10 | TS file download timeout by HTTP.
 | `dcDownloadTimeout` | NSTimeInterval | 3 | Download timeout for WebRTC datachannel.
 | `tag` | NSString | @"unknown" | User defined tag which is presented in console.
+| `maxPeerConnections` | NSUInteger | 10 | Max peer connections at the same time.
 
 ## P2P Engine
 Initialize `CBP2pEngine` to an instance or static variable:

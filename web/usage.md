@@ -144,7 +144,7 @@ require("@babel/polyfill");
 ```
 
 ## Electron
-本插件同样支持[Electron](https://electronjs.org/)平台（CDNBye版本>=0.10.0），只需求将从控制台获取的token等信息传进config中即可，如下所示：
+本插件同样支持 [Electron](https://electronjs.org/) 平台（CDNBye版本>=0.10.0），只需求将从控制台获取的token等信息传进config中即可，如下所示：
 ```javascript
 var hlsjsConfig = {
     p2pConfig: {

@@ -10,11 +10,13 @@ P2pConfig config = new P2pConfig.Builder()
     .downloadTimeout(10_000, TimeUnit.MILLISECONDS)   // HTTP下载ts文件超时时间
     .dcDownloadTimeout(4_000, TimeUnit.MILLISECONDS)  // datachannel下载二进制数据的超时时间
     .localPort(52019)                                 // 本地代理服务器的端口号
-    .maxBufferSize(1024*1024*1024)                    // 点播模式下P2P在磁盘缓存的最大数据量(设为0可以禁用磁盘缓存)。
+    .diskCacheLimit(1024*1024*1024)                   // 点播模式下P2P在磁盘缓存的最大数据量(设为0可以禁用磁盘缓存)
+    .memoryCacheLimit(60*1024*1024)                   // P2P在内存缓存的最大数据量，机顶盒直播建议不大于30MB
     .p2pEnabled(true)                                 // 开启或关闭p2p engine
     .packetSize(64*1024)                              // 每次通过datachannel发送的包的大小，64KB适用于与浏览器进行P2P
     .withTag("unknown")                               // 用户自定义的标签，可以在控制台查看分布图
     .webRTCConfig(null)                               // 通过webRTCConfig来修改WebRTC默认配置
+    .maxPeerConnections(10)                           // 最大连接节点数量，机顶盒建议不大于5
     .build();  
 P2pEngine.initEngine(getApplicationContext(), token, config);
 ```

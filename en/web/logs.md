@@ -48,3 +48,7 @@
 ### 0.10.2
 - Optimize P2P algorithm
 - fix data report bug
+
+### 0.10.5  13/8/2019
+- live mode optimization
+- fix known bug

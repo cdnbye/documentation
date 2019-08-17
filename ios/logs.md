@@ -60,3 +60,8 @@
 
 ### 0.5.1
 - 修复切换视频时可能产生的卡顿问题
+
+### 0.6.0 16/8/2019
+- 优化WebRTC的重连逻辑
+- 直播模式内存优化
+- 新的配置项`memoryCacheLimit` 和 `maxPeerConnections`

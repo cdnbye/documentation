@@ -14,3 +14,8 @@
 ### 0.5.0
 - Update WebRTC lib
 - Fix known bugs that cause crash
+
+### 0.6.0 17/8/2019
+- optimize reconnection of WebRTC
+- live mode memory optimization
+- new config `memoryCacheLimit` and `maxPeerConnections`

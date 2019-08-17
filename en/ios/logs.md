@@ -60,3 +60,8 @@
 
 ### 0.5.1
 - optimize performance while switching video
+
+### 0.6.0 16/8/2019
+- optimize reconnection of WebRTC
+- live mode memory optimization
+- new config `memoryCacheLimit` and `maxPeerConnections`

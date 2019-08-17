@@ -14,3 +14,8 @@
 ### 0.5.0
 - 升级WebRTC库
 - 修复已知的崩溃bug
+
+### 0.6.0 17/8/2019
+- 优化WebRTC的重连逻辑
+- 直播模式内存优化
+- 新的配置项`memoryCacheLimit` 和 `maxPeerConnections`
