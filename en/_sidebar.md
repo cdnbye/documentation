@@ -12,11 +12,13 @@
     - [Usage](/en/ios/usage.md)
     - [API & Config](/en/ios/API.md)
     - [Change Log](/en/ios/logs.md)
-- Android<sup style="color:red;">new!</sup>
+- Android
     - [Introduction](/en/android/introduction.md)
     - [Usage](/en/android/usage.md)
     - [API & Config](/en/android/API.md)
     - [Change Log](/en/android/logs.md)
+- Cross Platform<sup style="color:red;">new!</sup>
+    - [Flutter](/en/flutter.md)
 - [Signaling Service](/en/signaling.md)
 - [P2P Optimization](/en/m3u8.md)
 - Console
