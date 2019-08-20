@@ -204,7 +204,7 @@
     }
 </script>
 ```
-
+<!--
 ## P2P-DPlayer(推荐)
 增加了记忆播放和右键P2P信息统计的[改进版DPlayer](https://github.com/cdnbye/P2P-DPlayer)
 ```html
@@ -279,6 +279,7 @@
     }
 </script>
 ```
+-->
 
 ## CKPlayer
 [CKPlayer介绍](http://www.ckplayer.com/)
