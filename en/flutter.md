@@ -30,7 +30,7 @@ In order to allow the loading of distributed content via the local proxy, enable
 ```
 
 ### Android
-Requirement: Kitkat 4.4(API level >= 19)
+Requirement: Kitkat 4.4(API level >= 19), please set `minSdkVersion` to `19`.
 <br>
 Add relevant uses permissions in `app/src/main/AndroidManifest.xml`:
 ```xml
@@ -49,15 +49,6 @@ Starting with Android 9 (API level 28), cleartext support is disabled by default
   android:usesCleartextTraffic="true"
   ...
     />
-```
-Also you will need to set your build settings to Java 8, just add this to your app level build.gradle:
-```
-android {
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-}
 ```
 
 ### Example

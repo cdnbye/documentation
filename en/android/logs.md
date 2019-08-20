@@ -19,3 +19,6 @@
 - optimize reconnection of WebRTC
 - live mode memory optimization
 - new config `memoryCacheLimit` and `maxPeerConnections`
+
+### 0.6.2 20/8/2019
+- Fix known bugs

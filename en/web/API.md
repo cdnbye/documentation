@@ -38,6 +38,7 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | `wsReconnectInterval` | number | 30 | The number of seconds to delay before attempting to reconnect by websocket.
 | `maxBufferSize` | Object | {"pc": 1024 * 1024 * 300, "mobile": 1024 * 1024 * 150} | The max size of binary data that can be stored in the cache.
 | `p2pEnabled` | boolean | true | Enable or disable p2p engine.
+| `dcDownloadTimeout` | number | 10 | Max download timeout for WebRTC datachannel.
 | `getStats` | function | - | Get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded.
 | `getPeerId` | function | - | Emitted when the peer Id of this client is obtained from server.
 | `getPeersInfo` | function | - | Emitted when successfully connected with new peer.

@@ -31,7 +31,7 @@ CDNBye通过本地代理服务器拦截数据请求的方式来进行P2P缓存�
 ```
 
 ### Android
-系统要求：安卓4.4以上版本(API level >= 19)
+系统要求：安卓4.4以上版本(API level >= 19)，请将 `minSdkVersion` 设为 `19`。
 <br>
 在`app/src/main`目录中的`AndroidManifest.xml`中增加如下权限声明:
 ```xml
@@ -50,15 +50,6 @@ CDNBye通过本地代理服务器拦截数据请求的方式来进行P2P缓存�
   android:usesCleartextTraffic="true"
   ...
     />
-```
-在`app/build.gradle`中加入以下配置以开启Java8支持：
-```
-android {
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-}
 ```
 
 ### 示例

@@ -52,3 +52,6 @@
 ### 0.10.5  13/8/2019
 - live mode optimization
 - fix known bug
+
+### 0.11.0 19/8/2019
+- Optimize P2P algorithm

@@ -28,4 +28,6 @@ Before release iOS, Android and Electron APP, you should register AppId and obta
         <img width="400" src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/binding-android.png" alt="picture">
         
     - Electron's AppId is defined by yourself and should be configured in the SDK's `p2pConfig`->`appId`
+    
+    - Flutter and React Native need to `Create App` on corresponding platforms according to AppId
 

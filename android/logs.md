@@ -19,3 +19,6 @@
 - 优化WebRTC的重连逻辑
 - 直播模式内存优化
 - 新的配置项`memoryCacheLimit` 和 `maxPeerConnections`
+
+### 0.6.2 20/8/2019
+- 修复首次加载过慢的bug

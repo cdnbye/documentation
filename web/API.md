@@ -37,6 +37,7 @@ if (Hls.WEBRTC_SUPPORT) {
 | `wsReconnectInterval` | number | 30 | websocket重连时间间隔。
 | `maxBufferSize` | Object | {"pc": 1024 * 1024 * 300, "mobile": 1024 * 1024 * 150} | p2p缓存的最大数据量，分为PC和mobile。
 | `p2pEnabled` | boolean | true | 是否开启P2P。
+| `dcDownloadTimeout` | number | 10 | p2p下载的最大超时时间。
 | `getStats` | function | - | 获取p2p统计信息，包括totalP2PDownloaded、totalP2PUploaded和totalHTTPDownloaded。
 | `getPeerId` | function | - | 获取本节点的Id，当从服务端获取到peerId时回调该事件。
 | `getPeersInfo` | function | - | 获取成功连接的节点的信息，当与新的节点成功建立p2p连接时回调该事件。
