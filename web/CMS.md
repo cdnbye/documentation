@@ -41,8 +41,7 @@
     document.onselectstart=new Function("event.returnValue=false");
 </script>
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-<script src="//cdn.jsdelivr.net/npm/p2p-dplayer@latest"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/dplayer@latest"></script>
 <script>
     var webdata = {
         set:function(key,val){
@@ -58,48 +57,57 @@
             window.sessionStorage.clear();
         }
     };
+    var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
     var dp = new DPlayer({
         autoplay: true,
         container: document.getElementById('dplayer'),
-        video: {
-            url: parent.MacPlayer.PlayUrl,
-            type: 'hls',
-            // pic: './loading.jpg',           // 视频封面
-        },
         volume: 1.0,
         preload: 'auto',
         screenshot: true,
         theme: '#28FF28',
-        hlsjsConfig: {
-            p2pConfig: {
-                logLevel: false,                   // 调试时设为true
-                live: false,
+        video: {
+            url: parent.MacPlayer.PlayUrl,
+            type: 'customHls',
+            // pic: './loading.jpg',           // 视频封面
+            customType: {
+                'customHls': function (video, player) {
+                    const hls = new Hls({
+                        debug: false,
+                        // Other hlsjsConfig options provided by hls.js
+                        p2pConfig: {
+                            logLevel: false,
+                            live: false,        // 如果是直播设为true
+                            // Other p2pConfig options provided by CDNBye
+                            getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                                console.warn(`totalP2PDownloaded ${totalP2PDownloaded} totalHTTPDownloaded ${totalHTTPDownloaded}`);
+                                _totalP2PDownloaded = totalP2PDownloaded;
+                                _totalP2PUploaded = totalP2PUploaded;
+                                updateStats();
+                            },
+                            getPeerId: function (peerId) {
+                                _peerId = peerId;
+                            },
+                            getPeersInfo: function (peers) {
+                                _peerNum = peers.length;
+                                updateStats();
+                            },
+                        }
+                    });
+                    hls.loadSource(video.src);
+                    hls.attachMedia(video);
+                }
             }
-        }
+        },
     });
     dp.seek(webdata.get('pay'+parent.MacPlayer.PlayUrl));
     setInterval(function(){
         webdata.set('pay'+parent.MacPlayer.PlayUrl,dp.video.currentTime);
     },1000);
-    var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
-    dp.on('stats', function (stats) {
-        _totalP2PDownloaded = stats.totalP2PDownloaded;
-        _totalP2PUploaded = stats.totalP2PUploaded;
-        updateStats();
-    });
-    dp.on('peerId', function (peerId) {
-        _peerId = peerId;
-    });
-    dp.on('peers', function (peers) {
-        _peerNum = peers.length;
-        updateStats();
-    });
     dp.on('ended', function (){
         if(parent.MacPlayer.PlayLinkNext!=''){
             top.location.href = parent.MacPlayer.PlayLinkNext;
         }
     });
-
     function updateStats() {
         var text = 'P2P已开启 共享' + (_totalP2PUploaded/1024).toFixed(2) + 'MB' + ' 已加速' + (_totalP2PDownloaded/1024).toFixed(2)
             + 'MB' + ' 此片有 ' + _peerNum + ' 位影迷正在观看';
