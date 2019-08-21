@@ -21,6 +21,8 @@
 ### iOS
 系统要求：支持iOS 9.0以上系统。注意：本SDK暂时不支持bitcode，在发布前请在xcode关闭bitcode。
 <br>
+将项目文件的 `ios/Podfile` 中第二行的 `# platform :ios, '9.0'` 的井号去掉。
+<br>
 CDNBye通过本地代理服务器拦截数据请求的方式来进行P2P缓存和传输，所以需要在项目的info.plist中允许HTTP请求：
 ```xml
 <key>NSAppTransportSecurity</key>

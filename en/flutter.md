@@ -20,6 +20,8 @@ Add `cdnbye` as a [dependency in your pubspec.yaml file](https://flutter.io/usin
 ### iOS
 Requirement: This library requires iOS 9.0+. NOTICE: This framework doesn’t support bitcode currently.
 <br>
+Uncomment `# platform :ios, '9.0'` at the second line of `ios/Podfile` in your flutter project.
+<br>
 In order to allow the loading of distributed content via the local proxy, enable loading data from HTTP in your app by opening your info.plist file as source code and adding the following values below the </dict> tag:
 ```xml
 <key>NSAppTransportSecurity</key>
