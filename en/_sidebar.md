@@ -1,5 +1,7 @@
 - [Notice](/en/notice.md)
 - [Introduction](/en/README.md)
+- [FAQ<sup style="color:red;">hot!</sup>](/en/FAQ.md)
+- [Commercial Service](/en/commercial.md)
 - Web
     - [Introduction](/en/web/introduction.md)
     - [Usage](/en/web/usage.md)
@@ -7,16 +9,16 @@
     - [API & Config](/en/web/API.md)
     - [CDN](/en/web/CDN.md)
     - [Change Log](/en/web/logs.md)
-- iOS
-    - [Introduction](/en/ios/introduction.md)
-    - [Usage](/en/ios/usage.md)
-    - [API & Config](/en/ios/API.md)
-    - [Change Log](/en/ios/logs.md)
 - Android
     - [Introduction](/en/android/introduction.md)
     - [Usage](/en/android/usage.md)
     - [API & Config](/en/android/API.md)
     - [Change Log](/en/android/logs.md)
+- iOS
+    - [Introduction](/en/ios/introduction.md)
+    - [Usage](/en/ios/usage.md)
+    - [API & Config](/en/ios/API.md)
+    - [Change Log](/en/ios/logs.md)
 - Cross Platform<sup style="color:red;">new!</sup>
     - [Flutter](/en/flutter.md)
 - [Signaling Service](/en/signaling.md)
@@ -25,9 +27,7 @@
     - [Domain/AppId Binding](/en/bindings.md)
     - [Data Analysis](/en/data-explain.md)
     - [P2P Control](/en/p2p-control.md)
-- [FAQ<sup style="color:red;">hot!</sup>](/en/FAQ.md)
 - More
-    - [Commercial Service](/en/commercial.md)
     - [Design](/en/design.md)
     - [Forum](/coming-soon)
   
