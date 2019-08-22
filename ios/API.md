@@ -13,8 +13,8 @@ let config = CBP2pConfig.defaultConfiguration()
 | :-: | :-: | :-: | :-: |
 | `logLevel` | CBLogLevel | CBLogLevelWarn | 打印日志的级别(CBLogLevelNone, CBLogLevelDebug, CBLogLevelInfo, CBLogLevelWarn, CBLogLevelError)。                                                                                      
 | `webRTCConfig` | RTCConfiguration | - | 通过RTCConfiguration来修改WebRTC默认配置。
-| `announce` | NSString | @"https://api.cdnbye.com/v1" | tracker服务器地址。
-| `wsSignalerAddr` | NSString | @"wss://signal.cdnbye.com/wss" | 信令服务器地址。
+| `announce` | NSString | @"https://tracker.cdnbye.com/v1" | tracker服务器地址。
+| `wsSignalerAddr` | NSString | @"wss://signal.cdnbye.com" | 信令服务器地址。
 | `diskCacheLimit` | NSUInteger | 1024 * 1024 * 1024 | 点播模式下P2P在磁盘缓存的最大数据量(设为0可以禁用磁盘缓存)。
 | `memoryCacheLimit` | NSUInteger | 100 * 1024 * 1024 | P2P在内存缓存的最大数据量。
 | `p2pEnabled` | BOOL | YES | 开启或关闭p2p engine。

@@ -5,8 +5,8 @@
 P2pConfig config = new P2pConfig.Builder()
     .logEnabled(false)                                // 是否开启debug模式
     .logLevel(LogLevel.WARN)                          // 打印日志的级别
-    .announce("https://api.cdnbye.com/v1")            // tracker服务器地址
-    .wsSignalerAddr("wss://signal.cdnbye.com/wss")    // 信令服务器地址
+    .announce("https://tracker.cdnbye.com/v1")            // tracker服务器地址
+    .wsSignalerAddr("wss://signal.cdnbye.com")    // 信令服务器地址
     .downloadTimeout(10_000, TimeUnit.MILLISECONDS)   // HTTP下载ts文件超时时间
     .dcDownloadTimeout(4_000, TimeUnit.MILLISECONDS)  // datachannel下载二进制数据的超时时间
     .localPort(52019)                                 // 本地代理服务器的端口号
