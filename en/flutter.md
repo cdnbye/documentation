@@ -15,7 +15,11 @@
 - Use IP database to group up peers by ISP and regions
 
 ### Installation
-Add `cdnbye` as a [dependency in your pubspec.yaml file](https://flutter.io/using-packages/).
+Add this to your package's pubspec.yaml file:
+```
+dependencies:
+  cdnbye: ^0.2.0
+```
 
 ### iOS
 Requirement: This library requires iOS 9.0+. NOTICE: This framework doesn’t support bitcode currently.

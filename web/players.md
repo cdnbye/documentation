@@ -344,7 +344,7 @@
 ```
 
 ## TCPlayer  
-[TCPlayer介绍](https://cloud.tencent.com/document/product/267/7479)(腾讯云播放器)
+[TCPlayer介绍](https://cloud.tencent.com/document/product/881/20207)(腾讯云播放器)
 ```html
 <!DOCTYPE html>
 <html lang="en">

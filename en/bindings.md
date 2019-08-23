@@ -29,5 +29,5 @@ Before release iOS, Android and Electron APP, you should register AppId and obta
         
     - Electron's AppId is defined by yourself and should be configured in the SDK's `p2pConfig`->`appId`
     
-    - Flutter and React Native need to `Create App` on corresponding platforms according to AppId
+    - Flutter App need to `Create App` on corresponding platforms according to AppId
 

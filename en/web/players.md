@@ -350,7 +350,7 @@ CDNBye can be integrated into any HTML5 video player with hls.js built in.
 ```
 
 ## TCPlayer  
-[Introduction to TCPlayer](https://cloud.tencent.com/document/product/267/7479)
+[Introduction to TCPlayer](https://cloud.tencent.com/document/product/881/20207)
 ```html
 <!DOCTYPE html>
 <html lang="en">

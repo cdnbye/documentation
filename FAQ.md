@@ -103,6 +103,8 @@ Hls.js, JWPlayer, Video.js, Clappr, Flowplayer和TCPlayer等。
 ### iOS SDK可以用于APPLE TV吗？
 暂时还不兼容APPLE TV。
 
-### SDK除了P2P还有其他附加功能吗？
+### SDK除了 P2P 还有其他附加功能吗？
 有的。SDK还具备智能缓存能力，用于避免文件重复下载问题，从而有效节省带宽消耗，而且本功能是完全免费的。
+
+### 
 

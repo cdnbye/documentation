@@ -16,7 +16,11 @@
 - Tracker服务器根据访问IP的ISP、地域等进行智能调度
 
 ### 引入插件
-在项目的[pubspec.yaml](https://flutterchina.club/using-packages/)中添加 `cdnbye` 作为依赖。
+在项目的 `pubspec.yaml` 中添加依赖：
+```
+dependencies:
+  cdnbye: ^0.2.0
+```
 
 ### iOS
 系统要求：支持iOS 9.0以上系统。注意：本SDK暂时不支持bitcode，在发布前请在xcode关闭bitcode。

@@ -39,13 +39,13 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | `maxBufferSize` | Object | {"pc": 1024 * 1024 * 300, "mobile": 1024 * 1024 * 150} | The max size of binary data that can be stored in the cache.
 | `p2pEnabled` | boolean | true | Enable or disable p2p engine.
 | `dcDownloadTimeout` | number | 10 | Max download timeout for WebRTC datachannel.
+| `packetSize` | number | 64 * 1024 | The maximum package size sent by datachannel, 64KB should work with most of recent browsers. Set it to 16KB for older browsers support.
+| `webRTCConfig` | Object | {} | A [Configuration dictionary](https://github.com/feross/simple-peer) providing options to configure WebRTC connections.
 | `getStats` | function | - | Get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded.
 | `getPeerId` | function | - | Emitted when the peer Id of this client is obtained from server.
 | `getPeersInfo` | function | - | Emitted when successfully connected with new peer.
 | `channelId` | function | - | Pass a function to generate channel Id.(See advanced usage)
 | `segmentId` | function | - | Pass a function to generate segment Id.(See advanced usage)
-| `packetSize` | number | 64 * 1024 | The maximum package size sent by datachannel, 64KB should work with most of recent browsers. Set it to 16KB for older browsers support.
-| `webRTCConfig` | Object | {} | A [Configuration dictionary](https://github.com/feross/simple-peer) providing options to configure WebRTC connections.
 | `validateSegment` | function | - | Pass a function to check segment validity downloaded from peers.
 
 ## P2PEngine API

@@ -29,5 +29,5 @@ Web SDK的使用需要先绑定域名（移动端SDK不需要绑定域名），�
         
     - Electron的AppId自行拟定即可，并在SDK的`p2pConfig`->`appId`中进行配置
     
-    - Flutter和React Native应用需要根据AppId分别在对应平台创建应用
+    - Flutter应用需要根据AppId分别在对应平台创建应用
 
