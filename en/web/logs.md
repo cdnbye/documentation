@@ -55,3 +55,6 @@
 
 ### 0.11.0 20/8/2019
 - Optimize P2P algorithm
+
+### 0.11.1 25/8/2019
+- fix bug when using encrypted hls
