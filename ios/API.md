@@ -20,8 +20,8 @@ let config = CBP2pConfig.defaultConfiguration()
 | `p2pEnabled` | BOOL | YES | 开启或关闭p2p engine。
 | `localPort` | NSUInteger | 52019 | 本地代理服务器的端口号。
 | `packetSize` | NSUInteger | 64 * 1024 | 每次通过datachannel发送的包的大小，64KB适用于与浏览器进行P2P。
-| `downloadTimeout` | NSTimeInterval | 10 | HTTP下载ts文件超时时间（单位：秒）。
-| `dcDownloadTimeout` | NSTimeInterval | 3 | datachannel下载二进制数据的超时时间（单位：秒）。
+| `downloadTimeout` | NSTimeInterval | 10.0 | HTTP下载ts文件超时时间（单位：秒）。
+| `dcDownloadTimeout` | NSTimeInterval | 10.0 | datachannel下载二进制数据的最大超时时间（单位：秒）。
 | `tag` | NSString | @"unknown" | 用户自定义的标签，可以在控制台查看分布图。
 | `maxPeerConnections` | NSUInteger | 10 | 最大连接节点数量。
 

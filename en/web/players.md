@@ -488,6 +488,7 @@ CDNBye can be integrated into any HTML5 video player with hls.js built in.
         playsinline: true,
         height: window.innerHeight,
         width: window.innerWidth,
+        useHls: true,
         hlsOpts: {
             debug: false,
             // Other hlsjsConfig options provided by hls.js

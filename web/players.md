@@ -480,6 +480,7 @@
         playsinline: true,
         height: window.innerHeight,
         width: window.innerWidth,
+        useHls: true,
         hlsOpts: {
             debug: false,
             // Other hlsjsConfig options provided by hls.js
