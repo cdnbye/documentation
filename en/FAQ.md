@@ -10,7 +10,7 @@ secured WebSocket.
 Currently, CDNBye is being commercialized, but still offers free services to small streaming websites.The charge model is as follows.
 - P2P service will be no longer provided for those who do not bind domain names.
 - A daily free 5GB of P2P traffic will be provided after the domain name is bound in the console (https://oms.cdnbye.com). Please note that it will be cleared the next day.
-- A daily free 10GB of P2P traffic will be provided after signing in at the console. Please note that it will be cleared the next day.
+- A daily free 20GB of P2P traffic will be provided after signing in at the console. Please note that it will be cleared the next day.
 - P2P service will be stopped if the free quota is exceeded. If you want to continue to use it, you need to buy a traffic package.
 - iOS and android SDK will not charge a fee for use of the service.
 
