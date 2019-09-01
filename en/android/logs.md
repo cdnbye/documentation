@@ -22,3 +22,7 @@
 
 ### 0.6.2 20/8/2019
 - Fix known bugs
+
+### 0.6.7 1/9/2019
+- Fix known bugs that cause crash
+- Scheduling algorithm optimization

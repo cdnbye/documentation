@@ -8,7 +8,7 @@ P2pConfig config = new P2pConfig.Builder()
     .announce("https://tracker.cdnbye.com/v1")        // The address of tracker server
     .wsSignalerAddr("wss://signal.cdnbye.com")        // The address of signal server
     .downloadTimeout(10_000, TimeUnit.MILLISECONDS)   // TS file download timeout by HTTP
-    .dcDownloadTimeout(10_000, TimeUnit.MILLISECONDS) // Max download timeout for WebRTC datachannel
+    .dcDownloadTimeout(15_000, TimeUnit.MILLISECONDS) // Max download timeout for WebRTC datachannel
     .localPort(52019)                                 // The port for local http server
     .diskCacheLimit(1024*1024*1024)                   // The max size of binary data that can be stored in the disk cache for VOD(Set to 0 will disable disk cache)
     .memoryCacheLimit(60*1024*1024)                   // The max size of binary data that can be stored in the memory cache

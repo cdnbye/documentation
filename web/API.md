@@ -37,7 +37,7 @@ if (Hls.WEBRTC_SUPPORT) {
 | `wsReconnectInterval` | number | 30 | websocket重连时间间隔。
 | `maxBufferSize` | Object | {"pc": 1024 * 1024 * 300, "mobile": 1024 * 1024 * 150} | p2p缓存的最大数据量，分为PC和mobile。
 | `p2pEnabled` | boolean | true | 是否开启P2P。
-| `dcDownloadTimeout` | number | 10 | p2p下载的最大超时时间。
+| `dcDownloadTimeout` | number | 20 | p2p下载的最大超时时间。
 | `packetSize` | number | 64 * 1024 | 每次通过datachannel发送的包的大小，64KB适用于较新版本的浏览器，如果要兼容低版本浏览器可以设置成16KB。
 | `webRTCConfig` | Object | {} | 用于配置stun和datachannel的[字典](https://github.com/feross/simple-peer)。
 | `getStats` | function | - | 获取p2p统计信息，包括totalP2PDownloaded、totalP2PUploaded和totalHTTPDownloaded。

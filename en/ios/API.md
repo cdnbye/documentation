@@ -22,7 +22,7 @@ The default fields (shown below) can be overridden.
 | `localPort` | NSUInteger | 52019 | The port for local http server.
 | `packetSize` | NSUInteger | 64 * 1024 | The maximum package size sent by datachannel, 64KB should work with most of recent browsers.
 | `downloadTimeout` | NSTimeInterval | 10.0 | TS file download timeout by HTTP.
-| `dcDownloadTimeout` | NSTimeInterval | 10.0 | Max download timeout for WebRTC datachannel.
+| `dcDownloadTimeout` | NSTimeInterval | 15.0 | Max download timeout for WebRTC datachannel.
 | `tag` | NSString | @"unknown" | User defined tag which is presented in console.
 | `maxPeerConnections` | NSUInteger | 10 | Max peer connections at the same time.
 
