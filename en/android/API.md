@@ -13,7 +13,6 @@ P2pConfig config = new P2pConfig.Builder()
     .diskCacheLimit(1024*1024*1024)                   // The max size of binary data that can be stored in the disk cache for VOD(Set to 0 will disable disk cache)
     .memoryCacheLimit(60*1024*1024)                   // The max size of binary data that can be stored in the memory cache
     .p2pEnabled(true)                                 // Enable or disable p2p engine
-    .packetSize(64*1024)                              // The maximum package size sent by datachannel, 64KB should work with most of recent browsers
     .withTag("unknown")                               // User defined tag which is presented in console
     .webRTCConfig(null)                               // Providing options to configure WebRTC connections
     .maxPeerConnections(10)                           // Max peer connections at the same time
