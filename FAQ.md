@@ -90,7 +90,7 @@ Hls.js, JWPlayer, Video.js, Clappr, Flowplayer和TCPlayer等。
 - 视频播放后打开网页调试窗口查看debug信息
 - 如果有红色的报错信息一般是代码逻辑问题，请根据提示修改
 - 如果显示类似 "CDNBye 0.X.X is deprecated, please update to latest version(0.X.X已停止支持，请更新至最新版本)" 说明版本已过期，请升级至最新版
-- 如果显示类似 "P2P service is deactivated(P2P服务已停止，请先绑定域名或检查流量是否已用完)" 有以下四种可能：
+- 如果显示其它信息，请根据提示操作，有以下四种可能：
     - 域名没有绑定，注意CDNBye后台是根据HTTP请求的Origin字段来获取域名的（如果使用iFrame该域名可能和网站域名不一致），请在后台绑定正确的域名
     - 流量已经用完，请登录[控制台](https://oms.cdnbye.com)并切换到对应域名查看流量使用情况
     - 在控制台的`P2P配置`中关闭了P2P服务，重新开启即可

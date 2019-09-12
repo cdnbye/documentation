@@ -102,7 +102,7 @@ hls.on(Hls.Events.MANIFEST_PARSED,function() {
     video.play();
 });
 ```
-#### Engine(没有打包hls.js的插件，需要自己引入hls.js)
+#### Engine(没有打包hls.js的插件，需要自己引入hls.js，注意引入CDNBye提供的hls.js则不需要再引入Engine)
 实例化hls.js并将hlsjsConfig作为参数传入。然后实例化P2PEngine并将p2pConfig作为参数传入。调用hls.js的loadSource和attachMedia方法。
 ```javascript
 var hlsjsConfig = {

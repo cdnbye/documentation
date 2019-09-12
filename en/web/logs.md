@@ -58,3 +58,7 @@
 
 ### 0.11.1-0.11.2 25/8/2019
 - fix bug when using encrypted hls
+
+### 0.12.0 12/9/2019
+- Optimize P2P algorithm
+- Prevent repeated loads of cdnbye
