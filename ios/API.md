@@ -25,19 +25,28 @@ let config = CBP2pConfig.defaultConfiguration()
 | `maxPeerConnections` | NSUInteger | 10 | 最大连接节点数量。
 
 ## P2P Engine
-实例化`CBP2pEngine`：
+初始化化`CBP2pEngine`：
 ```objectivec
-CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:config];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
+    [[CBP2pEngine sharedInstance] startWithToken:@"free" andP2pConfig:config];
+    return YES;
+}
 ```
 ```swift
-let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    let config = CBP2pConfig.defaultConfiguration()
+    CBP2pEngine.sharedInstance().start(token: "free", p2pConfig: config)
+    return true
+}
 ```
 其中token是用于标识用户的字符串，在调试阶段将token设为"free"即可。在上线前请替换成从控制台获取的token。将原始播放地址(m3u8)传给`CBP2pEngine`，从而获取本地播放地址：
 ```objectivec
-NSURL *parsedUrl = [engine parseStreamURL:ORIGINAL_URL];
+NSURL *parsedUrl = [[CBP2pEngine sharedInstance] parseStreamURL:ORIGINAL_URL];
 ```
 ```swift
-let parsedUrl = engine.parse(streamURL: ORIGINAL_URL)
+let parsedUrl = CBP2pEngine.sharedInstance().parse(streamURL: ORIGINAL_URL)
 ```
 
 ## P2P统计
@@ -61,56 +70,14 @@ NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMsg),
 ```
 PS：下载和上传数据量的单位是KB。
 
-## 完整的例子
-```objectivec
-#import "ViewController.h"
-#import <AVFoundation/AVFoundation.h>
-#import <AVKit/AVKit.h>
-#import <CDNByeKit/CBP2pEngine.h>
-
-@interface ViewController ()
-@property (strong, nonatomic)AVPlayerViewController *player;
-@end
-
-@implementation ViewController
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.player = [[AVPlayerViewController alloc] init];
-    CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
-    config.logLevel =  CBLogLevelDebug;
-    config.tag = @"avplayer";
-    CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:config];
-    NSURL *originalUrl = [NSURL URLWithString:@"https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"];
-    NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
-    self.player.player = [[AVPlayer alloc] initWithURL:parsedUrl];
-    
-    self.player.view.frame = CGRectMake(0, 100, 400, 400);
-    [self.view addSubview:self.player.view];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMsg:) name:kP2pEngineDidReceiveStatistics object:nil];
-    
-    [self.player.player play];
-}
-/*
- Get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded.
- */
-- (void)didReceiveMsg:(NSNotification *)note {
-    NSDictionary *dict = (NSDictionary *)note.object;
-    NSLog(@"didReceiveMsg %@", dict);
-}
-@end
-```
-
 ## 高级用法
 ### 切换源
 当播放器切换到新的播放地址时，只需要将新的播放地址(m3u8)传给`CBP2pEngine`，从而获取新的本地播放地址：
 ```objectivec
-NSURL *newParsedURL = [engine parseStreamURL:NEW_ORIGINAL_URL];
+NSURL *newParsedURL = [[CBP2pEngine sharedInstance] parseStreamURL:NEW_ORIGINAL_URL];
 ```
 ```swift
-let newParsedURL = engine.parse(streamURL: NEW_ORIGINAL_URL)
+let newParsedURL = CBP2pEngine.sharedInstance().parse(streamURL: NEW_ORIGINAL_URL)
 ```
 ### 自行配置 STUN 和 TURN 服务器地址
 STUN用于p2p连接过程中获取公网IP地址，TURN则可以在p2p连接不通时用于中转数据。本SDK已内置公开的STUN服务，开发者可以通过P2pConfig来更换STUN地址。TURN服务器则需要开发者自行搭建，可以参考[coturn](https://github.com/coturn/coturn)。

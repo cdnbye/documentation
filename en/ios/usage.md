@@ -47,24 +47,38 @@ In order to allow the loading of distributed content via the local proxy, enable
 ```
 
 #### Include
-Import CDNByeSDK into your Objective-C app:
+Import CDNByeSDK in `AppDelegate.m`:
 ```objectivec
 #import <CDNByeKit/CBP2pEngine.h>
 ```
 If you want to use CDNByeSDK in your Swift app, then you need to create a bridging header that allows your Swift code to work with it.
 
+#### Initialize CBP2pEngine
+Initialize CBP2pEngine in `AppDelegate.m`:
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [[CBP2pEngine sharedInstance] startWithToken:@"free" andP2pConfig:nil];
+    return YES;
+}
+```
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    CBP2pEngine.sharedInstance().start(token: "free", p2pConfig: nil)
+    return true
+}
+```
+
 #### Usage
 When initializing an AVPlayer (or any other video player) instance, before passing it a URL, pass that URL through CDNBye P2P Engine:
 ```objectivec
-CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:nil];
 NSURL *originalUrl = [NSURL URLWithString:@"https://your_stream.m3u8"];
-NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
+NSURL *parsedUrl = [[CBP2pEngine sharedInstance] parseStreamURL:originalUrl];
 _player = [[AVPlayer alloc] initWithURL:parsedUrl];
 ```
 ```swift
-let engine = CBP2pEngine.init(token: "free", p2pConfig: nil)
 let orginalUrl = URL.init(string: "https://your_stream.m3u8")
-let parsedUrl = engine.parse(streamURL: orginalUrl!)
+let parsedUrl = CBP2pEngine.sharedInstance().parse(streamURL: orginalUrl!)
 _player = AVPlayer.init(url: parsedUrl)
 ```
 That’s it! CDNBye should now be integrated into your app.

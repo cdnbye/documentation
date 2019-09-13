@@ -26,20 +26,30 @@ The default fields (shown below) can be overridden.
 | `maxPeerConnections` | NSUInteger | 10 | Max peer connections at the same time.
 
 ## P2P Engine
-Initialize `CBP2pEngine` to an instance or static variable:
+Initialize `CBP2pEngine` in `AppDelegate.m`:
+初始化化`CBP2pEngine`：
 ```objectivec
-CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:config];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
+    [[CBP2pEngine sharedInstance] startWithToken:@"free" andP2pConfig:config];
+    return YES;
+}
 ```
 ```swift
-let engine = CBP2pEngine.init(token: "free", p2pConfig: config)
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    let config = CBP2pConfig.defaultConfiguration()
+    CBP2pEngine.sharedInstance().start(token: "free", p2pConfig: config)
+    return true
+}
 ```
 Where `token` is your Customer ID. You can set it to "free" when debugging. Please replace it by your own token obtained from console before release.
 Get parsed local stream url by passing the original stream url(m3u8) to `CBP2pEngine` instance:
 ```objectivec
-NSURL *parsedUrl = [engine parseStreamURL:ORIGINAL_URL];
+NSURL *parsedUrl = [[CBP2pEngine sharedInstance] parseStreamURL:ORIGINAL_URL];
 ```
 ```swift
-let parsedUrl = engine.parse(streamURL: ORIGINAL_URL)
+let parsedUrl = CBP2pEngine.sharedInstance().parse(streamURL: ORIGINAL_URL)
 ```
 
 ## P2P Statistics
@@ -63,56 +73,14 @@ Then get the downloading statistics, including p2pDownloaded, p2pUploaded, httpD
 ```
 PS: The unit of download and upload is KB.
 
-## Complete Example
-```objectivec
-#import "ViewController.h"
-#import <AVFoundation/AVFoundation.h>
-#import <AVKit/AVKit.h>
-#import <CDNByeKit/CBP2pEngine.h>
-
-@interface ViewController ()
-@property (strong, nonatomic)AVPlayerViewController *player;
-@end
-
-@implementation ViewController
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.player = [[AVPlayerViewController alloc] init];
-    CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
-    config.logLevel =  CBLogLevelDebug;
-    config.tag = @"avplayer";
-    CBP2pEngine *engine = [[CBP2pEngine alloc] initWithToken:@"free" andP2pConfig:config];
-    NSURL *originalUrl = [NSURL URLWithString:@"https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"];
-    NSURL *parsedUrl = [engine parseStreamURL:originalUrl];
-    self.player.player = [[AVPlayer alloc] initWithURL:parsedUrl];
-    
-    self.player.view.frame = CGRectMake(0, 100, 400, 400);
-    [self.view addSubview:self.player.view];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMsg:) name:kP2pEngineDidReceiveStatistics object:nil];
-    
-    [self.player.player play];
-}
-/*
- Get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded.
- */
-- (void)didReceiveMsg:(NSNotification *)note {
-    NSDictionary *dict = (NSDictionary *)note.object;
-    NSLog(@"didReceiveMsg %@", dict);
-}
-@end
-```
-
 ## Advanced Usage
 ### Switch Stream URL
 When Switching to a new stream URL, before passing new stream url(m3u8) to the player, pass that URL through `CBP2pEngine` instance:
 ```objectivec
-NSURL *newParsedURL = [engine parseStreamURL:NEW_ORIGINAL_URL];
+NSURL *newParsedURL = [[CBP2pEngine sharedInstance] parseStreamURL:NEW_ORIGINAL_URL];
 ```
 ```swift
-let newParsedURL = engine.parse(streamURL: NEW_ORIGINAL_URL)
+let newParsedURL = CBP2pEngine.sharedInstance().parse(streamURL: NEW_ORIGINAL_URL)
 ```
 ### Use Your Own STUN or TURN Server
 STUN (Session Traversal Utilities for NAT) allows clients to discover their public IP address and the type of NAT they are behind. This information is used to establish the media connection. Although there are default STUN servers in this SDK, you can replace them with your own via P2PConfig. TURN (Traversal Using Relays around NAT) server is used to relay traffic if direct connection fails. You can config your [TURN](https://github.com/coturn/coturn) server in the same way as STUN.
