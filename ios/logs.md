@@ -66,6 +66,6 @@
 - 直播模式内存优化
 - 新的配置项`memoryCacheLimit` 和 `maxPeerConnections`
 
-### 0.7.0 13/9/2019
+### 0.7.0-0.7.1 13/9/2019
 - 优化API
 - 优化p2p调度算法

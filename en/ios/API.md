@@ -96,7 +96,7 @@ config.webRTCConfig.iceServers = ICEServers;
 ### Dynamic m3u8 Path Issue
 Some m3u8 urls play the same live/vod but have different paths on them. For example, example.com/clientId1/file.m3u8 and example.com/clientId2/file.m3u8. In this case, you can format a common channelId for them.
 ```objectivec
-engine.channelId = ^NSString * _Nonnull(NSString * _Nonnull urlString) {
+[CBP2pEngine sharedInstance].channelId = ^NSString * _Nonnull(NSString * _Nonnull urlString) {
     NSString *formatedUrl = [Formater convert:urlString];
     return formatedUrl;
 };

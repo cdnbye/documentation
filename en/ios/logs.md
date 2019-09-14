@@ -66,6 +66,6 @@
 - live mode memory optimization
 - new config `memoryCacheLimit` and `maxPeerConnections`
 
-### 0.7.0 13/9/2019
+### 0.7.0-0.7.1 13/9/2019
 - Optimize API
 - optimize p2p scheduling algorithm
