@@ -26,3 +26,8 @@
 ### 0.6.7 1/9/2019
 - Fix known bugs that cause crash
 - Scheduling algorithm optimization
+
+### 0.7.0 15/9/2019
+- Remove API `packetSize`
+- optimize p2p scheduling algorithm
+- fix signaler bug
