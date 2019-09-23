@@ -27,7 +27,11 @@
 - Fix known bugs that cause crash
 - Scheduling algorithm optimization
 
-### 0.7.0 15/9/2019
+### 0.7.0 20/9/2019
 - Remove API `packetSize`
 - optimize p2p scheduling algorithm
 - fix signaler bug
+
+### 0.7.1 23/9/2019
+- Remove dependency `org.nanohttpd:nanohttpd`
+- fix known bug

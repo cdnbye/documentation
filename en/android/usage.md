@@ -51,13 +51,13 @@ Please add the following code in proguard-rules.pro:
 ### Import by Gradle
 ```
 dependencies {
-  implementation 'com.cdnbye:sdk:0.7.0'
+  implementation 'com.cdnbye:sdk:0.7.1'
 }
 ```
 
 ### Import Manually
 #### Download SDK
-Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.7.0.jar)，then copy it to `app/libs`. 
+Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.7.1.jar)，then copy it to `app/libs`. 
 
 #### Modify build.gradle
 Add new dependencies to your application's build.gradle `app/build.gradle` as shown below:
@@ -68,7 +68,6 @@ dependencies {
     implementation 'org.java-websocket:Java-WebSocket:1.4.0'
     implementation 'com.orhanobut:logger:2.2.0'
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
-    implementation 'org.nanohttpd:nanohttpd:2.3.1'
     implementation 'com.jakewharton:disklrucache:2.0.2'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
