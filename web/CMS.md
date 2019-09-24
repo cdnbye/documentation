@@ -6,6 +6,7 @@
 <br>
 安装完成后，将安装目录中的hls.min.js（linux下路径一般是/home/work/public/dplayer/hls.min.js）替换成CDNBye的[hls.min.js](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/dist)，将PPVOD安装目录中的DPlayer.min.js（linux下路径一般是/home/work/public/dplayer/DPlayer.min.js）替换成CDNBye的[DPlayer.min.js](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/demo/ppvod)，同时将share.js（linux下路径一般是/home/work/public/js/share.js）替换成CDNBye提供的[share.js](https://github.com/cdnbye/hlsjs-p2p-engine/tree/master/demo/ppvod)即可。在控制台绑定域名后即可开启P2P服务并查看实时数据。
 <br>
+PS：使用P2P功能后，请勿开启`播放加密`。
 
 ## 苹果CMS集成
 为苹果CMSV10播放器增加记忆+P2P播放+自动下一集功能，用以下代码替换`static/player/dplayer.html`全部内容即可。

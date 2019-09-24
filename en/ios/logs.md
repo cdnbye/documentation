@@ -69,3 +69,7 @@
 ### 0.7.0-0.7.1 13/9/2019
 - Optimize API
 - optimize p2p scheduling algorithm
+
+### 0.7.2 24/9/2019
+- fix known bug
+- Optimize start-up time of the video
