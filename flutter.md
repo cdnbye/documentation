@@ -22,7 +22,7 @@
 在项目的 `pubspec.yaml` 中添加依赖：
 ```
 dependencies:
-  cdnbye: ^0.4.0
+  cdnbye: ^0.4.1
 ```
 
 ### iOS
