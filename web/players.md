@@ -259,6 +259,9 @@
     <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
     <!-- CDNBye Clappr Plugin -->
     <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/clappr-plugin.min.js"></script>
+    <!-- Clappr Level Selector Plugin -->
+    <script type="text/javascript"
+            src="//cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
 </head>
 <body>
 <div id="player"></div>
@@ -270,8 +273,17 @@
             source: "https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8",
             parentId: "#player",
             autoPlay: true,
-            plugins: {
-                playback: [CDNByeClapprPlugin]
+            plugins: [CDNByeClapprPlugin, LevelSelector],
+            levelSelectorConfig: {
+                title: 'Quality',
+                labels: {
+                    2: 'High', // 500kbps
+                    1: 'Med', // 240kbps
+                    0: 'Low', // 120kbps
+                },
+                labelCallback: function(playbackLevel, customLabel) {
+                    return customLabel + playbackLevel.level.height+'p'; // High 720p
+                }
             },
             playback: {
                 hlsjsConfig: {
