@@ -443,9 +443,6 @@ CDNBye can be integrated into any HTML5 video player with hls.js built in.
         kernels: {
             hls: {
                 handler: window.ChimeeKernelHls,
-                maxBufferSize: 0,       // Highly recommended setting
-                maxBufferLength: 5,     // Highly recommended setting
-                liveSyncDuration: 30,   // Highly recommended setting
                 p2pConfig: {
                     logLevel: 'debug',
                     live: false,        // set to true in live mode

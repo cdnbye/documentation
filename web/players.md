@@ -437,9 +437,6 @@
         kernels: {
             hls: {
                 handler: window.ChimeeKernelHls,
-                maxBufferSize: 0,       // Highly recommended setting
-                maxBufferLength: 5,     // Highly recommended setting
-                liveSyncDuration: 30,   // Highly recommended setting
                 p2pConfig: {
                     logLevel: 'debug',
                     live: false,        // 如果是直播设为true
