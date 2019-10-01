@@ -291,9 +291,6 @@ CDNBye can be integrated into any HTML5 video player with hls.js built in.
             },
             playback: {
                 hlsjsConfig: {
-                    maxBufferSize: 0,       // Highly recommended setting
-                    maxBufferLength: 5,     // Highly recommended setting
-                    liveSyncDuration: 30,   // Highly recommended setting
                     // Other hlsjsConfig options provided by hls.js
                     p2pConfig: {
                         logLevel: 'debug',
