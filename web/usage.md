@@ -62,6 +62,7 @@
 ```
 或者引入没有与hls.js打包的独立版本：
 ```html
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
 ```
 
