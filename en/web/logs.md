@@ -62,3 +62,7 @@
 ### 0.12.0 12/9/2019
 - Optimize P2P algorithm
 - Prevent repeated loads of cdnbye
+
+### 0.12.2 3/10/2019
+- vod mode p2p optimization
+- fix known bug
