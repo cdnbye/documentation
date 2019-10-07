@@ -36,7 +36,7 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com' | The address of signal server.
 | `wsMaxRetries` | number | 15 | The maximum number of reconnection attempts that will be made by websocket before giving up.
 | `wsReconnectInterval` | number | 30 | The number of seconds to delay before attempting to reconnect by websocket.
-| `maxBufferSize` | Object | {"pc": 1024 * 1024 * 300, "mobile": 1024 * 1024 * 150} | The max size of binary data that can be stored in the cache.
+| `maxBufferSize` | Object | {"pc": 1024 * 1024 * 512, "mobile": 1024 * 1024 * 256} | The max size of binary data that can be stored in the cache.
 | `p2pEnabled` | boolean | true | Enable or disable p2p engine.
 | `dcDownloadTimeout` | number | 20 | Max download timeout for WebRTC datachannel.
 | `webRTCConfig` | Object | {} | A [Configuration dictionary](https://github.com/feross/simple-peer) providing options to configure WebRTC connections.
@@ -154,7 +154,7 @@ p2pConfig: {
 ### How to Check Segment Validity
 Sometimes we need to prevent a peer from sending a fake segment
  (such as the bittorrent with a hash function). 
- CDNBye provide a validation callback with buffer of the 
+ CDNBye provides a validation callback with buffer of the 
  downloaded segment, developer should implement the actual 
  validator. For example, you can create a program that generates 
  hashes for the segments and stores them in a specific file or 
@@ -168,3 +168,8 @@ p2pConfig: {
     }
 }
 ```
+
+### Online Debugging
+CDNBye provides two query parameters for online debugging:
+- You can display the log information in console by adding a query parameter "_debug=1" to the url, such as "http://your_website.com?_debug=1".
+- In the case that P2P has been enabled, to temporarily disable P2P, you can add query parameter "_p2p=0" to the url, such as "http://your_website.com?_p2p=0".
