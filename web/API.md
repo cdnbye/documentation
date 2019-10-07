@@ -168,5 +168,5 @@ p2pConfig: {
 
 ### 在线调试
 CDNBye提供了两个查询参数用于在线调试：
-- 如果要在调试的网页打印log，只需要在url中加入查询参数"_debug=1"，例如"http://your_website.com?_debug=1"，即可在console中显示日志信息。
-- 在已经开启P2P的情况下，要使调试的网页临时关闭P2P，只需要在url中加入查询参数"_p2p=0"即可，例如"http://your_website.com?_p2p=0"。
+- 如果要在调试的网页打印log，只需要在url中加入查询参数`_debug=1`，例如`http://your_website.com?_debug=1`，即可在console中显示日志信息。
+- 在已经开启P2P的情况下，要使调试的网页临时关闭P2P，只需要在url中加入查询参数`_p2p=0`即可，例如`http://your_website.com?_p2p=0`。

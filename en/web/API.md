@@ -171,5 +171,5 @@ p2pConfig: {
 
 ### Online Debugging
 CDNBye provides two query parameters for online debugging:
-- You can display the log information in console by adding a query parameter "_debug=1" to the url, such as "http://your_website.com?_debug=1".
-- In the case that P2P has been enabled, to temporarily disable P2P, you can add query parameter "_p2p=0" to the url, such as "http://your_website.com?_p2p=0".
+- You can display the log information in console by adding a query parameter `_debug=1` to the url, such as `http://your_website.com?_debug=1`.
+- In the case that P2P has been enabled, to temporarily disable P2P, you can add query parameter `_p2p=0` to the url, such as `http://your_website.com?_p2p=0`.
