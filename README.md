@@ -28,8 +28,9 @@ CDNBye基于WebRTC技术进行P2P传输，主流浏览器默认支持WebRTC，�
 邮箱：service@cdnbye.com
 QQ：86755838
 
-### 技术支持
-QQ群：746163014
+### 技术支持QQ群
+Web端：`746163014`
+移动端：`901641535`
 
 ### Github Star数趋势图
 
