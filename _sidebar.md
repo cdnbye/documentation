@@ -30,7 +30,6 @@
     - [P2P控制](p2p-control.md)
 - 更多
     - [技术原理](design.md)
-    - [关于我们](/about.md)
     
   
 

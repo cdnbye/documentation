@@ -66,3 +66,7 @@
 ### 0.12.2 3/10/2019
 - vod mode p2p optimization
 - fix known bug
+
+### 0.12.3 14/10/2019
+- Optimize play experience
+- fix known bug
