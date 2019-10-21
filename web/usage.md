@@ -26,7 +26,7 @@
                 // Other p2pConfig options provided by CDNBye
             }
         });
-        hls.loadSource('https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8');
+        hls.loadSource('https://example.m3u8');
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED,function(event, data) {
             video.play();

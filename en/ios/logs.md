@@ -73,3 +73,7 @@
 ### 0.7.2 24/9/2019
 - fix known bug
 - Optimize start-up time of the video
+
+### 0.8.0 21/10/2019
+- Be compatible with more m3u8 types
+- Improve security

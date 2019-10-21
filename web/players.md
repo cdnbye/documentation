@@ -21,7 +21,7 @@
 <body>
 <div id="main">
     <video id="player" class="video-js vjs-default-skin" height="360" width="640" controls preload="none">
-        <source src="https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"
+        <source src="https://example.m3u8"
                 type="application/x-mpegURL"/>
     </video>
     <p id="version"></p>
@@ -78,7 +78,7 @@
         clip: {
             sources: [
                 // path to the HLS m3u8
-                { type: "application/x-mpegurl", src: "https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"},
+                { type: "application/x-mpegurl", src: "https://example.m3u8"},
             ]
         },
         hlsjs: {
@@ -121,7 +121,7 @@
 <script>
     jwplayer.key = "uoW6qHjBL3KNudxKVnwa3rt5LlTakbko9e6aQ6VUyKQ=";
     jwplayer('demoplayer').setup({
-        file: 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8',
+        file: 'https://example.m3u8',
         width: 512,
         height: 288,
         autostart: true,
@@ -166,7 +166,7 @@
         container: document.getElementById('dplayer'),
         autoplay: true,
         video: {
-            url: 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8',
+            url: 'https://example.m3u8',
             type: 'customHls',
             customType: {
                 'customHls': function (video, player) {
@@ -223,7 +223,7 @@
         variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
         autoplay:true,
         html5m3u8:true,
-        video:'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8',//视频地址
+        video:'https://example.m3u8',//视频地址
         hlsjsConfig: {   // hlsjs和CDNBye的配置参数
             debug: false,
             // Other hlsjsConfig options provided by hls.js
@@ -270,7 +270,7 @@
 <script>
     var player = new Clappr.Player(
         {
-            source: "https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8",
+            source: "https://example.m3u8",
             parentId: "#player",
             autoPlay: true,
             plugins: [CDNByeClapprPlugin, LevelSelector],
@@ -319,7 +319,7 @@
 </head>
 <body>
 <video id="player"
-       src="https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"
+       src="https://example.m3u8"
        class="mejs__player"
        controls>
 </video>
@@ -384,7 +384,7 @@
 <script>
     document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
     var options = {
-        m3u8: 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8' ,
+        m3u8: 'https://example.m3u8' ,
         autoplay: true,
         live: false,
         width: '480',
@@ -432,7 +432,7 @@
 <script>
     new Chimee({
         wrapper: '#player',  // video dom容器
-        src: 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8',
+        src: 'https://example.m3u8',
         controls: true,
         kernels: {
             hls: {
@@ -512,7 +512,7 @@
 <script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 <script src="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.js"></script>
 <video id='hls-video'>
-    <source src='https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8' type='application/x-mpegURL'/>
+    <source src='https://example.m3u8' type='application/x-mpegURL'/>
 </video>
 <p id="version"></p>
 <h3>download info:</h3>
@@ -556,7 +556,7 @@
 </head>
 <body>
 <video class="op-player__media" id="video" controls playsinline>
-    <source src="https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8"></video>
+    <source src="https://example.m3u8"></video>
 <p id="version"></p>
 <h3>download info:</h3>
 <p id="info"></p>
@@ -602,7 +602,7 @@
 <script>
     document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
     document.addEventListener('DOMContentLoaded', () => {
-        var source = 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8';
+        var source = 'https://example.m3u8';
         var video = document.querySelector('video');
 
         // For more options see: https://github.com/sampotts/plyr/#options
@@ -640,6 +640,28 @@
 
         // Expose player so it can be used from the console
         window.player = player;
+    });
+</script>
+```
+
+## Playerjs
+[Playerjs介绍](https://playerjs.com/)
+<br>
+先在Playerjs控制台的`Plugins`页面关闭HLS插件，然后在HTML中引入`playerjs`之前先引入cdnbye的script标签。
+```html
+<div id="player"></div>
+<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="//site.com/playerjs.js" type="text/javascript"></script>
+<script>
+    var player = new Playerjs({
+        id: "player",
+        file: "https://example.m3u8",
+        hlsconfig: {
+            p2pConfig: {
+                logLevel: true,
+                live: false,        // 如果是直播设为true
+            }
+        }
     });
 </script>
 ```
