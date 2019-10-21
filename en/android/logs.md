@@ -34,4 +34,8 @@
 
 ### 0.7.1 23/9/2019
 - Remove dependency `org.nanohttpd:nanohttpd`
-- fix known bug
+- Fix known bug
+
+### 0.8.0 21/10/2019
+- Fix play error in some players
+- Improve security

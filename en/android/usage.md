@@ -51,13 +51,13 @@ Please add the following code in proguard-rules.pro:
 ### Import by Gradle
 ```
 dependencies {
-  implementation 'com.cdnbye:sdk:0.7.1'
+  implementation 'com.cdnbye:sdk:0.8.0'
 }
 ```
 
 ### Import Manually
 #### Download SDK
-Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.7.1.jar)，then copy it to `app/libs`. 
+Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.8.0.jar)，then copy it to `app/libs`. 
 
 #### Modify build.gradle
 Add new dependencies to your application's build.gradle `app/build.gradle` as shown below:

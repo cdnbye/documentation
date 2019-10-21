@@ -52,13 +52,13 @@ android {
 添加Jcenter仓库 Gradle依赖：
 ```
 dependencies {
-  implementation 'com.cdnbye:sdk:0.7.1'
+  implementation 'com.cdnbye:sdk:0.8.0'
 }
 ```
 
 ### 手动导入
 ##### 下载 SDK
-下载最新版本的[安卓SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.7.1.jar)，并拷贝到工程的`libs`目录下。
+下载最新版本的[安卓SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.8.0.jar)，并拷贝到工程的`libs`目录下。
 
 ##### 修改 build.gradle
 双击打开您的工程目录下的`app/build.gradle`，添加如下依赖：
