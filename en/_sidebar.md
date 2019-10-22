@@ -1,4 +1,3 @@
-- [Notice](/en/notice.md)
 - [Introduction](/en/README.md)
 - [FAQ<sup style="color:red;">hot!</sup>](/en/FAQ.md)
 - [Commercial Service](/en/commercial.md)

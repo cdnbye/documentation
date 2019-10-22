@@ -1,4 +1,3 @@
-- [重要公告](notice.md)
 - [快速入门](README.md)
 - [常见问题](FAQ.md)
 - [商业服务<sup style="color:red;">hot!</sup>](commercial.md)
