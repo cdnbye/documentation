@@ -85,7 +85,7 @@ import Hls from 'cdnbye';
 
 ## 使用插件
 #### Bundle
-在hlsjsConfig对象字面量中加入p2pConfig字段，然后在实例化hls.js时把hlsjsConfig作为参数传入。
+在`hlsjsConfig`对象字面量中加入`p2pConfig`字段，然后在实例化hls.js时把`hlsjsConfig`作为参数传入。
 ```javascript
 var hlsjsConfig = {
     debug: true,
@@ -105,7 +105,7 @@ hls.on(Hls.Events.MANIFEST_PARSED,function() {
 });
 ```
 #### Engine(没有打包hls.js的插件，需要自己引入hls.js，注意引入CDNBye提供的hls.js则不需要再引入Engine)
-实例化hls.js并将hlsjsConfig作为参数传入。然后实例化P2PEngine并将p2pConfig作为参数传入。调用hls.js的loadSource和attachMedia方法。
+实例化hls.js并将`hlsjsConfig`作为参数传入。然后实例化`P2PEngine`并将`p2pConfig`作为参数传入。调用hls.js的`loadSource`和`attachMedia`方法。
 ```javascript
 var hlsjsConfig = {
     maxBufferSize: 0,       // Highly recommended setting in live mode

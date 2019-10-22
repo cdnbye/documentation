@@ -81,7 +81,7 @@ import Hls from 'cdnbye';
 
 ## Usage
 #### Bundle
-Add p2pConfig as a property of hlsjsConfig, then Create hls.js instance passing hlsjsConfig as constructor param.
+Add `p2pConfig` as a property of hlsjsConfig, then Create hls.js instance passing `hlsjsConfig` as constructor param.
 ```javascript
 var hlsjsConfig = {
     debug: true,
@@ -102,7 +102,7 @@ hls.on(Hls.Events.MANIFEST_PARSED,function() {
 ```
 #### Engine(the library without hls.js)
 
-Create hls.js instance passsing hlsjsConfig as parameter. Create P2PEngine instance passing hls.js instance and p2pConfig as parameters. Call hls.js loadSource and attachMedia methods.
+Create hls.js instance passsing `hlsjsConfig` as parameter. Create `P2PEngine` instance passing hls.js instance and `p2pConfig` as parameters. Call hls.js `loadSource` and `attachMedia` methods.
 ```javascript
 var hlsjsConfig = {
     maxBufferSize: 0,       // Highly recommended setting

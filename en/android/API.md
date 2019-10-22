@@ -111,3 +111,4 @@ P2pConfig config = new P2pConfig.Builder()
         }
     }).build();
 ```
+`It is strongly recommended to add a unique identifier to the channelid to prevent conflicts with other channels.`

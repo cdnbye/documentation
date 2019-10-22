@@ -111,3 +111,4 @@ P2pConfig config = new P2pConfig.Builder()
         }
     }).build();
 ```
+`强烈建议在chanelId中加入唯一标识符，防止与其他频道产生冲突。`

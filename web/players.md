@@ -2,6 +2,106 @@
 ### 简介
 本插件是以hls.js作为播放内核的，所以可以集成到内置hls.js的任何H5视频播放器中！以下为部分播放器集成示例，当然您也可以尝试集成到其他播放器中。
 
+## DPlayer
+[DPlayer介绍](https://github.com/MoePlayer/DPlayer)
+```html
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@latest/dist/DPlayer.min.css">
+<style type="text/css">
+    body,html{width:100%;height:100%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}
+    *{margin:0;border:0;padding:0;text-decoration:none}
+    #stats{position:fixed;top:5px;left:10px;font-size:12px;color:#fdfdfd;z-index:2147483647;text-shadow:1px 1px 1px #000, 1px 1px 1px #000}
+    #dplayer{position:inherit}
+</style>
+<div id="dplayer"></div>
+<div id="stats"></div>
+<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/dplayer@latest"></script>
+<script>
+    var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
+    const dp = new DPlayer({
+        container: document.getElementById('dplayer'),
+        autoplay: true,
+        video: {
+            url: 'https://example.m3u8',
+            type: 'customHls',
+            customType: {
+                'customHls': function (video, player) {
+                    const hls = new Hls({
+                        debug: false,
+                        // Other hlsjsConfig options provided by hls.js
+                        p2pConfig: {
+                            logLevel: 'debug',
+                            live: false,        // 如果是直播设为true
+                            // Other p2pConfig options provided by CDNBye
+                        }
+                    });
+                    hls.loadSource(video.src);
+                    hls.attachMedia(video);
+                    hls.p2pEngine.on('stats', function (stats) {
+                        _totalP2PDownloaded = stats.totalP2PDownloaded;
+                        _totalP2PUploaded = stats.totalP2PUploaded;
+                        updateStats();
+                    }).on('peerId', function (peerId) {
+                        _peerId = peerId;
+                    }).on('peers', function (peers) {
+                        _peerNum = peers.length;
+                        updateStats();
+                    });
+
+                }
+            }
+        }
+    });
+
+    function updateStats() {
+        var text = 'P2P正在为您加速' + (_totalP2PDownloaded/1024).toFixed(2)
+            + 'MB 已分享' + (_totalP2PUploaded/1024).toFixed(2) + 'MB' + ' 连接节点' + _peerNum + '个';
+        document.getElementById('stats').innerText = text
+    }
+</script>
+```
+
+## CKPlayer
+[CKPlayer介绍](http://www.ckplayer.com/)
+<br>本示例基于嵌入hlsjs-p2p-engine的[P2P-CKPlayer](https://github.com/cdnbye/P2P-CKPlayer)
+<br>只能使用P2P-CKPlayer，不能使用官方的，否则无P2P效果
+```html
+<!DOCTYPE html>
+<html>
+<body>
+<div id="video" style="width: 100%; height: 400px;max-width: 600px;"></div>
+<h3>download info:</h3>
+<p id="info"></p>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/p2p-ckplayer@latest/ckplayer/ckplayer.min.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    var videoObject = {
+        container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
+        variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+        autoplay:true,
+        html5m3u8:true,
+        video:'https://example.m3u8',//视频地址
+        hlsjsConfig: {   // hlsjs和CDNBye的配置参数
+            debug: false,
+            // Other hlsjsConfig options provided by hls.js
+            p2pConfig: {
+                logLevel: 'debug',
+                live: false,        // 如果是直播设为true
+                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                    var total = totalHTTPDownloaded + totalP2PDownloaded;
+                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                },
+                // Other p2pConfig options provided by CDNBye
+                // https://docs.cdnbye.com/#/en/API
+            }
+        }
+    };
+    var player = new ckplayer(videoObject);
+</script>
+</body>
+</html>
+```
+
 ## videojs
 [videojs介绍](http://videojs.com/)
 ```html
@@ -140,106 +240,6 @@
             // get totalHTTPDownloaded and totalP2PDownloaded here
         })
     })
-</script>
-</body>
-</html>
-```
-
-## DPlayer
-[DPlayer介绍](https://github.com/MoePlayer/DPlayer)
-```html
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@latest/dist/DPlayer.min.css">
-<style type="text/css">
-    body,html{width:100%;height:100%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}
-    *{margin:0;border:0;padding:0;text-decoration:none}
-    #stats{position:fixed;top:5px;left:10px;font-size:12px;color:#fdfdfd;z-index:2147483647;text-shadow:1px 1px 1px #000, 1px 1px 1px #000}
-    #dplayer{position:inherit}
-</style>
-<div id="dplayer"></div>
-<div id="stats"></div>
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-<script src="https://cdn.jsdelivr.net/npm/dplayer@latest"></script>
-<script>
-    var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
-    const dp = new DPlayer({
-        container: document.getElementById('dplayer'),
-        autoplay: true,
-        video: {
-            url: 'https://example.m3u8',
-            type: 'customHls',
-            customType: {
-                'customHls': function (video, player) {
-                    const hls = new Hls({
-                        debug: false,
-                        // Other hlsjsConfig options provided by hls.js
-                        p2pConfig: {
-                            logLevel: 'debug',
-                            live: false,        // 如果是直播设为true
-                            // Other p2pConfig options provided by CDNBye
-                        }
-                    });
-                    hls.loadSource(video.src);
-                    hls.attachMedia(video);
-                    hls.p2pEngine.on('stats', function (stats) {
-                        _totalP2PDownloaded = stats.totalP2PDownloaded;
-                        _totalP2PUploaded = stats.totalP2PUploaded;
-                        updateStats();
-                    }).on('peerId', function (peerId) {
-                        _peerId = peerId;
-                    }).on('peers', function (peers) {
-                        _peerNum = peers.length;
-                        updateStats();
-                    });
-
-                }
-            }
-        }
-    });
-
-    function updateStats() {
-        var text = 'P2P正在为您加速' + (_totalP2PDownloaded/1024).toFixed(2)
-            + 'MB 已分享' + (_totalP2PUploaded/1024).toFixed(2) + 'MB' + ' 连接节点' + _peerNum + '个';
-        document.getElementById('stats').innerText = text
-    }
-</script>
-```
-
-## CKPlayer
-[CKPlayer介绍](http://www.ckplayer.com/)
-<br>本示例基于嵌入hlsjs-p2p-engine的[P2P-CKPlayer](https://github.com/cdnbye/P2P-CKPlayer)
-<br>只能使用P2P-CKPlayer，不能使用官方的，否则无P2P效果
-```html
-<!DOCTYPE html>
-<html>
-<body>
-<div id="video" style="width: 100%; height: 400px;max-width: 600px;"></div>
-<h3>download info:</h3>
-<p id="info"></p>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/p2p-ckplayer@latest/ckplayer/ckplayer.min.js" charset="UTF-8"></script>
-<script type="text/javascript">
-    var videoObject = {
-        container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
-        variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
-        autoplay:true,
-        html5m3u8:true,
-        video:'https://example.m3u8',//视频地址
-        hlsjsConfig: {   // hlsjs和CDNBye的配置参数
-            debug: false,
-            // Other hlsjsConfig options provided by hls.js
-            p2pConfig: {
-                logLevel: 'debug',
-                live: false,        // 如果是直播设为true
-                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
-                    var total = totalHTTPDownloaded + totalP2PDownloaded;
-                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
-                },
-                // Other p2pConfig options provided by CDNBye
-                // https://docs.cdnbye.com/#/en/API
-            }
-        }
-    };
-    var player = new ckplayer(videoObject);
 </script>
 </body>
 </html>
