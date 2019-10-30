@@ -36,9 +36,9 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com' | The address of signal server.
 | `wsMaxRetries` | number | 15 | The maximum number of reconnection attempts that will be made by websocket before giving up.
 | `wsReconnectInterval` | number | 30 | The number of seconds to delay before attempting to reconnect by websocket.
-| `maxBufferSize` | Object | {"pc": 1024 * 1024 * 512, "mobile": 1024 * 1024 * 256} | The max size of binary data that can be stored in the cache.
+| `memoryCacheLimit` | Object | {"pc": 1024 * 1024 * 512, "mobile": 1024 * 1024 * 384} | The max size of binary data that can be stored in the cache.
 | `p2pEnabled` | boolean | true | Enable or disable p2p engine.
-| `dcDownloadTimeout` | number | 20 | Max download timeout for WebRTC datachannel.
+| `dcDownloadTimeout` | number | 25 | Max download timeout for WebRTC datachannel.
 | `webRTCConfig` | Object | {} | A [Configuration dictionary](https://github.com/feross/simple-peer) providing options to configure WebRTC connections.
 | `getStats` | function | - | Get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded.
 | `getPeerId` | function | - | Emitted when the peer Id of this client is obtained from server.

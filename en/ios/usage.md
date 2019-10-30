@@ -58,13 +58,13 @@ Initialize CBP2pEngine in `AppDelegate.m`:
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[CBP2pEngine sharedInstance] startWithToken:@"free" andP2pConfig:nil];
+    [[CBP2pEngine sharedInstance] startWithToken:YOUR_TOKEN andP2pConfig:nil];
     return YES;
 }
 ```
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    CBP2pEngine.sharedInstance().start(token: "free", p2pConfig: nil)
+    CBP2pEngine.sharedInstance().start(token: YOUR_TOKEN, p2pConfig: nil)
     return true
 }
 ```

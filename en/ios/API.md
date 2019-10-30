@@ -32,14 +32,14 @@ Initialize `CBP2pEngine` in `AppDelegate.m`:
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
-    [[CBP2pEngine sharedInstance] startWithToken:@"free" andP2pConfig:config];
+    [[CBP2pEngine sharedInstance] startWithToken:YOUR_TOKEN andP2pConfig:config];
     return YES;
 }
 ```
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     let config = CBP2pConfig.defaultConfiguration()
-    CBP2pEngine.sharedInstance().start(token: "free", p2pConfig: config)
+    CBP2pEngine.sharedInstance().start(token: YOUR_TOKEN, p2pConfig: config)
     return true
 }
 ```
