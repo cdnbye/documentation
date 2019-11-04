@@ -9,7 +9,7 @@
 PS：使用P2P功能后，请勿开启`播放加密`。
 
 ## 苹果CMS集成
-为苹果CMSV10播放器增加记忆+P2P播放+自动下一集功能，用以下代码替换`static/player/dplayer.html`全部内容即可。
+为苹果CMSV10播放器增加记忆+P2P播放+自动下一集功能，用以下代码替换`static/player/dplayer.html`全部内容：
 ```html
 <html>
 <head>
@@ -116,4 +116,9 @@ PS：使用P2P功能后，请勿开启`播放加密`。
 </script>
 </body>
 </html>
+```
+然后点击苹果CMS后台的`播放器`选项，拷贝以下代码：
+```html
+MacPlayer.Html = '<iframe border="0" src="'+maccms.path+'/static/player/dplayer.html" width="100%" height="100%" marginWidth="0" frameSpacing="0" marginHeight="0" frameBorder="0" scrolling="no" vspale="0" noResize></iframe>';
+MacPlayer.Show();
 ```

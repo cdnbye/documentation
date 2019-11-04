@@ -40,6 +40,7 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | `p2pEnabled` | boolean | true | Enable or disable p2p engine.
 | `dcDownloadTimeout` | number | 25 | Max download timeout for WebRTC datachannel.
 | `webRTCConfig` | Object | {} | A [Configuration dictionary](https://github.com/feross/simple-peer) providing options to configure WebRTC connections.
+| `useHttpRange` | boolean | true | Use HTTP ranges requests where it is possible. Allows to continue (and not start over) aborted P2P downloads over HTTP.
 | `getStats` | function | - | Get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded.
 | `getPeerId` | function | - | Emitted when the peer Id of this client is obtained from server.
 | `getPeersInfo` | function | - | Emitted when successfully connected with new peer.
