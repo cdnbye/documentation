@@ -71,6 +71,6 @@
 - Optimize play experience
 - fix known bug
 
-### 0.13.1 4/11/2019
+### 0.13.2 4/11/2019
 - Use http range requests if possible
 - fix known bug
