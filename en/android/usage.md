@@ -51,10 +51,10 @@ Please add the following code in proguard-rules.pro:
 ### Import by Gradle
 ```
 dependencies {
-  implementation 'com.cdnbye:sdk:0.8.0'
+  implementation 'com.cdnbye:sdk:0.9.0'
 }
 ```
-
+<!--
 ### Import Manually
 #### Download SDK
 Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.8.0.jar)，then copy it to `app/libs`. 
@@ -72,7 +72,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
 ```
-
+-->
 ## Quick Start
 It is recommended to initialize `P2pEngine` in `Application.OnCreate()`.
 ### Import P2pEngine

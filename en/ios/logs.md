@@ -77,3 +77,7 @@
 ### 0.8.0 21/10/2019
 - Be compatible with more m3u8 types
 - Improve security
+
+### 0.9.0 8/11/2019
+- Use http range requests if possible
+- fix known bug

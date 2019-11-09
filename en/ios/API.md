@@ -24,6 +24,7 @@ The default fields (shown below) can be overridden.
 | `dcDownloadTimeout` | NSTimeInterval | 15.0 | Max download timeout for WebRTC datachannel.
 | `tag` | NSString | @"unknown" | User defined tag which is presented in console.
 | `maxPeerConnections` | NSUInteger | 10 | Max peer connections at the same time.
+| `useHttpRange` | BOOL | YES | Use HTTP ranges requests where it is possible. Allows to continue (and not start over) aborted P2P downloads over HTTP.
 
 ## P2P Engine
 Initialize `CBP2pEngine` in `AppDelegate.m`:

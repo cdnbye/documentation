@@ -52,10 +52,10 @@ android {
 添加Jcenter仓库 Gradle依赖：
 ```
 dependencies {
-  implementation 'com.cdnbye:sdk:0.8.0'
+  implementation 'com.cdnbye:sdk:0.9.0'
 }
 ```
-
+<!--
 ### 手动导入
 ##### 下载 SDK
 下载最新版本的[安卓SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.8.0.jar)，并拷贝到工程的`libs`目录下。
@@ -73,7 +73,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
 ```
-
+-->
 ## 快速开始
 推荐在`Application.OnCreate()`中启动P2P加速服务。在播放之前使用parseStreamUrl()方法去转换播放地址开始播放。
 ### 导入 P2pEngine

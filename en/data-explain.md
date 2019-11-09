@@ -3,12 +3,14 @@
 
 - Current Online Viewers
 - P2P Traffic Today
-- Served Viewers Today
+- Total Views Today
+- Remaining Traffic
+- Peak Concurrent Viewers
 - Pie chart(Version, Tag, Terminal, Live/VOD, Network type)
 
 ### Advanced Data Analysis
 
-- P2P Traffic Trend
+- P2P/HTTP Traffic Trend
 - Online Viewers Trend
 
 ### Viewer Geographical Distribution

@@ -1,5 +1,5 @@
 ### CDNBye Cross-platform P2P Engine :id=head
-> CDNBye makes it possible to interconnect all users in different platforms with the same p2p network.
+> CDNBye makes it possible to interconnect users in different platforms with the same p2p network.
 
 <img width="300" src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/newlogo.png" alt="p2p">
 
