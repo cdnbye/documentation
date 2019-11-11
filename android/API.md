@@ -16,6 +16,7 @@ P2pConfig config = new P2pConfig.Builder()
     .withTag("unknown")                               // 用户自定义的标签，可以在控制台查看分布图
     .webRTCConfig(null)                               // 通过webRTCConfig来修改WebRTC默认配置
     .maxPeerConnections(10)                           // 最大连接节点数量，机顶盒建议不大于5
+    .useHttpRange(true)                               // 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据。
     .build();  
 P2pEngine.initEngine(getApplicationContext(), token, config);
 ```

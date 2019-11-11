@@ -16,12 +16,13 @@ P2pConfig config = new P2pConfig.Builder()
     .withTag("unknown")                               // User defined tag which is presented in console
     .webRTCConfig(null)                               // Providing options to configure WebRTC connections
     .maxPeerConnections(10)                           // Max peer connections at the same time
+    .useHttpRange(true)                               // Use HTTP ranges requests where it is possible. Allows to continue (and not start over) aborted P2P downloads over HTTP.
     .build();  
 P2pEngine.initEngine(getApplicationContext(), token, config);
 ```
 
 ## P2P Engine
-instantiate `P2pEngine`，which is a singleton：
+Instantiate `P2pEngine`，which is a singleton：
 ```java
 P2pEngine engine = P2pEngine.initEngine(Context context, String token, P2pConfig config);
 ```
