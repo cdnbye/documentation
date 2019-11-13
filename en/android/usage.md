@@ -94,7 +94,7 @@ public class MyApplication extends android.app.Application {
 Where `token` is your Customer ID. You can set it to "free" when debugging. Please replace it by your own token obtained from console before release. 
 
 ### Playback Address
-When initializing a media player (or any other video player) instance, before passing it a URL, pass that URL through CDNBye P2P Engine.
+When initializing a media player (or any other video player, [ExoPlayer](https://github.com/google/ExoPlayer) is highly recommended) instance, before passing it a URL, pass that URL through CDNBye P2P Engine.
 ```java
 private void onPlay(){
   String parsedUrl = P2pEngine.getInstance().parseStreamUrl("https://your_stream.m3u8");

@@ -35,7 +35,7 @@ if (Hls.WEBRTC_SUPPORT) {
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com' | 信令服务器地址。
 | `wsMaxRetries` | number | 15 |websocket连接重试次数。
 | `wsReconnectInterval` | number | 30 | websocket重连时间间隔。
-| `memoryCacheLimit` | Object | {"pc": 1024 * 1024 * 512, "mobile": 1024 * 1024 * 384} | p2p缓存的最大数据量，分为PC和mobile。
+| `memoryCacheLimit` | Object | {"pc": 1024 * 1024 * 512, "mobile": 1024 * 1024 * 256} | p2p缓存的最大数据量，分为PC和mobile。
 | `p2pEnabled` | boolean | true | 是否开启P2P。
 | `dcDownloadTimeout` | number | 25 | p2p下载的最大超时时间。
 | `webRTCConfig` | Object | {} | 用于配置stun和datachannel的[字典](https://github.com/feross/simple-peer)。

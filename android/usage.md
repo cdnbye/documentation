@@ -96,7 +96,7 @@ public class MyApplication extends android.app.Application {
 <br>注意：如果要在调试期间在控制台查看效果，请换成自己的token。
 
 ### 获取播放地址
-使用加速功能，必须通过SDK把地址转换成加速地址
+使用加速功能，必须通过SDK把地址转换成加速地址，再把转换后的地址传给播放器即可（建议使用[ExoPlayer](https://github.com/google/ExoPlayer)）。
 ```java
 private void onPlay(){
   String parsedUrl = P2pEngine.getInstance().parseStreamUrl("https://your_stream.m3u8");

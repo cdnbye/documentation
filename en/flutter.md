@@ -41,6 +41,7 @@ Requirement: Kitkat 4.4(API level >= 19), please set `minSdkVersion` to `19`.
 Add relevant uses permissions in `app/src/main/AndroidManifest.xml`:
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
