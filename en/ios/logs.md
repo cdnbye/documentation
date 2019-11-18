@@ -81,3 +81,6 @@
 ### 0.9.0 8/11/2019
 - Use http range requests if possible
 - fix known bug
+
+### 0.10.0 18/11/2019
+- Replace YYCache with CBCache

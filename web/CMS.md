@@ -428,3 +428,114 @@ document.getElementById('player').innerHTML  = '<iframe width="100%" height='+pl
 </body>
 </html>
 ```
+
+## 飞飞CMS
+为飞飞CMS播放器增加记忆+P2P播放，在网站根目录下创建dplayer.php文件，代码如下：
+```html
+<html>
+<head>
+    <title>dplayer播放器p2p加速+记忆播放</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta http-equiv="content-language" content="zh-CN"/>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta name="referrer" content="never"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="x5-page-mode" content="app"/>
+    <meta name="Viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@latest/dist/DPlayer.min.css">
+  <style type="text/css">
+    body,html{width:100%;height:100%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}
+    *{margin:0;border:0;padding:0;text-decoration:none}
+	#stats{position:fixed;top:5px;left:10px;font-size:10px;z-index:20719029;display: block;background-image: -webkit-linear-gradient(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%,#ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);color: transparent;-webkit-text-fill-color: transparent;-webkit-background-clip: text; background-size: 200% 100%;animation: masked-animation 4s infinite linear;}
+    #playerCnt{position:inherit}
+  </style>
+</head>
+<body style="background:#000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" oncontextmenu=window.event.returnValue=false>
+<div id="dplayer"></div>
+<div id="stats"></div>
+<script language="Javascript">
+    document.oncontextmenu=new Function("event.returnValue=false");
+    document.onselectstart=new Function("event.returnValue=false");
+</script>
+<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/dplayer@latest"></script>
+<script>
+    url = '<?php echo($_REQUEST['url']);?>';
+    var webdata = {
+        set:function(key,val){
+            window.sessionStorage.setItem(key,val);
+        },
+        get:function(key){
+            return window.sessionStorage.getItem(key);
+        },
+        del:function(key){
+            window.sessionStorage.removeItem(key);
+        },
+        clear:function(key){
+            window.sessionStorage.clear();
+        }
+    };
+    var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
+    var dp = new DPlayer({
+        autoplay: true,
+        container: document.getElementById('dplayer'),
+        volume: 1.0,
+        preload: 'auto',
+        screenshot: true,
+        theme: '#28FF28',
+        video: {
+            url: url,
+            type: 'customHls',
+			customType: {
+                'customHls': function (video, player) {
+                    const hls = new Hls({
+                        debug: false,
+                        p2pConfig: {
+                            logLevel: true,
+                            live: false,        // 如果是直播设为true
+                        }
+                    });
+                    hls.loadSource(video.src);
+                    hls.attachMedia(video);
+                    hls.p2pEngine.on('stats', function (stats) {
+                        _totalP2PDownloaded = stats.totalP2PDownloaded;
+                        _totalP2PUploaded = stats.totalP2PUploaded;
+                        updateStats();
+                    }).on('peerId', function (peerId) {
+                        _peerId = peerId;
+                    }).on('peers', function (peers) {
+                        _peerNum = peers.length;
+                        updateStats();
+                    });
+ 
+                }
+            }
+        },
+    });
+	dp.seek(webdata.get('vod'+url));
+    setInterval(function(){
+        webdata.set('vod'+url,dp.video.currentTime);
+    },1000);
+    function updateStats() {
+        var text = 'P2P正在为您加速' + (_totalP2PDownloaded/1024).toFixed(2)
+            + 'MB 已分享' + (_totalP2PUploaded/1024).toFixed(2) + 'MB' + ' 连接节点' + _peerNum + '个';
+        document.getElementById('stats').innerText = text
+    }
+</script>
+</body>
+</html>
+```
+然后点击飞飞CMS后台，选择`系统——>播放来源——>添加播放器`，接着创建与播放器标识一样的js文件，如bjm3u8.js，代码如下：
+```javascript
+cms_player.yun = false;
+if(cms_player.jiexi){
+	document.write('<iframe class="embed-responsive-item" src="'+cms_player.jiexi+cms_player.url+'" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>');
+}else{
+	document.write('<script type="text/javascript" src="/dplayer.php?url='+cms_player.url+'"></script>');
+}
+```
+并把这个文件上传至`/Public/player`目录下。
