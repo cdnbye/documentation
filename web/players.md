@@ -76,10 +76,10 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/p2p-ckplayer@latest/ckplayer/ckplayer.min.js" charset="UTF-8"></script>
 <script type="text/javascript">
     var videoObject = {
-        container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
-        variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
-        autoplay:true,
-        html5m3u8:true,
+        container: '#video',  // “#”代表容器的ID，“.”或“”代表容器的class
+        variable: 'player',   // 该属性必需设置，值等于下面的new chplayer()的对象
+        autoplay:true,   
+        html5m3u8:true,       // 强制html5播放
         video:'https://example.m3u8',//视频地址
         hlsjsConfig: {   // hlsjs和CDNBye的配置参数
             debug: false,
