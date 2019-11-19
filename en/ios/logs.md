@@ -84,3 +84,4 @@
 
 ### 0.10.0 18/11/2019
 - Replace YYCache with CBCache
+- Scheduling algorithm optimization

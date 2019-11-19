@@ -9,40 +9,29 @@
 PS：使用P2P功能后，请勿开启`播放加密`。
 
 ## 苹果CMS
-为苹果CMSV10播放器增加记忆+P2P播放+自动下一集功能，用以下代码替换`static/player/dplayer.html`全部内容：
+为苹果CMS V10播放器增加记忆+P2P播放+自动下一集功能，在网站根目录上传或创建dplayer.php，代码如下：
 ```html
 <html>
 <head>
-    <title>dplayer播放器p2p加速+记忆播放</title>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
-    <meta http-equiv="content-language" content="zh-CN"/>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
-    <meta http-equiv="pragma" content="no-cache"/>
-    <meta http-equiv="expires" content="0"/>
-    <meta name="referrer" content="never"/>
-    <meta name="renderer" content="webkit"/>
-    <meta name="msapplication-tap-highlight" content="no"/>
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="x5-page-mode" content="app"/>
-    <meta name="Viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@latest/dist/DPlayer.min.css">
-    <style type="text/css">
-        body,html{width:100%;height:100%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}
-        *{margin:0;border:0;padding:0;text-decoration:none}
-        #stats{position:fixed;top:5px;left:8px;font-size:12px;color:#fdfdfd;text-shadow:1px 1px 1px #000, 1px 1px 1px #000}
-        #dplayer{position:inherit}
-    </style>
+	<title>dplayer增加记忆+P2P播放+自动下一集功能</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=11" />
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+  <style type="text/css">
+    body,html{width:100%;height:100%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}
+    *{margin:0;border:0;padding:0;text-decoration:none}
+	#stats{position:fixed;top:5px;left:10px;font-size:10px;z-index:20719029;display: block;background-image: -webkit-linear-gradient(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%,#ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);color: transparent;-webkit-text-fill-color: transparent;-webkit-background-clip: text; background-size: 200% 100%;animation: masked-animation 4s infinite linear;}
+    #playerCnt{position:inherit}
+</style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@latest/dist/DPlayer.min.css" /> 
 </head>
 <body style="background:#000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" oncontextmenu=window.event.returnValue=false>
 <div id="dplayer"></div>
 <div id="stats"></div>
-<script language="Javascript">
-    document.oncontextmenu=new Function("event.returnValue=false");
-    document.onselectstart=new Function("event.returnValue=false");
-</script>
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 <script src="https://cdn.jsdelivr.net/npm/dplayer@latest"></script>
 <script>
+    url = '<?php echo($_REQUEST['url']);?>';
     var webdata = {
         set:function(key,val){
             window.sessionStorage.setItem(key,val);
@@ -66,62 +55,63 @@ PS：使用P2P功能后，请勿开启`播放加密`。
         screenshot: true,
         theme: '#28FF28',
         video: {
-            url: parent.MacPlayer.PlayUrl,
+            url: url,
             type: 'customHls',
-            // pic: './loading.jpg',           // 视频封面
-            customType: {
+			customType: {
                 'customHls': function (video, player) {
                     const hls = new Hls({
                         debug: false,
-                        // Other hlsjsConfig options provided by hls.js
                         p2pConfig: {
-                            logLevel: false,
+                            logLevel: true,
                             live: false,        // 如果是直播设为true
-                            // Other p2pConfig options provided by CDNBye
-                            getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
-                                console.warn(`totalP2PDownloaded ${totalP2PDownloaded} totalHTTPDownloaded ${totalHTTPDownloaded}`);
-                                _totalP2PDownloaded = totalP2PDownloaded;
-                                _totalP2PUploaded = totalP2PUploaded;
-                                updateStats();
-                            },
-                            getPeerId: function (peerId) {
-                                _peerId = peerId;
-                            },
-                            getPeersInfo: function (peers) {
-                                _peerNum = peers.length;
-                                updateStats();
-                            },
                         }
                     });
                     hls.loadSource(video.src);
                     hls.attachMedia(video);
+                    hls.p2pEngine.on('stats', function (stats) {
+                        _totalP2PDownloaded = stats.totalP2PDownloaded;
+                        _totalP2PUploaded = stats.totalP2PUploaded;
+                        updateStats();
+                    }).on('peerId', function (peerId) {
+                        _peerId = peerId;
+                    }).on('peers', function (peers) {
+                        _peerNum = peers.length;
+                        updateStats();
+                    });
+ 
                 }
             }
         },
     });
-    dp.seek(webdata.get('pay'+parent.MacPlayer.PlayUrl));
+	dp.seek(webdata.get('vod'+url));
     setInterval(function(){
-        webdata.set('pay'+parent.MacPlayer.PlayUrl,dp.video.currentTime);
+        webdata.set('vod'+url,dp.video.currentTime);
     },1000);
-    dp.on('ended', function (){
-        if(parent.MacPlayer.PlayLinkNext!=''){
+	dp.on('ended',function(){
+　　　　if(parent.MacPlayer.PlayLinkNext!=''){
             top.location.href = parent.MacPlayer.PlayLinkNext;
         }
-    });
+　　});
     function updateStats() {
-        var text = 'P2P已开启 共享' + (_totalP2PUploaded/1024).toFixed(2) + 'MB' + ' 已加速' + (_totalP2PDownloaded/1024).toFixed(2)
-            + 'MB' + ' 此片有 ' + _peerNum + ' 位影迷正在观看';
+        var text = 'P2P正在为您加速' + (_totalP2PDownloaded/1024).toFixed(2)
+            + 'MB 已分享' + (_totalP2PUploaded/1024).toFixed(2) + 'MB' + ' 连接节点' + _peerNum + '个';
         document.getElementById('stats').innerText = text
     }
 </script>
 </body>
 </html>
 ```
-然后点击苹果CMS后台的`播放器`选项，拷贝以下代码：
-```html
-MacPlayer.Html = '<iframe border="0" src="'+maccms.path+'/static/player/dplayer.html" width="100%" height="100%" marginWidth="0" frameSpacing="0" marginHeight="0" frameBorder="0" scrolling="no" vspale="0" noResize></iframe>';
-MacPlayer.Show();
-```
+然后进苹果CMSV10后台，选择`视频-->播放器-->添加-->基本设置`，按如图所示设置：<br>
+状态：启用<br>
+编码：bjm3u8<br>
+名称：bjm3u8<br>
+目标窗口：当前<br>
+解析状态：启用<br>
+解析：/dplayer.php?url=<br>
+排序：909<br>
+提示：无需安装任何插件<br>
+<img width="800" src="http://blog.a5027.com/content/uploadfile/201911/8fcc1574166500.png" alt="picture">
+最后清理后台缓存和浏览器缓存即可。
 
 ## 海洋CMS
 为海洋CMS v9.99播放器增加记忆+P2P播放+自动下一集功能，用以下代码替换`js/player/dplayer/dplayer.html`全部内容：
