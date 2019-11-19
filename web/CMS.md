@@ -519,7 +519,9 @@ document.getElementById('player').innerHTML  = '<iframe width="100%" height='+pl
 </body>
 </html>
 ```
-然后点击飞飞CMS后台，选择`系统——>播放来源——>添加播放器`，接着创建与播放器标识一样的js文件，如bjm3u8.js，代码如下：
+然后点击飞飞CMS后台，选择`系统——>播放来源——>添加播放器`，如图：
+<img width="800" src="http://blog.a5027.com/content/uploadfile/201911/539f1574078898.png" alt="picture">
+接着创建与播放器标识一样的js文件，如bjm3u8.js，代码如下：
 ```javascript
 cms_player.yun = false;
 if(cms_player.jiexi){
