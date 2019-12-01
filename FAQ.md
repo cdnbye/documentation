@@ -106,5 +106,27 @@ Hls.js, JWPlayer, Video.js, Clappr, Flowplayer和TCPlayer等。
 ### SDK除了 P2P 还有其他附加功能吗？
 有的。SDK还具备智能缓存能力，用于避免文件重复下载问题，从而有效节省带宽消耗，而且本功能是完全免费的。
 
-### 
+### 客户端SDK P2P无效问题排查步骤
+- iOS
+    - 在控制台搜索关键字"CDNBye warning"，根据对应的警告信息进行配置
+    - 如果仍然无法排查问题，请先将日志打印功能打开，示例代码如下：
+    ```objc
+    CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
+    config.logLevel =  CBLogLevelDebug;
+    [[CBP2pEngine sharedInstance] startWithToken:YOUR_TOKEN andP2pConfig:config];
+    ```
+    - 然后将日志信息保存到文件并发送给CDNBye技术人员
+- 安卓
+    - 先打开日志打印功能，示例代码如下：
+    ```java
+    P2pConfig config = new P2pConfig.Builder().logEnabled(true).build();
+    P2pEngine.initEngine(this, YOUR_TOKEN, config);
+    ```
+    - 在控制台搜索"CDNBye"，根据对应的警告信息进行配置
+    - 如果仍然无法排查问题，请先将日志级别调整为Debug，示例代码如下：
+    ```java
+    P2pConfig config = new P2pConfig.Builder().logEnabled(true).logLevel(LogLevel.DEBUG).build();
+    P2pEngine.initEngine(this, YOUR_TOKEN, config);
+    ```
+    - 然后将日志信息保存到文件并发送给CDNBye技术人员
 

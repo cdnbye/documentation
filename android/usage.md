@@ -106,3 +106,6 @@ private void onPlay(){
 
 #### 示例
 获取完整的[示例程序](https://github.com/cdnbye/android-p2p-engine)。
+
+#### P2P无效问题排查步骤
+请参考[常见问题](/FAQ?id=客户端sdk-p2p无效问题排查步骤)
