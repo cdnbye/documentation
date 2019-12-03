@@ -126,6 +126,7 @@ p2pConfig: {
 }
 ```
 
+<!--
 ### Dynamic ts path issue
 Like dynamic m3u8 path issue, you should format a common segmentId for the same ts file. We have da that for you. If you want to set the path as segment ID, override the segmentID like this:
 ```javascript
@@ -137,6 +138,7 @@ p2pConfig: {
     }
 }
 ```
+-->
 
 ### Config STUN Servers
 ```javascript
