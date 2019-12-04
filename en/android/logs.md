@@ -47,3 +47,7 @@
 ### 0.10.0 19/11/2019
 - Remove DiskLRUCache dependency
 - Scheduling algorithm optimization
+
+### 0.11.0 4/12/2019
+- Report network type
+- fix known bug
