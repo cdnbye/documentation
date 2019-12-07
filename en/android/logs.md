@@ -51,3 +51,6 @@
 ### 0.11.0 4/12/2019
 - Report network type
 - fix known bug
+
+### 0.11.1 6/12/2019
+- fix bugs that may cause crash

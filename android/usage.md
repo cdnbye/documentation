@@ -53,7 +53,7 @@ android {
 添加Jcenter仓库 Gradle依赖：
 ```
 dependencies {
-  implementation 'com.cdnbye:sdk:0.11.0'
+  implementation 'com.cdnbye:sdk:0.11.1'
 }
 ```
 <!--

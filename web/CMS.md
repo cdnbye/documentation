@@ -111,7 +111,8 @@ PS：使用P2P功能后，请勿开启`播放加密`。
 排序：909<br>
 提示：无需安装任何插件<br>
 <img width="800" src="http://blog.a5027.com/content/uploadfile/201911/8fcc1574166500.png" alt="picture">
-最后清理后台缓存和浏览器缓存即可。
+最后清理后台缓存和浏览器缓存即可。<br>
+为苹果CMS V10集成CKPlayer可参考[这里](http://blog.a5027.com/post-127.html)
 
 ## 海洋CMS
 为海洋CMS v9.99播放器增加记忆+P2P播放+自动下一集功能，用以下代码替换`js/player/dplayer/dplayer.html`全部内容：
