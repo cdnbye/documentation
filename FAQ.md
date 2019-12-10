@@ -42,7 +42,7 @@ CDNBye不对色情等非法内容提供P2P服务，请确保您的网站/APP符�
 ### 使用过程中出现异常如何反馈？
 如果是Web端插件的异常请在p2p配置中开启log并截图浏览器console出错信息发送到service@cdnbye.com，或者在QQ群里反馈。如果是原生SDK出现异常请在p2p配置中开启log并保存日志文件发送到官方邮箱，建议在APP中集成[Bugly](https://bugly.qq.com)，有助于收集crash日志并上传到云端。
 
-### 如何在内网使用CDNBye的服务？
+### 如何在内网使用CDNBye？
 使用CDNBye的p2p服务需要调用两个云端服务，一个是Tracker调度服务，另一个是信令服务。
 ##### 信令服务
 可以直接在内网服务器上部署[信令服务](https://github.com/cdnbye/gosignaler)，信令不需要与外网通信。
