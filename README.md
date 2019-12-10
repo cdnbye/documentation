@@ -19,6 +19,9 @@ CDNBye基于WebRTC技术进行P2P传输，主流浏览器默认支持WebRTC，�
 ### 后台管理系统
 在接入P2P插件后，访问`https://oms.cdnbye.com`，注册并绑定域名，即可查看该域名的P2P流量、在线人数、用户地理分布等信息。
 
+### 支持内网设备接入P2P服务
+请参考[如何在内网使用CDNBye](FAQ.md?id=如何在内网使用cdnbye？)
+
 ### 客户案例
 [<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531253035445&di=7af6cc9ad4abe3d06ba376af22d85131&imgtype=0&src=http%3A%2F%2Fimg.kuai8.com%2Fattaches%2Fintro%2F1213%2F201612131436417407.png" width="120">](https://egame.qq.com/?hls=1&p2p=1&_debug=1)
 [<img src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/maocloud.png" width="120">](https://www.maoyuncloud.com/)
