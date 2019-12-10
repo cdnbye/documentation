@@ -74,3 +74,7 @@
 ### 0.13.2 4/11/2019
 - Use http range requests if possible
 - fix known bug
+
+### 0.13.4 10/12/2019
+- Optimize parameters
+- fix known bug

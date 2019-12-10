@@ -23,5 +23,5 @@ CDNBye iOS P2P Engine scales live/vod video streaming by peer-to-peer network us
 This library requires iOS 9.0+.
 <br>NOTICE: This framework doesn’t support bitcode currently.
 
-### Obtain Token
+### Get Token
 See [here](/en/bindings.md?id=app-id-and-token)

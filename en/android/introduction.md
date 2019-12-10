@@ -21,6 +21,6 @@ CDNBye Android P2P Engine scales live/vod video streaming by peer-to-peer networ
 ### Requirements
 Android Version Support: Kitkat 4.4(API level >= 19)
 
-### Obtain Token
+### Get Token
 See [here](/en/bindings.md?id=app-id-and-token)
 
