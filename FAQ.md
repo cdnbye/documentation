@@ -50,9 +50,28 @@ CDNBye不对色情等非法内容提供P2P服务，请确保您的网站/APP符�
 Tracker需要通过能与外网通信的服务器进行转发，操作步骤如下：
 - 在控制台绑定网站域名
 - 联系CDNBye技术人员对转发域名进行授权
-- 在服务器部署Tracker转发服务[cbproxy](https://github.com/cdnbye/cbproxy)
+- 在服务器配置nginx内网转发，在conf.d增加tracker.conf，示例如下：
+    ```bash
+    server {
+        listen 80;
+        listen 443 ssl;
+        server_name YOUR_TRACKER_DOMAIN;          # 配置内网转发域名
+        access_log /root/log/access.log;
+        error_log /root/log/error.log;
+    
+        # ssl on;
+        ssl_certificate  tracker.pem;    # 证书路径
+        ssl_certificate_key tracker.key;  # 证书秘钥路径
+    
+        location / {
+            proxy_pass https://tracker.cdnbye.com;      # 转发到CDNBye的tracker服务
+            proxy_set_header  Host  $host;
+            proxy_set_header  X-Real-IP  $remote_addr;
+            proxy_set_header  X-Forwarded-For $remote_addr;  
+        }
+    }
+    ```
 - 修改前端代码，替换Tracker域名为转发域名
-
 
 ### CDNBye的效果如何？如果使用过程效果不如预期，应该怎么调整？
 从目前后台记录的数据来看，理想情况下，在直播中P2P分享率可以达到60%以上，点播中在有冷流存在的情况下综合分享率也可以达到30%以上。
