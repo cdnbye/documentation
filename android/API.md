@@ -3,7 +3,7 @@
 用建造者模式实例化`CBP2pConfig`，以下的参数是默认值：
 ```java
 P2pConfig config = new P2pConfig.Builder()
-    .logEnabled(false)                                // 是否开启debug模式
+    .logEnabled(false)                                // 是否打印日志
     .logLevel(LogLevel.WARN)                          // 打印日志的级别
     .announce("https://tracker.cdnbye.com/v1")        // tracker服务器地址
     .wsSignalerAddr("wss://signal.cdnbye.com")        // 信令服务器地址
@@ -11,11 +11,11 @@ P2pConfig config = new P2pConfig.Builder()
     .dcDownloadTimeout(6_000, TimeUnit.MILLISECONDS)  // datachannel下载二进制数据的最大超时时间
     .localPort(52019)                                 // 本地代理服务器的端口号
     .diskCacheLimit(1024*1024*1024)                   // 点播模式下P2P在磁盘缓存的最大数据量(设为0可以禁用磁盘缓存)
-    .memoryCacheLimit(60*1024*1024)                   // P2P在内存缓存的最大数据量，机顶盒直播建议不大于30MB
+    .memoryCacheLimit(60*1024*1024)                   // P2P在内存缓存的最大数据量，机顶盒建议不大于15MB
     .p2pEnabled(true)                                 // 开启或关闭p2p engine
     .withTag("unknown")                               // 用户自定义的标签，可以在控制台查看分布图
     .webRTCConfig(null)                               // 通过webRTCConfig来修改WebRTC默认配置
-    .maxPeerConnections(10)                           // 最大连接节点数量，机顶盒建议不大于5
+    .maxPeerConnections(10)                           // 最大连接节点数量
     .useHttpRange(true)                               // 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据。
     .build();  
 P2pEngine.initEngine(getApplicationContext(), token, config);

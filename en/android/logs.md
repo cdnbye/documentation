@@ -54,3 +54,6 @@
 
 ### 0.11.1 6/12/2019
 - fix bugs that may cause crash
+
+### 0.11.2 13/12/2019
+- fix bugs that may cause crash
