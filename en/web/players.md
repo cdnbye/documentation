@@ -696,7 +696,7 @@ Simply disable the HLS plugin in the builder and connect it separately with scri
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                logLevel: false,
+                logLevel: true,
                 live: false,
                 // Other p2pConfig options provided by CDNBye
                 // https://github.com/cdnbye/hlsjs-p2p-engine/blob/master/docs/%E4%B8%AD%E6%96%87/API.md

@@ -75,7 +75,7 @@ Tracker需要通过能与外网通信的服务器进行转发，操作步骤如�
     ```bash
     worker_rlimit_nofile 1000000;   # 配置Nginx worker进程最大打开文件数
     events {
-        worker_connections 1000000;  # 单个进程允许的客户端最大连接数
+        worker_connections 102400;  # 单个进程允许的客户端最大连接数
     }
     ```
 - 修改前端代码，替换Tracker域名为转发域名

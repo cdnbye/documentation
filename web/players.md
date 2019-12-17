@@ -31,7 +31,7 @@
                         debug: false,
                         // Other hlsjsConfig options provided by hls.js
                         p2pConfig: {
-                            logLevel: 'debug',
+                            logLevel: false,
                             live: false,        // 如果是直播设为true
                             // Other p2pConfig options provided by CDNBye
                         }
@@ -85,7 +85,7 @@
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                logLevel: 'debug',
+                logLevel: false,
                 live: false,        // 如果是直播设为true
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     var total = totalHTTPDownloaded + totalP2PDownloaded;
@@ -137,7 +137,7 @@
                 debug: false,
                 // Other hlsjsConfig options provided by hls.js
                 p2pConfig: {
-                    logLevel: true,
+                    logLevel: false,
                     live: false,        // 如果是直播设为true
                     getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                         var total = totalHTTPDownloaded + totalP2PDownloaded;
@@ -185,7 +185,7 @@
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                logLevel: true,
+                logLevel: false,
                 live: false,        // 如果是直播设为true
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     var total = totalHTTPDownloaded + totalP2PDownloaded;
@@ -229,7 +229,7 @@
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                logLevel: true,
+                logLevel: false,
                 live: false,        // 如果是直播设为true
                 // Other p2pConfig options provided by CDNBye
             }
@@ -289,7 +289,7 @@
                 hlsjsConfig: {
                     // Other hlsjsConfig options provided by hls.js
                     p2pConfig: {
-                        logLevel: 'debug',
+                        logLevel: false,
                         live: false,        // 如果是直播设为true
                         getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                             var total = totalHTTPDownloaded + totalP2PDownloaded;
@@ -333,7 +333,7 @@
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                logLevel: true,
+                logLevel: false,
                 live: false,        // 如果是直播设为true
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     var total = totalHTTPDownloaded + totalP2PDownloaded;
@@ -393,7 +393,7 @@
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                logLevel: true,
+                logLevel: false,
                 live: false,        // 如果是直播设为true
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     var total = totalHTTPDownloaded + totalP2PDownloaded;
@@ -438,7 +438,7 @@
             hls: {
                 handler: window.ChimeeKernelHls,
                 p2pConfig: {
-                    logLevel: 'debug',
+                    logLevel: false,
                     live: false,        // 如果是直播设为true
                     getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                         var total = totalHTTPDownloaded + totalP2PDownloaded;
@@ -491,7 +491,7 @@
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                logLevel: true,
+                logLevel: false,
                 live: false,        // 如果是直播设为true
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     console.log(`totalP2PDownloaded ${totalP2PDownloaded} totalP2PUploaded ${totalP2PUploaded} totalHTTPDownloaded ${totalHTTPDownloaded}`)
@@ -529,7 +529,7 @@
                 // debug: false,
                 // Other hlsjsConfig options provided by hls.js
                 p2pConfig: {
-                    logLevel: true,
+                    logLevel: false,
                     live: false,        // 如果是直播设为true
                     getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                         var total = totalHTTPDownloaded + totalP2PDownloaded;
@@ -570,7 +570,7 @@
             debug: false,
             // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
-                logLevel: 'debug',
+                logLevel: false,
                 live: false,        // 如果是直播设为true
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                     var total = totalHTTPDownloaded + totalP2PDownloaded;
@@ -618,7 +618,7 @@
             // For more Hls.js options, see https://github.com/dailymotion/hls.js
             var hls = new Hls({
                 p2pConfig: {
-                    logLevel: true,
+                    logLevel: false,
                     live: false,        // 如果是直播设为true
                     getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
                         var total = totalHTTPDownloaded + totalP2PDownloaded;
@@ -658,7 +658,7 @@
         file: "https://example.m3u8",
         hlsconfig: {
             p2pConfig: {
-                logLevel: true,
+                logLevel: false,
                 live: false,        // 如果是直播设为true
             }
         }

@@ -52,7 +52,7 @@ Please add the following code in proguard-rules.pro:
 ### Import by Gradle
 ```
 dependencies {
-  implementation 'com.cdnbye:sdk:0.11.2'
+  implementation 'com.cdnbye:sdk:latest.release'
 }
 ```
 <!--
