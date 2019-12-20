@@ -9,7 +9,7 @@
 <!--
 - [node-signaler](https://github.com/cdnbye/node-signaler) (nodejs版，推荐)
 -->
-- [gosignaler](https://github.com/cdnbye/gosignaler) (Go语言编写，单机版)
+- [cbsignal](https://github.com/cdnbye/cbsignal) (Go语言编写，单机版)
 - [gosignaler-cluster](https://github.com/cdnbye/gosignaler-cluster) (Go语言编写，集群版)
 
 

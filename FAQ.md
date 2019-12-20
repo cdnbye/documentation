@@ -45,7 +45,7 @@ CDNBye不对色情等非法内容提供P2P服务，请确保您的网站/APP符�
 ### 如何在内网使用CDNBye？
 使用CDNBye的p2p服务需要调用两个云端服务，一个是Tracker调度服务，另一个是信令服务。
 ##### 信令服务
-可以直接在内网服务器上部署[信令服务](https://github.com/cdnbye/gosignaler)，信令不需要与外网通信。
+可以直接在内网服务器上部署[信令服务](https://github.com/cdnbye/cbsignal)，信令不需要与外网通信。
 ##### Tracker服务
 Tracker需要通过能与外网通信的服务器进行转发，操作步骤如下：
 - 在控制台绑定网站域名
