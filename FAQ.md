@@ -7,7 +7,7 @@ CDNBye采用的WebRTC data channel技术，是基于SCTP协议和TLS加密的，
 ### 使用CDNBye的P2P服务需要付费吗？
 目前CDNBye已经开始商业化，但同时对小型流媒体网站仍提供免费服务。收费模式如下：
 - 只对在控制台(https://oms.cdnbye.com) 绑定的域名提供P2P服务
-- 每个账号每日免费赠送5GB P2P流量，次日清零
+- 每个账号每日免费赠送5GB P2P流量，次日重置
 - 每日在控制台完成签到后再赠送20GB P2P流量，次日清零
 - 超出免费额度后停止P2P服务，如果继续使用，需要购买流量包，购买的流量包额度越大，价格越划算，且可以使用更多P2P流量，直到剩余可用流量为零。
 - 目前只针对Web端插件收费，iOS和安卓SDK完全免费
@@ -169,14 +169,7 @@ Hls.js, JWPlayer, Video.js, Clappr, Flowplayer和TCPlayer等。
     - 然后将日志信息保存到文件并发送给CDNBye技术人员
     
 ### 安卓机顶盒兼容性问题
-较低版本的机顶盒（API level在20以下）可能会出现崩溃等兼容性问题，处理思路是先做系统版本判断，只有高于指定版本才使用P2P，示例代码如下：
-```java
-// 在初始化P2pEngine前，判断当前API level是否大于20
-if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT_WATCH) {
-    P2pEngine.initEngine(this, YOUR_TOKEN, null);
-}
-```
-然后在转换播放地址前也做一下判断：
+较低版本的机顶盒（API level在20以下）可能会出现崩溃等兼容性问题，处理思路是在转换播放地址前先做系统版本判断，只有高于指定版本才使用P2P，示例代码如下：
 ```java
 String url = ORIGINAL_URL;
 if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT_WATCH) {
