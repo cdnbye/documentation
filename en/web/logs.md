@@ -78,3 +78,6 @@
 ### 0.13.4 10/12/2019
 - Optimize parameters
 - fix known bug
+
+### 0.14.0 23/12/2019
+- Update hls.js to 0.13.0
