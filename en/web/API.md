@@ -40,7 +40,7 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | `p2pEnabled` | boolean | true | Enable or disable p2p engine.
 | `dcDownloadTimeout` | number | 25 | Max download timeout for WebRTC datachannel.
 | `webRTCConfig` | Object | {} | A [Configuration dictionary](https://github.com/feross/simple-peer) providing options to configure WebRTC connections.
-| `useHttpRange` | boolean | true | Use HTTP ranges requests where it is possible. Allows to continue (and not start over) aborted P2P downloads over HTTP.
+| `useHttpRange` | boolean | false | Use HTTP ranges requests where it is possible. Allows to continue (and not start over) aborted P2P downloads over HTTP.
 | `getStats` | function | - | Get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded.
 | `getPeerId` | function | - | Emitted when the peer Id of this client is obtained from server.
 | `getPeersInfo` | function | - | Emitted when successfully connected with new peer.
@@ -153,6 +153,13 @@ p2pConfig: {
     }
 }
 ```
+
+### Allow Http Range Request
+If http range request is activated, we are able to get chunks of data from peer and then complete the segments by getting other chunks from the CDN, thus, reducing your CDN bandwidth. To activate range requests, See [Allow Http Range Request](../m3u8.md?id=allow-http-range-request). Besides, the code below is needed：
+```javascript
+p2pConfig: {
+    useHttpRange: true,
+}
 
 ### How to Check Segment Validity
 Sometimes we need to prevent a peer from sending a fake segment

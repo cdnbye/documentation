@@ -81,3 +81,7 @@
 
 ### 0.14.0 23/12/2019
 - Update hls.js to 0.13.0
+
+### 1.0.0 4/1/2020
+- Release v1.0.0
+- `useHttpRange` is not available by default

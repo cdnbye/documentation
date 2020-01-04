@@ -15,8 +15,9 @@ P2pConfig config = new P2pConfig.Builder()
     .p2pEnabled(true)                                 // Enable or disable p2p engine
     .withTag("unknown")                               // User defined tag which is presented in console
     .webRTCConfig(null)                               // Providing options to configure WebRTC connections
-    .maxPeerConnections(10)                           // Max peer connections at the same time
+    .maxPeerConnections(20)                           // Max peer connections at the same time
     .useHttpRange(true)                               // Use HTTP ranges requests where it is possible. Allows to continue (and not start over) aborted P2P downloads over HTTP.
+    .isSetTopBox(false)                               // If run on set-top box, please set it true for compatibility purpose.
     .build();  
 P2pEngine.initEngine(getApplicationContext(), token, config);
 ```

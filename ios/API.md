@@ -22,7 +22,7 @@ let config = CBP2pConfig.defaultConfiguration()
 | `downloadTimeout` | NSTimeInterval | 10.0 | HTTP下载ts文件超时时间（单位：秒）。
 | `dcDownloadTimeout` | NSTimeInterval | 15.0 | datachannel下载二进制数据的最大超时时间（单位：秒）。
 | `tag` | NSString | @"unknown" | 用户自定义的标签，可以在控制台查看分布图。
-| `maxPeerConnections` | NSUInteger | 10 | 最大连接节点数量。
+| `maxPeerConnections` | NSUInteger | 20 | 最大连接节点数量。
 | `useHttpRange` | BOOL | YES | 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据。
 
 ## P2P Engine

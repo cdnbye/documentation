@@ -15,8 +15,9 @@ P2pConfig config = new P2pConfig.Builder()
     .p2pEnabled(true)                                 // 开启或关闭p2p engine
     .withTag("unknown")                               // 用户自定义的标签，可以在控制台查看分布图
     .webRTCConfig(null)                               // 通过webRTCConfig来修改WebRTC默认配置
-    .maxPeerConnections(10)                           // 最大连接节点数量
+    .maxPeerConnections(20)                           // 最大连接节点数量
     .useHttpRange(true)                               // 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据。
+    .isSetTopBox(false)                               // 是否机顶盒设备，如果在机顶盒运行设为true，提高兼容性。
     .build();  
 P2pEngine.initEngine(getApplicationContext(), token, config);
 ```
@@ -49,7 +50,7 @@ P2pEngine engine = P2pEngine.initEngine(Context context, String token, P2pConfig
 是否已与CDNBye后台建立连接。
 
 #### `engine.stopP2p()`
-停止P2P加速并释放资源，一般不需要调用。
+停止P2P加速并释放资源，一般不需要调用。SDK采用"懒释放"的策略，只有在重启p2p的时候才释放资源。对于性能较差的设备起播耗时可能比较明显，建议在视频播放之前提前调用`engine.stopP2p()`。
 
 #### `engine.restartP2p()`
 重启P2P加速服务，一般不需要调用。

@@ -39,7 +39,7 @@ if (Hls.WEBRTC_SUPPORT) {
 | `p2pEnabled` | boolean | true | 是否开启P2P。
 | `dcDownloadTimeout` | number | 25 | p2p下载的最大超时时间。
 | `webRTCConfig` | Object | {} | 用于配置stun和datachannel的[字典](https://github.com/feross/simple-peer)。
-| `useHttpRange` | boolean | true | 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据。
+| `useHttpRange` | boolean | false | 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据。
 | `getStats` | function | - | 获取p2p统计信息，包括totalP2PDownloaded、totalP2PUploaded和totalHTTPDownloaded。
 | `getPeerId` | function | - | 获取本节点的Id，当从服务端获取到peerId时回调该事件。
 | `getPeersInfo` | function | - | 获取成功连接的节点的信息，当与新的节点成功建立p2p连接时回调该事件。
@@ -151,6 +151,14 @@ p2pConfig: {
             ] 
         }
     }
+}
+```
+
+### 允许Http Range请求
+当对等端上行带宽不够时，可能导致p2p传输超时而转向http下载，原本p2p下载的数据无法复用。Http Range请求用于补足p2p下载超时的剩余部分数据，要开启Http Range，首先需要源服务器支持，请参考[允许Http Range请求](../m3u8.md?id=允许http-range请求)，然后增加以下配置：
+```javascript
+p2pConfig: {
+    useHttpRange: true,
 }
 ```
 

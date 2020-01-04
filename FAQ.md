@@ -167,15 +167,5 @@ Hls.js, JWPlayer, Video.js, Clappr, Flowplayer和TCPlayer等。
     P2pEngine.initEngine(this, YOUR_TOKEN, config);
     ```
     - 然后将日志信息保存到文件并发送给CDNBye技术人员
-    
-### 安卓机顶盒兼容性问题
-较低版本的机顶盒（API level在20以下）可能会出现崩溃等兼容性问题，处理思路是在转换播放地址前先做系统版本判断，只有高于指定版本才使用P2P，示例代码如下：
-```java
-String url = ORIGINAL_URL;
-if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT_WATCH) {
-    url = P2pEngine.getInstance().parseStreamUrl(url);
-}
-mediaPlayer.play(url);
-```
 
 
