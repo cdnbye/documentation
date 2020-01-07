@@ -31,7 +31,7 @@ If `opts` is specified, then the default options (shown below) will be overridde
 
 | Field | Type | Default | Description |
 | :-: | :-: | :-: | :-: |
-| `logLevel` | string or boolean | 'none' | Print log level(debug, info, warn, error, none，false=none, true=debug).
+| `logLevel` | string or boolean | 'none' | Print log level(warn, error, none，false=none, true=warn).
 | `live` | boolean | false | tell engine whether in live or VOD mode, set to false will pre-buffer for smooth playing.
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com' | The address of signal server.
 | `wsMaxRetries` | number | 15 | The maximum number of reconnection attempts that will be made by websocket before giving up.
@@ -40,13 +40,16 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | `p2pEnabled` | boolean | true | Enable or disable p2p engine.
 | `dcDownloadTimeout` | number | 25 | Max download timeout for WebRTC datachannel.
 | `webRTCConfig` | Object | {} | A [Configuration dictionary](https://github.com/feross/simple-peer) providing options to configure WebRTC connections.
-| `useHttpRange` | boolean | false | Use HTTP ranges requests where it is possible. Allows to continue (and not start over) aborted P2P downloads over HTTP.
+| `useHttpRange` | boolean | false | Use HTTP ranges requests where it is possible. Allows to continue (and not start over) aborted P2P downloads over HTTP(True in live mode by default).
 | `getStats` | function | - | Get the downloading statistics, including totalP2PDownloaded, totalP2PUploaded and totalHTTPDownloaded.
 | `getPeerId` | function | - | Emitted when the peer Id of this client is obtained from server.
 | `getPeersInfo` | function | - | Emitted when successfully connected with new peer.
 | `channelId` | function | - | Pass a function to generate channel Id.(See advanced usage)
-| `segmentId` | function | - | Pass a function to generate segment Id.(See advanced usage)
 | `validateSegment` | function | - | Pass a function to check segment validity downloaded from peers.
+
+<!--
+| `segmentId` | function | - | Pass a function to generate segment Id.(See advanced usage)
+-->
 
 ## P2PEngine API
 

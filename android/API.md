@@ -12,6 +12,7 @@ P2pConfig config = new P2pConfig.Builder()
     .localPort(52019)                                 // 本地代理服务器的端口号
     .diskCacheLimit(1024*1024*1024)                   // 点播模式下P2P在磁盘缓存的最大数据量(设为0可以禁用磁盘缓存)
     .memoryCacheLimit(30*1024*1024)                   // P2P在内存缓存的最大数据量，机顶盒建议不大于15MB
+    .memoryCacheCountLimit(-1)                        // 与memoryCacheLimit互斥，用存储的ts个数取代字节大小，需要大于0才能生效，并且会覆盖memoryCacheLimit
     .p2pEnabled(true)                                 // 开启或关闭p2p engine
     .withTag("unknown")                               // 用户自定义的标签，可以在控制台查看分布图
     .webRTCConfig(null)                               // 通过webRTCConfig来修改WebRTC默认配置

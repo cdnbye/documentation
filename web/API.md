@@ -30,7 +30,7 @@ if (Hls.WEBRTC_SUPPORT) {
 
 | 字段 | 类型 | 默认值 | 描述 |
 | :-: | :-: | :-: | :-: |
-| `logLevel` | string or boolean | 'none' | log的等级，分为debug、info、warn、error、none，设为true等于debug，设为false等于none。
+| `logLevel` | string or boolean | 'none' | log的等级，分为warn、error、none，设为true等于warn，设为false等于none。
 | `live` | boolean | false | 直播或者点播模式，建议在点播模式下设为false，p2p插件会预缓存buffer以避免卡顿。
 | `wsSignalerAddr` | string | 'wss://signal.cdnbye.com' | 信令服务器地址。
 | `wsMaxRetries` | number | 15 |websocket连接重试次数。
@@ -39,14 +39,16 @@ if (Hls.WEBRTC_SUPPORT) {
 | `p2pEnabled` | boolean | true | 是否开启P2P。
 | `dcDownloadTimeout` | number | 25 | p2p下载的最大超时时间。
 | `webRTCConfig` | Object | {} | 用于配置stun和datachannel的[字典](https://github.com/feross/simple-peer)。
-| `useHttpRange` | boolean | false | 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据。
+| `useHttpRange` | boolean | false | 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据（直播模式下默认是true）。
 | `getStats` | function | - | 获取p2p统计信息，包括totalP2PDownloaded、totalP2PUploaded和totalHTTPDownloaded。
 | `getPeerId` | function | - | 获取本节点的Id，当从服务端获取到peerId时回调该事件。
 | `getPeersInfo` | function | - | 获取成功连接的节点的信息，当与新的节点成功建立p2p连接时回调该事件。
 | `channelId` | function | - | 标识channel的字段，同一个channel的用户可以共享数据。（参考高级用法）
-| `segmentId` | function | - | 标识ts文件的字段，防止相同ts文件具有不同的路径。（参考高级用法）
 | `validateSegment` | function | - | 用于校验从其它节点下载的ts文件的合法性。
 
+<!--
+| `segmentId` | function | - | 标识ts文件的字段，防止相同ts文件具有不同的路径。（参考高级用法）
+-->
 
 ## P2PEngine API
 

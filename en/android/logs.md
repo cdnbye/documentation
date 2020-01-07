@@ -57,3 +57,7 @@
 
 ### 0.11.2 13/12/2019
 - fix bugs that may cause crash
+
+### 1.0.0 7/1/2020
+- Release v1.0.0
+- Add new config field `memoryCacheCountLimit`

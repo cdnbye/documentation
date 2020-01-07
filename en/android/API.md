@@ -12,6 +12,7 @@ P2pConfig config = new P2pConfig.Builder()
     .localPort(52019)                                 // The port for local http server
     .diskCacheLimit(1024*1024*1024)                   // The max size of binary data that can be stored in the disk cache for VOD(Set to 0 will disable disk cache)
     .memoryCacheLimit(30*1024*1024)                   // The max size of binary data that can be stored in the memory cache
+    .memoryCacheCountLimit(-1)                        // The max count of ts files that can be stored in the memory cache, regardless of memoryCacheLimit, parameter should be a integer greater than 0
     .p2pEnabled(true)                                 // Enable or disable p2p engine
     .withTag("unknown")                               // User defined tag which is presented in console
     .webRTCConfig(null)                               // Providing options to configure WebRTC connections

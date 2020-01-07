@@ -85,3 +85,6 @@
 ### 0.10.0 18/11/2019
 - Replace YYCache with CBCache
 - Scheduling algorithm optimization
+
+### 0.12.0 4/1/2020
+- Improve stability
