@@ -168,4 +168,25 @@ Hls.js, JWPlayer, Video.js, Clappr, Flowplayer和TCPlayer等。
     ```
     - 然后将日志信息保存到文件并发送给CDNBye技术人员
 
+### 解决Exoplayer无法播放问题
+Exoplayer默认[不支持重定向](https://github.com/google/ExoPlayer/issues/1190)，因此需要在初始化时设置`allowCrossProtocolRedirects=true`，如以下示例：
+```java
+DataSource.Factory dataSourceFactory =
+    new DefaultHttpDataSourceFactory(
+            Util.getUserAgent(this, "p2p-engine"),
+            DefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS,
+            DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS,
+            true   /* allowCrossProtocolRedirects */
+    );
+```
+具体用法可以参考[官方demo](https://github.com/cdnbye/android-p2p-engine)。
 
+### 解决安卓机顶盒OOM问题
+配置比较低的机顶盒容易出现OOM，可以通过配置提高堆内存大小，在`app/src/main`目录中的`AndroidManifest.xml`的<application>标签中直接插入：
+```xml
+<application
+  ...
+  android:largeHeap=“true”
+  ...
+    />
+```

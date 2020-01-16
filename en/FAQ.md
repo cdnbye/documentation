@@ -65,3 +65,16 @@ Yes, Android TV is a supported platform for the SDK. CDNBye Android SDK works wi
 
 ### Is Apple TV supported?
 No, Apple TV is not supported currently.
+
+### Resolve some streams fail with HTTP response code 302 in exoplayer
+It's working as intended that ExoPlayer [doesn't follow cross-protocol redirects]((https://github.com/google/ExoPlayer/issues/1190)) by default. You can enable following of cross-protocol redirects in ExoPlayer by passing `allowCrossProtocolRedirects=true` to the `DefaultHttpDataSourceFactory` constructor:
+```java
+DataSource.Factory dataSourceFactory =
+    new DefaultHttpDataSourceFactory(
+            Util.getUserAgent(this, "p2p-engine"),
+            DefaultHttpDataSource.DEFAULT_CONNECT_TIMEOUT_MILLIS,
+            DefaultHttpDataSource.DEFAULT_READ_TIMEOUT_MILLIS,
+            true   /* allowCrossProtocolRedirects */
+    );
+```
+For details, please see official [demo](https://github.com/cdnbye/android-p2p-engine).

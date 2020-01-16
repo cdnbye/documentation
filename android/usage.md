@@ -65,7 +65,7 @@ dependencies {
 双击打开您的工程目录下的`app/build.gradle`，添加如下依赖：
 ```
 dependencies {
-    implementation 'org.webrtc:google-webrtc:1.0.28513'
+    implementation 'org.webrtc:google-webrtc:1.0.30039'
     implementation 'com.alibaba:fastjson:1.2.58'
     implementation 'org.java-websocket:Java-WebSocket:1.4.0'
     implementation 'com.orhanobut:logger:2.2.0'
@@ -109,3 +109,6 @@ private void onPlay(){
 
 #### P2P无效问题排查步骤
 请参考[常见问题](/FAQ?id=客户端sdk-p2p无效问题排查步骤)
+
+#### 解决Exoplayer无法播放问题
+

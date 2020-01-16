@@ -11,14 +11,14 @@ P2pConfig config = new P2pConfig.Builder()
     .dcDownloadTimeout(6_000, TimeUnit.MILLISECONDS)  // datachannel下载二进制数据的最大超时时间
     .localPort(52019)                                 // 本地代理服务器的端口号
     .diskCacheLimit(1024*1024*1024)                   // 点播模式下P2P在磁盘缓存的最大数据量(设为0可以禁用磁盘缓存)
-    .memoryCacheLimit(30*1024*1024)                   // P2P在内存缓存的最大数据量，机顶盒建议不大于15MB
-    .memoryCacheCountLimit(-1)                        // 与memoryCacheLimit互斥，用存储的ts个数取代字节大小，需要大于0才能生效，并且会覆盖memoryCacheLimit
+    .memoryCacheCountLimit(30)                        // P2P在内存缓存的最大数据量，用ts文件个数表示
+    .memoryCacheLimit(0)                              // P2P在内存缓存的最大字节数，单位是byte，与memoryCacheCountLimit互斥，机顶盒建议不大于15MB，需要大于0才能生效，并且会覆盖memoryCacheCountLimit
     .p2pEnabled(true)                                 // 开启或关闭p2p engine
     .withTag("unknown")                               // 用户自定义的标签，可以在控制台查看分布图
     .webRTCConfig(null)                               // 通过webRTCConfig来修改WebRTC默认配置
     .maxPeerConnections(20)                           // 最大连接节点数量
-    .useHttpRange(true)                               // 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据。
-    .isSetTopBox(false)                               // 是否机顶盒设备，如果在机顶盒运行设为true，提高兼容性。
+    .useHttpRange(true)                               // 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据
+    .isSetTopBox(false)                               // 是否机顶盒设备，如果在机顶盒运行设为true，提高兼容性
     .build();  
 P2pEngine.initEngine(getApplicationContext(), token, config);
 ```
