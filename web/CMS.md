@@ -13,25 +13,28 @@ PS：使用P2P功能后，请勿开启`播放加密`。
 ```html
 <html>
 <head>
-	<title>dplayer增加记忆+P2P播放+自动下一集功能</title>
+    <title>dplayer增加记忆+P2P播放+自动下一集功能</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=11" />
 	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
-  <style type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@latest/dist/DPlayer.min.css" /> 
+<style type="text/css">
     body,html{width:100%;height:100%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}
     *{margin:0;border:0;padding:0;text-decoration:none}
-	#stats{position:fixed;top:5px;left:10px;font-size:10px;z-index:20719029;display: block;background-image: -webkit-linear-gradient(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%,#ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);color: transparent;-webkit-text-fill-color: transparent;-webkit-background-clip: text; background-size: 200% 100%;animation: masked-animation 4s infinite linear;}
-    #playerCnt{position:inherit}
+    #stats{position:fixed;top:5px;left:10px;font-size:10px;color:#fdfdfd;z-index:20719029;text-shadow:1px 1px 1px #000, 1px 1px 1px #000}
+    #dplayer{position:inherit}
 </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@latest/dist/DPlayer.min.css" /> 
-</head>
+ </head>
 <body style="background:#000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" oncontextmenu=window.event.returnValue=false>
 <div id="dplayer"></div>
 <div id="stats"></div>
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 <script src="https://cdn.jsdelivr.net/npm/dplayer@latest"></script>
 <script>
-    url = '<?php echo($_REQUEST['url']);?>';
+	var url = '<?php echo($_REQUEST['url']);?>';
+    var isWap = navigator.userAgent.match(/iPad|iPhone|iPod|Baidu|UCBrowser/i) != null; //百度浏览器和苹果移动端不使用P2P功能
+    if(!isWap){
+    var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
     var webdata = {
         set:function(key,val){
             window.sessionStorage.setItem(key,val);
@@ -46,18 +49,15 @@ PS：使用P2P功能后，请勿开启`播放加密`。
             window.sessionStorage.clear();
         }
     };
-    var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
-    var dp = new DPlayer({
-        autoplay: true,
+	var dp = new DPlayer({
         container: document.getElementById('dplayer'),
-        volume: 1.0,
-        preload: 'auto',
-        screenshot: true,
-        theme: '#28FF28',
+        autoplay: true,
+		hotkey: true,  // 移动端全屏时向右划动快进，向左划动快退。
         video: {
-            url: url,
+            url:url,
+			pic: '', // 可自定义播放前图片。
             type: 'customHls',
-			customType: {
+            customType: {
                 'customHls': function (video, player) {
                     const hls = new Hls({
                         debug: false,
@@ -81,19 +81,23 @@ PS：使用P2P功能后，请勿开启`播放加密`。
  
                 }
             }
-        },
+        }
     });
 	dp.seek(webdata.get('vod'+url));
     setInterval(function(){
         webdata.set('vod'+url,dp.video.currentTime);
     },1000);
 	dp.on('ended',function(){
-　　　　if(parent.MacPlayer.PlayLinkNext!=''){
-            top.location.href = parent.MacPlayer.PlayLinkNext;
+　　if(parent.MacPlayer.PlayLinkNext!=''){
+         top.location.href = parent.MacPlayer.PlayLinkNext;
         }
 　　});
+	}
+    else{
+    	document.getElementById('dplayer').innerHTML='<video src="'+url+'" controls="controls" preload="preload" poster="" width="100%" height="100%" autoplay="autoplay"></video>';
+    }
     function updateStats() {
-        var text = 'P2P正在为您加速' + (_totalP2PDownloaded/1024).toFixed(2)
+        var text = '七星P2P正在为您加速' + (_totalP2PDownloaded/1024).toFixed(2)
             + 'MB 已分享' + (_totalP2PUploaded/1024).toFixed(2) + 'MB' + ' 连接节点' + _peerNum + '个';
         document.getElementById('stats').innerText = text
     }
