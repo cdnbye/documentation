@@ -2,7 +2,7 @@
 ## 基础
 ### CDNBye的P2P服务安全吗？
 CDNBye采用的WebRTC data channel技术，是基于SCTP协议和TLS加密的，无需担心数据传输的
-安全问题。另外，与后台服务器的通信（包括tracker和信令服务器）是基于安全的HTTPS和WSS。
+安全问题。另外，与后台服务器的通信（包括tracker和信令服务器）是基于安全的HTTPS和WSS。隐私方面，CDNBye不会在服务器缓存任何视频内容相关的信息，视频地址也做了加密处理。
  
 ### 使用CDNBye的P2P服务需要付费吗？
 目前CDNBye已经开始商业化，但同时对小型流媒体网站仍提供免费服务。收费模式如下：
@@ -118,6 +118,20 @@ Hls.js, JWPlayer, Video.js, Clappr, Flowplayer和TCPlayer等。
 - 先锋浏览器
 <br>
 注：以上所列出均是安卓平台，目前iOS平台还未支持，不断完善中...
+
+### 某些移动端浏览器无法正常播放？
+目前已知安卓端浏览器不能播放的有:
+- UC浏览器
+- 百度APP内置浏览器
+<br><br>
+可以通过`UserAgent`识别出这些浏览器，然后让原生播放器来接管播放，实例代码如下：
+```javascript
+if (navigator.userAgent.match(/iPad|iPhone|iPod|Baidu|UCBrowser/i)) {
+    // 采用原生浏览器播放
+} else {
+    // 采用CDNBye播放
+}
+```
 
 ### iOS浏览器是否不支持P2P？
 由于iOS的浏览器内核不支持MSE(Media Source Extension)，因此所有iOS系统的手机均不支持P2P，这也是其他Web P2P方案共同的局限性，建议使用原生APP集成iOS端SDK来实现P2P。
