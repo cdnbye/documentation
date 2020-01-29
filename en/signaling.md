@@ -9,7 +9,7 @@ Deploy your own Signaling Service (Recommended)
  
 
 ## Use free Signaling Service
-- 'wss://signal.cdnbye.com' (Korea，default)
+- 'wss://signal.cdnbye.com' (China，default)
 - 'wss://opensignal.cdnbye.com'  (America)
 - 'wss://signalcloud.cdnbye.com'  (Germany)
 - 'wss://opensignal.gcvow.top' (China)

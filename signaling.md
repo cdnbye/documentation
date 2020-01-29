@@ -14,7 +14,7 @@
 
 
 ## 第三方免费信令服务
-- 'wss://signal.cdnbye.com' (韩国节点，默认)
+- 'wss://signal.cdnbye.com' (中国节点，默认)
 - 'wss://opensignal.cdnbye.com' （美国节点）
 - 'wss://signalcloud.cdnbye.com' （德国节点）
 - 'wss://opensignal.gcvow.top'  (中国节点，由猫云赞助)
