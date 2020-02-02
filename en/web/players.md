@@ -173,7 +173,7 @@ CDNBye can be integrated into any HTML5 video player with hls.js built in.
             type: 'customHls',
             customType: {
                 'customHls': function (video, player) {
-                    if (navigator.userAgent.match(/Baidu|UCBrowser/i)) {
+                    if (navigator.userAgent.match(/iPad|iPhone|iPod|Baidu|UCBrowser/i)) {
                         // 百度和UC浏览器目前不兼容P2P
                         video.addEventListener('loadedmetadata',function() {
                             video.play();
