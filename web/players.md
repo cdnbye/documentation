@@ -27,28 +27,34 @@
             type: 'customHls',
             customType: {
                 'customHls': function (video, player) {
-                    const hls = new Hls({
-                        debug: false,
-                        // Other hlsjsConfig options provided by hls.js
-                        p2pConfig: {
-                            logLevel: false,
-                            live: false,        // 如果是直播设为true
-                            // Other p2pConfig options provided by CDNBye
-                        }
-                    });
-                    hls.loadSource(video.src);
-                    hls.attachMedia(video);
-                    hls.p2pEngine.on('stats', function (stats) {
-                        _totalP2PDownloaded = stats.totalP2PDownloaded;
-                        _totalP2PUploaded = stats.totalP2PUploaded;
-                        updateStats();
-                    }).on('peerId', function (peerId) {
-                        _peerId = peerId;
-                    }).on('peers', function (peers) {
-                        _peerNum = peers.length;
-                        updateStats();
-                    });
-
+                    if (navigator.userAgent.match(/Baidu|UCBrowser/i)) {
+                        // 百度和UC浏览器目前不兼容P2P
+                        video.addEventListener('loadedmetadata',function() {
+                            video.play();
+                        });
+                    } else {
+                        const hls = new Hls({
+                            debug: false,
+                            // Other hlsjsConfig options provided by hls.js
+                            p2pConfig: {
+                                logLevel: false,
+                                live: false,        // 如果是直播设为true
+                                // Other p2pConfig options provided by CDNBye
+                            }
+                        });
+                        hls.loadSource(video.src);
+                        hls.attachMedia(video);
+                        hls.p2pEngine.on('stats', function (stats) {
+                            _totalP2PDownloaded = stats.totalP2PDownloaded;
+                            _totalP2PUploaded = stats.totalP2PUploaded;
+                            updateStats();
+                        }).on('peerId', function (peerId) {
+                            _peerId = peerId;
+                        }).on('peers', function (peers) {
+                            _peerNum = peers.length;
+                            updateStats();
+                        });
+                    }
                 }
             }
         }
