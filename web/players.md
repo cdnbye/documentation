@@ -19,12 +19,16 @@
 <script src="https://cdn.jsdelivr.net/npm/dplayer@1.25.0"></script>
 <script>
     var _peerId = '', _peerNum = 0, _totalP2PDownloaded = 0, _totalP2PUploaded = 0;
+    var type = 'customHls';
+    if(navigator.userAgent.match(/iPad|iPhone|iPod|Baidu|UCBrowser/i)) {
+        type = 'normal';
+    }
     const dp = new DPlayer({
         container: document.getElementById('dplayer'),
         autoplay: true,
         video: {
             url: 'https://example.m3u8',
-            type: 'customHls',
+            type: type,
             customType: {
                 'customHls': function (video, player) {
                     const hls = new Hls({
