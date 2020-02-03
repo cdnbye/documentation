@@ -173,35 +173,28 @@ CDNBye can be integrated into any HTML5 video player with hls.js built in.
             type: 'customHls',
             customType: {
                 'customHls': function (video, player) {
-                    if (navigator.userAgent.match(/iPad|iPhone|iPod|Baidu|UCBrowser/i)) {
-                        // 百度和UC浏览器目前不兼容P2P
-                        video.addEventListener('loadedmetadata',function() {
-                            video.play();
-                        });
-                    } else {
-                        const hls = new Hls({
-                            debug: false,
-                            // Other hlsjsConfig options provided by hls.js
-                            p2pConfig: {
-                                logLevel: 'debug',
-                                live: false,        // set to true in live mode
-                                wsSignalerAddr: 'wss://opensignal.cdnbye.com',
-                                // Other p2pConfig options provided by CDNBye
-                            }
-                        });
-                        hls.loadSource(video.src);
-                        hls.attachMedia(video);
-                        hls.p2pEngine.on('stats', function (stats) {
-                            _totalP2PDownloaded = stats.totalP2PDownloaded;
-                            _totalP2PUploaded = stats.totalP2PUploaded;
-                            updateStats();
-                        }).on('peerId', function (peerId) {
-                            _peerId = peerId;
-                        }).on('peers', function (peers) {
-                            _peerNum = peers.length;
-                            updateStats();
-                        });
-                    }
+                    const hls = new Hls({
+                        debug: false,
+                        // Other hlsjsConfig options provided by hls.js
+                        p2pConfig: {
+                            logLevel: 'debug',
+                            live: false,        // set to true in live mode
+                            wsSignalerAddr: 'wss://opensignal.cdnbye.com',
+                            // Other p2pConfig options provided by CDNBye
+                        }
+                    });
+                    hls.loadSource(video.src);
+                    hls.attachMedia(video);
+                    hls.p2pEngine.on('stats', function (stats) {
+                        _totalP2PDownloaded = stats.totalP2PDownloaded;
+                        _totalP2PUploaded = stats.totalP2PUploaded;
+                        updateStats();
+                    }).on('peerId', function (peerId) {
+                        _peerId = peerId;
+                    }).on('peers', function (peers) {
+                        _peerNum = peers.length;
+                        updateStats();
+                    });
                 }
             }
         }
