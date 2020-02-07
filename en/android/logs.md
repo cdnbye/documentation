@@ -34,7 +34,7 @@
 
 ### 0.7.1 23/9/2019
 - Remove dependency `org.nanohttpd:nanohttpd`
-- Fix known bug
+- Fix known bugs
 
 ### 0.8.0 21/10/2019
 - Fix play error in some players
@@ -42,7 +42,7 @@
 
 ### 0.9.0 8/11/2019
 - Use http range requests if possible
-- fix known bug
+- fix known bugs
 
 ### 0.10.0 19/11/2019
 - Remove DiskLRUCache dependency
@@ -50,7 +50,7 @@
 
 ### 0.11.0 4/12/2019
 - Report network type
-- fix known bug
+- fix known bugs
 
 ### 0.11.1 6/12/2019
 - fix bugs that may cause crash
@@ -61,3 +61,8 @@
 ### 1.0.0 7/1/2020
 - Release v1.0.0
 - Add new config field `memoryCacheCountLimit`
+
+### 1.2.4 7/2/2020
+- NAT type detect
+- Optimize parameters
+- fix known bugs
