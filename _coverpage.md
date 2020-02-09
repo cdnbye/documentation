@@ -2,7 +2,7 @@
 
 # `跨平台P2P流媒体加速引擎`
 
-> 跟高昂的CDN流量费Say Goodbye!
+> 疫情期间在线教育行业可免费使用CDNBye所有产品！
 
 [产品演示](https://demo.cdnbye.com/)
 [快速入门](/README.md)
