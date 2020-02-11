@@ -89,3 +89,7 @@
 ### 1.0.1 16/1/2020
 - Update hls.js to 0.13.1
 - Optimize parameters
+
+### 1.1.0 10/2/2020
+- Optimize parameters
+- Optimize security verification mechanism

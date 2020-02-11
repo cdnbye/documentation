@@ -88,3 +88,9 @@
 
 ### 0.12.0 4/1/2020
 - Improve stability
+
+### 1.0.0 12/2/2020
+- Release v1.0.0
+- NAT type detect
+- fix known bugs
+
