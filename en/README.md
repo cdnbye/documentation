@@ -7,6 +7,18 @@
 
 <img width="600" src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/p2p.jpg" alt="p2p">
 
+### Boost User Experience
+Being able to deliver high quality and stable video stream to the users is a must to maintain high service quality and drive user satisfaction. By utilizing CDNBye P2P MESH streaming solution, it does not rely on a single link from a client to your streaming server and therefore less prone to network disruption, which will lead to better user experience.
+
+### Save on CDN Expenses
+CDNBye uses MESH networking to deliver most of the video. Your CDN is only used when p2p network unavailable and to allow faster startup. You can save valuable money and resources.
+
+### Easy to Integrate
+CDNBye allows simple integration with a few lines of code. Switching to P2P-CDN streaming has never been easier. Your integration will be done in mere minutes. Compatible with all CDNs, agnostic to DRM and video codecs. No service side changes required.
+
+### ISP Friendly
+Peer-to-peer functionality has long been deemed non beneficial for Internet Service Providers as it puts strain on their network infrastructure. CDNBye actually reverses that by only interconnecting peers grouped up by ISP and regions, which allows ISPs that have OTT services to benefit from peer-to-peer in way never before possible.
+
 ### Console
 Bind your domain in `https://oms.cdnbye.com`, then you can view p2p-related information.
 
