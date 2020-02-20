@@ -83,6 +83,16 @@ NSURL *newParsedURL = [[CBP2pEngine sharedInstance] parseStreamURL:NEW_ORIGINAL_
 ```swift
 let newParsedURL = CBP2pEngine.sharedInstance().parse(streamURL: NEW_ORIGINAL_URL)
 ```
+
+### Switch Signal Address
+Sometimes you need to change signal address in runtime to avoid overload of signal server:
+```objectivec
+CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
+config.wsSignalerAddr = @"wss://yoursignal2.com";
+[CBP2pEngine sharedInstance].p2pConfig = config;
+```
+Please note that it will reset all fields of config in `P2pEngine`.
+
 ### Use Your Own STUN or TURN Server
 STUN (Session Traversal Utilities for NAT) allows clients to discover their public IP address and the type of NAT they are behind. This information is used to establish the media connection. Although there are default STUN servers in this SDK, you can replace them with your own via P2PConfig. TURN (Traversal Using Relays around NAT) server is used to relay traffic if direct connection fails. You can config your [TURN](https://github.com/coturn/coturn) server in the same way as STUN.
 ```objectivec

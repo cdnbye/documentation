@@ -80,6 +80,17 @@ NSURL *newParsedURL = [[CBP2pEngine sharedInstance] parseStreamURL:NEW_ORIGINAL_
 ```swift
 let newParsedURL = CBP2pEngine.sharedInstance().parse(streamURL: NEW_ORIGINAL_URL)
 ```
+
+### 切换信令
+某些场景下需要动态修改信令地址，防止单个信令负载过大，例如根据播放地址的哈希值选择信令。可以通过`CBP2pEngine`运行时动态调整配置，示例如下：
+```objectivec
+CBP2pConfig *config = [CBP2pConfig defaultConfiguration];
+config.wsSignalerAddr = @"wss://yoursignal2.com";
+[CBP2pEngine sharedInstance].p2pConfig = config;
+```
+需要注意的是这个方法会重置`CBP2pEngine`的所有config，因此之前已经修改的字段需要再设置一次以保持一致。
+
+
 ### 自行配置 STUN 和 TURN 服务器地址
 STUN用于p2p连接过程中获取公网IP地址，TURN则可以在p2p连接不通时用于中转数据。本SDK已内置公开的STUN服务，开发者可以通过P2pConfig来更换STUN地址。TURN服务器则需要开发者自行搭建，可以参考[coturn](https://github.com/coturn/coturn)。
 ```objectivec

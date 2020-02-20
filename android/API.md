@@ -8,7 +8,7 @@ P2pConfig config = new P2pConfig.Builder()
     .announce("https://tracker.cdnbye.com/v1")        // tracker服务器地址
     .wsSignalerAddr("wss://signal.cdnbye.com")        // 信令服务器地址
     .downloadTimeout(10_000, TimeUnit.MILLISECONDS)   // HTTP下载ts文件超时时间
-    .dcDownloadTimeout(6_000, TimeUnit.MILLISECONDS)  // datachannel下载二进制数据的最大超时时间
+    .dcDownloadTimeout(8_000, TimeUnit.MILLISECONDS)  // datachannel下载二进制数据的最大超时时间
     .localPort(52019)                                 // 本地代理服务器的端口号
     .diskCacheLimit(1024*1024*1024)                   // 点播模式下P2P在磁盘缓存的最大数据量(设为0可以禁用磁盘缓存)
     .memoryCacheCountLimit(30)                        // P2P在内存缓存的最大数据量，用ts文件个数表示
@@ -87,6 +87,17 @@ PS：下载和上传数据量的单位是KB。
 ```java
 String newParsedURL = P2pEngine.getInstance().parseStreamUrl(url);
 ```
+
+### 切换信令
+某些场景下需要动态修改信令地址，防止单个信令负载过大，例如根据播放地址的哈希值选择信令。可以通过调用`engine.setConfig(config)`运行时动态调整配置，示例如下：
+```java
+P2pConfig config = new P2pConfig.Builder()
+        .wsSignalerAddr("wss://yoursignal2.com")
+        .build();
+P2pEngine.getInstance().setConfig(config);
+```
+需要注意的是这个方法会重置`P2pEngine`的所有config，因此之前已经修改的字段需要再设置一次以保持一致。
+
 ### 自行配置 STUN 和 TURN 服务器地址
 STUN用于p2p连接过程中获取公网IP地址，TURN则可以在p2p连接不通时用于中转数据。本SDK已内置公开的STUN服务，开发者可以通过P2pConfig来更换STUN地址。TURN服务器则需要开发者自行搭建，可以参考[coturn](https://github.com/coturn/coturn)。
 ```java
