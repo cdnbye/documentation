@@ -30,6 +30,7 @@ CDNBye基于WebRTC技术进行P2P传输，主流浏览器默认支持WebRTC，�
         <td ><center> <a target="_blank" href="https://sj.qq.com/myapp/detail.htm?apkName=com.hnr.dxxw"><img src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/dxxw.png" width="120"></a></center></td>
         <td ><center> <a target="_blank" href="https://www.maoyuncloud.com/"><img src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/maocloud.png" width="120"></a></center></td>
         <td ><center> <a target="_blank" href="http://www.sportnews.to/"><img src="http://www.sportnews.to/wp-content/uploads/2019/08/logo-small.png" width="120"></a></center></td>
+        <td ><center> <a target="_blank" href="https://www.25pp.com/android/detail_1228955/"><img src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/fuyin.png" width="120"></a></center></td>
     </tr>
 </table>
 
