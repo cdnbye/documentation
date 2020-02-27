@@ -18,6 +18,7 @@ P2pConfig config = new P2pConfig.Builder()
     .maxPeerConnections(20)                           // 最大连接节点数量
     .useHttpRange(true)                               // 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据
     .isSetTopBox(false)                               // 是否机顶盒设备，如果在机顶盒运行设为true，提高兼容性
+    .setUserAgent(null)                               // 设置请求ts时候的User-Agent
     .build();  
 P2pEngine.initEngine(getApplicationContext(), token, config);
 ```

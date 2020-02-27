@@ -164,6 +164,7 @@ If http range request is activated, we are able to get chunks of data from peer 
 p2pConfig: {
     useHttpRange: true,
 }
+```
 
 ### How to Check Segment Validity
 Sometimes we need to prevent a peer from sending a fake segment

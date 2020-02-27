@@ -49,22 +49,24 @@ Please add the following code in proguard-rules.pro:
 ```
 
 ## Import SDK
+<!--
 ### Import by Gradle
 ```
 dependencies {
   implementation 'com.cdnbye:sdk:latest.release'
 }
 ```
-<!--
 ### Import Manually
+-->
+
 #### Download SDK
-Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-0.8.0.jar)，then copy it to `app/libs`. 
+Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-iptv-1.3.0.jar) for IPTV，then copy it to `app/libs`. 
 
 #### Modify build.gradle
 Add new dependencies to your application's build.gradle `app/build.gradle` as shown below:
 ```
 dependencies {
-    implementation 'org.webrtc:google-webrtc:1.0.28513'
+    implementation 'org.webrtc:google-webrtc:1.0.30039'
     implementation 'com.alibaba:fastjson:1.2.58'
     implementation 'org.java-websocket:Java-WebSocket:1.4.0'
     implementation 'com.orhanobut:logger:2.2.0'
@@ -72,7 +74,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
 ```
--->
+
 ## Quick Start
 It is recommended to initialize `P2pEngine` in `Application.OnCreate()`.
 ### Import P2pEngine

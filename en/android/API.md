@@ -18,6 +18,7 @@ P2pConfig config = new P2pConfig.Builder()
     .maxPeerConnections(20)                           // Max peer connections at the same time
     .useHttpRange(true)                               // Use HTTP ranges requests where it is possible. Allows to continue (and not start over) aborted P2P downloads over HTTP.
     .isSetTopBox(false)                               // If run on set-top box, please set it true for compatibility purpose.
+    .setUserAgent(null)                               // Set User-Agent to http header while requesting ts. 
     .build();  
 P2pEngine.initEngine(getApplicationContext(), token, config);
 ```
