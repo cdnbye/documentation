@@ -66,6 +66,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return true
 }
 ```
+其中 YOUR_TOKEN 是用于标识用户的字符串，请换成自己的token，点击[这里](/bindings?id=绑定-app-id-并获取token)查看如何注册`Appid`并获取`token`。
+
 #### 转换地址
 在代码中实例化AVPlayer之后（也可以是其他任何视频播放器），先将URL传给CBP2pEngine，之后将转化的本地URL传给播放器：
 ```objectivec

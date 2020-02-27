@@ -92,7 +92,7 @@ public class MyApplication extends android.app.Application {
     }
 }
 ```
-Where `token` is your Customer ID. You can set it to "free" when debugging. Please replace it by your own token obtained from console before release. 
+Where YOUR_TOKEN is your Customer ID. Please replace it by your own token obtained from console, click [here](/en/bindings?id=app-id-and-token) for more information. 
 
 ### Playback Address
 When initializing a media player (or any other video player, [ExoPlayer](https://github.com/google/ExoPlayer) is highly recommended) instance, before passing it a URL, pass that URL through CDNBye P2P Engine.

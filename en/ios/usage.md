@@ -68,6 +68,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return true
 }
 ```
+Where YOUR_TOKEN is your Customer ID. Please replace it by your own token obtained from console, click [here](/en/bindings?id=app-id-and-token) for more information.
 
 #### Usage
 When initializing an AVPlayer (or any other video player) instance, before passing it a URL, pass that URL through CDNBye P2P Engine:

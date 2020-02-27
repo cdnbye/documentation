@@ -1,7 +1,6 @@
 
 ## 环境配置
 ### 开发环境
-
 - Android Studio 开发工具，[下载地址](http://developer.android.com/intl/zh-cn/sdk/index.html)
 
 ### 开启Java8支持
@@ -91,8 +90,7 @@ public class MyApplication extends android.app.Application {
     }
 }
 ```
-其中token是用于标识用户的字符串，在调试阶段将token设为"free"即可。在上线前请替换成从控制台获取的token。
-<br>注意：如果要在调试期间在控制台查看效果，请换成自己的token。
+其中 YOUR_TOKEN 是用于标识用户的字符串，请换成自己的token，点击[这里](/bindings?id=绑定-app-id-并获取token)查看如何注册`Appid`并获取`token`。
 
 ### 获取播放地址
 使用加速功能，必须通过SDK把地址转换成加速地址，再把转换后的地址传给播放器即可（建议使用[ExoPlayer](https://github.com/google/ExoPlayer)）。
