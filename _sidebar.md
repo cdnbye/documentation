@@ -19,8 +19,9 @@
     - [使用方法](/ios/usage.md)
     - [API文档](/ios/API.md)
     - [更新日志](/ios/logs.md)
-- 跨平台<sup style="color:red;">新!</sup>
+- 其它<sup style="color:red;">新!</sup>
     - [Flutter](/flutter.md)
+    - [dash.js](/dashjs.md)
 - [信令服务](signaling.md)
 - [P2P优化](m3u8.md)
 - 控制台
