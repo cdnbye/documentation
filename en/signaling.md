@@ -13,6 +13,7 @@ Deploy your own Signaling Service (Recommended)
 - 'wss://opensignal.cdnbye.com'  (America)
 - 'wss://signalcloud.cdnbye.com'  (Germany)
 - 'wss://opensignal.gcvow.top' (China)
+- 'wss://sigyy.dianzhenkeji.com' (China)
 
 ## Example
 

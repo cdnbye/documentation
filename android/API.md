@@ -8,7 +8,7 @@ P2pConfig config = new P2pConfig.Builder()
     .announce("https://tracker.cdnbye.com/v1")        // tracker服务器地址
     .wsSignalerAddr("wss://signal.cdnbye.com")        // 信令服务器地址
     .downloadTimeout(10_000, TimeUnit.MILLISECONDS)   // HTTP下载ts文件超时时间
-    .dcDownloadTimeout(8_000, TimeUnit.MILLISECONDS)  // datachannel下载二进制数据的最大超时时间
+    .dcDownloadTimeout(6_000, TimeUnit.MILLISECONDS)  // datachannel下载二进制数据的最大超时时间
     .localPort(52019)                                 // 本地代理服务器的端口号
     .diskCacheLimit(1024*1024*1024)                   // 点播模式下P2P在磁盘缓存的最大数据量(设为0可以禁用磁盘缓存)
     .memoryCacheCountLimit(30)                        // P2P在内存缓存的最大数据量，用ts文件个数表示

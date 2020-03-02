@@ -25,6 +25,7 @@ The default fields (shown below) can be overridden.
 | `tag` | NSString | @"unknown" | User defined tag which is presented in console.
 | `maxPeerConnections` | NSUInteger | 20 | Max peer connections at the same time.
 | `useHttpRange` | BOOL | YES | Use HTTP ranges requests where it is possible. Allows to continue (and not start over) aborted P2P downloads over HTTP.
+| `userAgent` | NSString | nil | Set User-Agent to http header while requesting ts.
 
 ## P2P Engine
 Initialize `CBP2pEngine` in `AppDelegate.m`:

@@ -24,6 +24,7 @@ let config = CBP2pConfig.defaultConfiguration()
 | `tag` | NSString | @"unknown" | 用户自定义的标签，可以在控制台查看分布图。
 | `maxPeerConnections` | NSUInteger | 20 | 最大连接节点数量。
 | `useHttpRange` | BOOL | YES | 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据。
+| `userAgent` | NSString | nil | 设置请求ts时候的User-Agent
 
 ## P2P Engine
 初始化化`CBP2pEngine`：

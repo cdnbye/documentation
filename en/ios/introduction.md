@@ -21,7 +21,7 @@ CDNBye iOS P2P Engine scales live/vod video streaming by peer-to-peer network us
 
 ### Requirements
 This library requires iOS 9.0+.
-<br>NOTICE: This framework doesn’t support bitcode currently.
+<br>NOTICE: This framework doesn’t support bitcode currently. Replace `GoogleWebRTC` with `GoogleWebRTC-Bitcode` in pod if enable bitcode.
 
 ### Get Token
 See [here](/en/bindings.md?id=app-id-and-token)
