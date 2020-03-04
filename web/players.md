@@ -2,6 +2,47 @@
 ### 简介
 本插件是以hls.js作为播放内核的，所以可以集成到内置hls.js的任何H5视频播放器中！以下为部分播放器集成示例，当然您也可以尝试集成到其他播放器中。
 
+## CBPlayer
+[CBPlayer介绍](https://github.com/cdnbye/CBPlayer)
+<br>本示例为php版本，可以直接调用，调用方式：http://example.com?url=
+```php
+<html>
+<head>
+    <title>dplayer增加记忆+P2P播放</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cbplayer@latest/dist/CBPlayer.min.css" />
+    <style type="text/css">
+        body,html{width:100%;height:100%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}
+        *{margin:0;border:0;padding:0;text-decoration:none}
+        #video{position:inherit}
+    </style>
+</head>
+<body style="background:#000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" oncontextmenu=window.event.returnValue=false>
+<div id="video"></div>
+<script src="https://cdn.jsdelivr.net/npm/cbplayer@latest"></script>
+<script>
+    var url = '<?php echo($_REQUEST['url']);?>';
+    var dp = new CBPlayer({
+        container: document.getElementById('video'),
+        autoplay: true,
+        hotkey: true,  // 移动端全屏时向右划动快进，向左划动快退。
+        video: {
+            url:url,
+            // pic: 'loading_wap.gif',
+        },
+    });
+    dp.on('fullscreen', function () {
+        if (/Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            screen.orientation.lock('landscape');
+        }
+    });
+</script>
+</body>
+</html>
+```
+
 ## DPlayer
 [DPlayer介绍](https://github.com/MoePlayer/DPlayer)
 ```html
@@ -100,6 +141,191 @@
         }
     };
     var player = new ckplayer(videoObject);
+</script>
+</body>
+</html>
+```
+
+## TCPlayer  
+[TCPlayer介绍](https://cloud.tencent.com/document/product/881/20207)(腾讯云播放器)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+    <title>CDNBye TCPlayer Demo</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-tap-highlight" content="no">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="video-container" style="margin: 0px auto;">
+</div>
+<p id="version"></p>
+<h3>download info:</h3>
+<p id="info"></p>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.3.js"></script>
+<script>
+    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
+    var options = {
+        m3u8: 'https://example.m3u8' ,
+        autoplay: true,
+        live: false,
+        width: '480',
+        height: '320',
+        hlsConfig: {
+            debug: false,
+            // Other hlsjsConfig options provided by hls.js
+            p2pConfig: {
+                logLevel: false,
+                live: false,        // 如果是直播设为true
+                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                    var total = totalHTTPDownloaded + totalP2PDownloaded;
+                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                },
+                // Other p2pConfig options provided by CDNBye
+            }
+        }
+    };
+    var player = new TcPlayer('video-container', options);
+    window.qcplayer = player;
+</script>
+</body>
+</html>
+```
+
+## Chimee
+[Chimee介绍](http://chimee.org/)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CDNBye Chimee Demo</title>
+    <!-- Chimee Builds -->
+    <script src="//cdn.jsdelivr.net/npm/chimee@0.11.0/lib/index.browser.min.js"></script>
+    <!-- CDNBye P2PEngine -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <!-- Chimee HLS Kernel -->
+    <script src="//cdn.jsdelivr.net/npm/p2p-chimee-kernel-hls@latest"></script>
+</head>
+<body>
+<div id="player"></div>
+<h3>download info:</h3>
+<p id="info"></p>
+<script>
+    new Chimee({
+        wrapper: '#player',  // video dom容器
+        src: 'https://example.m3u8',
+        controls: true,
+        kernels: {
+            hls: {
+                handler: window.ChimeeKernelHls,
+                p2pConfig: {
+                    logLevel: false,
+                    live: false,        // 如果是直播设为true
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                    },
+                    // Other p2pConfig options provided by CDNBye
+                }
+            }
+        },
+    });
+</script>
+</body>
+</html>
+```
+
+## XGPlayer
+[XGPlayer介绍](http://h5player.bytedance.com/)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="referrer" content="no-referrer">
+    <title>CDNBye XGPlayer Demo</title>
+    <style type="text/css">
+        html, body {width:100%;height:100%;margin:auto;overflow: hidden;}
+        body {display:flex;}
+        #mse {flex:auto;}
+    </style>
+    <script type="text/javascript">
+        window.addEventListener('resize',function(){document.getElementById('mse').style.height=window.innerHeight+'px';});
+    </script>
+</head>
+<body>
+<div id="mse"></div>
+<script src="//cdn.jsdelivr.net/npm/xgplayer@1.1.4-beta.3/browser/index.js" charset="utf-8"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script src="//cdn.jsdelivr.net/npm/p2p-xgplayer-hlsjs@latest"></script>
+<script type="text/javascript">
+    new window.HlsJsPlayer({
+        id: 'mse',
+        url: '//video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8',
+        autoplay: true,
+        playsinline: true,
+        height: window.innerHeight,
+        width: window.innerWidth,
+        useHls: true,
+        hlsOpts: {
+            debug: false,
+            // Other hlsjsConfig options provided by hls.js
+            p2pConfig: {
+                logLevel: false,
+                live: false,        // 如果是直播设为true
+                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                    console.log(`totalP2PDownloaded ${totalP2PDownloaded} totalP2PUploaded ${totalP2PUploaded} totalHTTPDownloaded ${totalHTTPDownloaded}`)
+                },
+                // Other p2pConfig options provided by CDNBye
+            }
+        }
+    });
+</script>
+</body>
+</html>
+```
+
+## CHPlayer
+[CHPlayer介绍](http://www.chplayer.com/)
+<br>参考 [P2P-CHPlayer](https://github.com/cdnbye/P2P-CHPlayer)
+```html
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p2p-chplayer@latest/chplayer/chplayer.min.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    var videoObject = {
+        container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
+        variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+        autoplay: true,
+        html5m3u8: true,
+        video: 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8',//视频地址
+        hlsjsConfig: {   // hlsjs和CDNBye的配置参数
+            debug: false,
+            // Other hlsjsConfig options provided by hls.js
+            p2pConfig: {
+                logLevel: false,
+                live: false,
+                // Other p2pConfig options provided by CDNBye
+                // https://github.com/cdnbye/hlsjs-p2p-engine/blob/master/docs/%E4%B8%AD%E6%96%87/API.md
+            }
+        }
+    };
+    var player = new chplayer(videoObject);
 </script>
 </body>
 </html>
@@ -355,159 +581,6 @@
 </html>
 ```
 
-## TCPlayer  
-[TCPlayer介绍](https://cloud.tencent.com/document/product/881/20207)(腾讯云播放器)
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
-    <title>CDNBye TCPlayer Demo</title>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="msapplication-tap-highlight" content="no">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-</head>
-<body>
-<div id="video-container" style="margin: 0px auto;">
-</div>
-<p id="version"></p>
-<h3>download info:</h3>
-<p id="info"></p>
-<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-<script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.3.js"></script>
-<script>
-    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
-    var options = {
-        m3u8: 'https://example.m3u8' ,
-        autoplay: true,
-        live: false,
-        width: '480',
-        height: '320',
-        hlsConfig: {
-            debug: false,
-            // Other hlsjsConfig options provided by hls.js
-            p2pConfig: {
-                logLevel: false,
-                live: false,        // 如果是直播设为true
-                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
-                    var total = totalHTTPDownloaded + totalP2PDownloaded;
-                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
-                },
-                // Other p2pConfig options provided by CDNBye
-            }
-        }
-    };
-    var player = new TcPlayer('video-container', options);
-    window.qcplayer = player;
-</script>
-</body>
-</html>
-```
-
-## Chimee
-[Chimee介绍](http://chimee.org/)
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>CDNBye Chimee Demo</title>
-    <!-- Chimee Builds -->
-    <script src="//cdn.jsdelivr.net/npm/chimee@0.11.0/lib/index.browser.min.js"></script>
-    <!-- CDNBye P2PEngine -->
-    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
-    <!-- Chimee HLS Kernel -->
-    <script src="//cdn.jsdelivr.net/npm/p2p-chimee-kernel-hls@latest"></script>
-</head>
-<body>
-<div id="player"></div>
-<h3>download info:</h3>
-<p id="info"></p>
-<script>
-    new Chimee({
-        wrapper: '#player',  // video dom容器
-        src: 'https://example.m3u8',
-        controls: true,
-        kernels: {
-            hls: {
-                handler: window.ChimeeKernelHls,
-                p2pConfig: {
-                    logLevel: false,
-                    live: false,        // 如果是直播设为true
-                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
-                        var total = totalHTTPDownloaded + totalP2PDownloaded;
-                        document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
-                    },
-                    // Other p2pConfig options provided by CDNBye
-                }
-            }
-        },
-    });
-</script>
-</body>
-</html>
-```
-
-## XGPlayer
-[XGPlayer介绍](http://h5player.bytedance.com/)
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
-    <meta name="referrer" content="no-referrer">
-    <title>CDNBye XGPlayer Demo</title>
-    <style type="text/css">
-        html, body {width:100%;height:100%;margin:auto;overflow: hidden;}
-        body {display:flex;}
-        #mse {flex:auto;}
-    </style>
-    <script type="text/javascript">
-        window.addEventListener('resize',function(){document.getElementById('mse').style.height=window.innerHeight+'px';});
-    </script>
-</head>
-<body>
-<div id="mse"></div>
-<script src="//cdn.jsdelivr.net/npm/xgplayer@1.1.4-beta.3/browser/index.js" charset="utf-8"></script>
-<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
-<script src="//cdn.jsdelivr.net/npm/p2p-xgplayer-hlsjs@latest"></script>
-<script type="text/javascript">
-    new window.HlsJsPlayer({
-        id: 'mse',
-        url: '//video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8',
-        autoplay: true,
-        playsinline: true,
-        height: window.innerHeight,
-        width: window.innerWidth,
-        useHls: true,
-        hlsOpts: {
-            debug: false,
-            // Other hlsjsConfig options provided by hls.js
-            p2pConfig: {
-                logLevel: false,
-                live: false,        // 如果是直播设为true
-                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
-                    console.log(`totalP2PDownloaded ${totalP2PDownloaded} totalP2PUploaded ${totalP2PUploaded} totalHTTPDownloaded ${totalHTTPDownloaded}`)
-                },
-                // Other p2pConfig options provided by CDNBye
-            }
-        }
-    });
-</script>
-</body>
-</html>
-```
-
 ## fluidplayer
 [fluidplayer介绍](https://www.fluidplayer.com/)
 ```html
@@ -667,36 +740,4 @@
         }
     });
 </script>
-```
-
-## CHPlayer
-[CHPlayer介绍](http://www.chplayer.com/)
-<br>参考 [P2P-CHPlayer](https://github.com/cdnbye/P2P-CHPlayer)
-```html
-<!DOCTYPE html>
-<html>
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p2p-chplayer@latest/chplayer/chplayer.min.js" charset="UTF-8"></script>
-<script type="text/javascript">
-    var videoObject = {
-        container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
-        variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
-        autoplay: true,
-        html5m3u8: true,
-        video: 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8',//视频地址
-        hlsjsConfig: {   // hlsjs和CDNBye的配置参数
-            debug: false,
-            // Other hlsjsConfig options provided by hls.js
-            p2pConfig: {
-                logLevel: false,
-                live: false,
-                // Other p2pConfig options provided by CDNBye
-                // https://github.com/cdnbye/hlsjs-p2p-engine/blob/master/docs/%E4%B8%AD%E6%96%87/API.md
-            }
-        }
-    };
-    var player = new chplayer(videoObject);
-</script>
-</body>
-</html>
 ```

@@ -1,7 +1,7 @@
 
 ## 快速集成步骤
 - 访问[CDNBye后台系统OMS](https://oms.cdnbye.com)，按提示绑定域名
-- 选择一个网站目前在用的[播放器](/web/players.md)（例如DPlayer）
+- 选择一个网站目前在用的[播放器](/web/players.md)（例如DPlayer），或者直接使用官方提供的[php版代码](/web/players?id=cbplayer)
 - 将播放器部分代码替换成demo的代码，修改播放地址，p2p插件也可以[本地化](https://cdnbye.oss-cn-beijing.aliyuncs.com/web_sdk/dist.zip)
 - 调试通过后部署到服务器
 - 访问[CDNBye后台系统OMS](https://oms.cdnbye.com)，即可查看P2P效果
