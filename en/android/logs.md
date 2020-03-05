@@ -66,3 +66,7 @@
 - NAT type detect
 - Optimize parameters
 - fix known bugs
+
+### 1.3.6 5/3/2020
+- Optimization for live mode
+- fix known bugs

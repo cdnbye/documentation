@@ -60,7 +60,7 @@ dependencies {
 -->
 
 #### Download SDK
-Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-iptv-1.3.0.jar) for IPTV，then copy it to `app/libs`. 
+Download the latest version [SDK](https://cdnbye.oss-cn-beijing.aliyuncs.com/android_sdk/cdnbye-iptv-1.3.6.jar) for IPTV，then copy it to `app/libs`. 
 
 #### Modify build.gradle
 Add new dependencies to your application's build.gradle `app/build.gradle` as shown below:
