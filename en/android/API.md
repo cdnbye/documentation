@@ -78,6 +78,10 @@ engine.addP2pStatisticsListener(new P2pStatisticsListener() {
             @Override
             public void onPeers(List<String> peers) {
             }
+            
+            @Override
+            public void onServerConnected(boolean connected) {
+            }
         });
 ```
 PS: The unit of download and upload is KB.

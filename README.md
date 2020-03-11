@@ -28,9 +28,9 @@ CDNBye基于WebRTC技术进行P2P传输，主流浏览器默认支持WebRTC，�
     <tr>
         <td ><center> <a target="_blank" href="https://egame.qq.com/?hls=1&p2p=1&_debug=1"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531253035445&di=7af6cc9ad4abe3d06ba376af22d85131&imgtype=0&src=http%3A%2F%2Fimg.kuai8.com%2Fattaches%2Fintro%2F1213%2F201612131436417407.png" width="120"></a></center></td>
         <td ><center> <a target="_blank" href="https://sj.qq.com/myapp/detail.htm?apkName=com.hnr.dxxw"><img src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/dxxw.png" width="120"></a></center></td>
+        <td ><center> <a target="_blank" href="https://www.25pp.com/android/detail_1228955/"><img src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/fuyin.png" width="120"></a></center></td>
         <td ><center> <a target="_blank" href="https://www.maoyuncloud.com/"><img src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/maocloud.png" width="120"></a></center></td>
         <td ><center> <a target="_blank" href="http://www.sportnews.to/"><img src="http://www.sportnews.to/wp-content/uploads/2019/08/logo-small.png" width="120"></a></center></td>
-        <td ><center> <a target="_blank" href="https://www.25pp.com/android/detail_1228955/"><img src="https://cdnbye.oss-cn-beijing.aliyuncs.com/pic/fuyin.png" width="120"></a></center></td>
     </tr>
 </table>
 

@@ -121,7 +121,6 @@ Hls.js, JWPlayer, Video.js, Clappr, Flowplayer和TCPlayer等。
 
 ### 某些移动端浏览器无法正常播放？
 目前已知安卓端浏览器不能播放的有:
-- UC浏览器
 - 百度APP内置浏览器
 <br><br>
 可以通过`UserAgent`识别出这些浏览器，然后让原生播放器来接管播放，实例代码如下：
@@ -182,7 +181,7 @@ if (navigator.userAgent.match(/iPad|iPhone|iPod|Baidu|UCBrowser/i)) {
     - 然后将日志信息保存到文件并发送给CDNBye技术人员
 
 ### 解决Exoplayer无法播放问题
-Exoplayer默认[不支持重定向](https://github.com/google/ExoPlayer/issues/1190)，因此需要在初始化时设置`allowCrossProtocolRedirects=true`，如以下示例：
+Exoplayer默认[不支持跨协议重定向](https://github.com/google/ExoPlayer/issues/1190)，因此需要在初始化时设置`allowCrossProtocolRedirects=true`，如以下示例：
 ```java
 DataSource.Factory dataSourceFactory =
     new DefaultHttpDataSourceFactory(

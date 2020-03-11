@@ -59,7 +59,7 @@ let parsedUrl = CBP2pEngine.sharedInstance().parse(streamURL: ORIGINAL_URL)
 ```swift
 NotificationCenter.default.addObserver(self, selector: #selector(didReceiveMsg), name: NSNotification.Name(rawValue: kP2pEngineDidReceiveStatistics), object: nil)
 ```
-在回调的字典中获取p2pDownloaded、p2pUploaded、httpDownloaded、peers等：
+在回调的字典中获取`p2pDownloaded`、`p2pUploaded`、`httpDownloaded`、`peers`、`serverConnected`等：
 ```objectivec
 - (void)didReceiveMsg:(NSNotification *)note {
     NSDictionary *dict = (NSDictionary *)note.object;

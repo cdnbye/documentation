@@ -78,6 +78,10 @@ engine.addP2pStatisticsListener(new P2pStatisticsListener() {
             @Override
             public void onPeers(List<String> peers) {
             }
+            
+            @Override
+            public void onServerConnected(boolean connected) {
+            }
         });
 ```
 PS：下载和上传数据量的单位是KB。

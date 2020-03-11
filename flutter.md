@@ -15,8 +15,8 @@
 - 通过有效的调度策略来保证用户的播放体验以及p2p分享率
 - Tracker服务器根据访问IP的ISP、地域等进行智能调度
 
-## Demo下载
-[https://fir.im/cdnbye](https://fir.im/cdnbye)
+## 演示Demo
+[http://d.6short.com/cdnbye](http://d.6short.com/cdnbye)
 
 ### 引入插件
 在项目的 `pubspec.yaml` 中添加依赖：
