@@ -93,3 +93,7 @@
 ### 1.1.0 10/2/2020
 - Optimize parameters
 - Optimize security verification mechanism
+
+### 1.2.0 19/3/2020
+- Optimize P2P algorithm
+- Fix known bug
