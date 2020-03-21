@@ -70,3 +70,7 @@
 ### 1.3.6 5/3/2020
 - Optimization for live mode
 - fix known bugs
+
+### 1.4.2 22/3/2020
+- Optimize P2P algorithm
+- Fix known bug
