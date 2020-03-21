@@ -41,10 +41,13 @@ Requirement: Kitkat 4.4(API level >= 19), please set `minSdkVersion` to `19`.
 Add relevant uses permissions in `app/src/main/AndroidManifest.xml`:
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 ```
 Starting with Android 9 (API level 28), cleartext support is disabled by default. There are 2 solutions:
 <br>
