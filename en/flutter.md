@@ -18,7 +18,7 @@
 Add this to your package's pubspec.yaml file:
 ```
 dependencies:
-  cdnbye: ^0.4.1
+  cdnbye: ^0.6.0
 ```
 
 ### iOS
