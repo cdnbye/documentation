@@ -13,6 +13,11 @@
     - [Usage](/en/android/usage.md)
     - [API & Config](/en/android/API.md)
     - [Change Log](/en/android/logs.md)
+- iOS
+    - [Introduction](/en/ios/introduction.md)
+    - [Usage](/en/ios/usage.md)
+    - [API & Config](/en/ios/API.md)
+    - [Change Log](/en/ios/logs.md)
 - Others<sup style="color:red;">new!</sup>
     - [Flutter](/en/flutter.md)
     - [dash.js](/en/dashjs.md)
