@@ -2,7 +2,7 @@
 
 # `Cross-platform P2P Streaming Engine`
 
-> Save Your Bandwidth using WebRTC. 
+> Boost Your Stream using WebRTC. 
 
 [Online Demo](https://demo.cdnbye.com/)
 [Getting Started](/en/README.md)

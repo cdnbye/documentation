@@ -94,3 +94,8 @@
 - NAT type detect
 - fix known bugs
 
+### 1.3.0 26/3/2020
+- Fix the bug that cause stalled in main thread
+- Optimize p2p scheduling algorithm
+- Fix other known bugs
+
