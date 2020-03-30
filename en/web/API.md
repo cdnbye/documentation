@@ -120,7 +120,7 @@ p2pConfig: {
 
 ### Dynamic m3u8 path issue
 Some m3u8 urls play the same live/vod but have different paths on them. For example, 
-example.com/clientId1/file.m3u8 and example.com/clientId2/file.m3u8. In this case, you can format a common channelId for them. `It is strongly recommended to add a unique identifier to the channelid to prevent conflicts with other channels.`
+example.com/clientId1/file.m3u8 and example.com/clientId2/file.m3u8. In this case, you can format a common channelId for them. `It is strongly recommended to add a unique identifier to the channelid to prevent conflicts with other channels. If there's a collision, our backend is going to match peers that aren't watching the same content together, and that can lead to unpredictable results.`
 ```javascript
 p2pConfig: {
     channelId: function (m3u8Url) {

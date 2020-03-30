@@ -113,4 +113,4 @@ Some m3u8 urls play the same live/vod but have different paths on them. For exam
     return formatedUrl;
 };
 ```
-`It is strongly recommended to add a unique identifier to the channelid to prevent conflicts with other channels.`
+`It is strongly recommended to add a unique identifier to the channelid to prevent conflicts with other channels. If there's a collision, our backend is going to match peers that aren't watching the same content together, and that can lead to unpredictable results.`

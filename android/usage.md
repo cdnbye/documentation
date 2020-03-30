@@ -110,3 +110,6 @@ private void onPlay(){
 
 #### 解决Exoplayer无法播放问题
 请参考[常见问题](/FAQ?id=解决exoplayer无法播放问题)
+
+#### 如何减小APK体积
+请参考[常见问题](/FAQ?id=如何减小APK体积)

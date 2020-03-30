@@ -77,3 +77,33 @@ DataSource.Factory dataSourceFactory =
     );
 ```
 For details, please see official [demo](https://github.com/cdnbye/android-p2p-engine).
+
+### How to reduce your APK size?
+CDNBye's core library weighs less than 300KB alone, but it uses some large dependencies such as the WebRTC C++ library, which is compiled for different architectures.
+The solution we recommend is to [split the builds per CPU architecture](https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split).
+```javascript
+    android {
+      ...
+      splits {
+
+        // Configures multiple APKs based on ABI.
+        abi {
+
+          // Enables building multiple APKs per ABI.
+          enable true
+
+          // By default all ABIs are included, so use reset() and include to specify that we only
+          // want APKs for x86 and x86_64.
+
+          // Resets the list of ABIs that Gradle should create APKs for to none.
+          reset()
+
+          // Specifies a list of ABIs that Gradle should create APKs for.
+          include "x86", "x86_64"
+
+          // Specifies that we do not want to also generate a universal APK that includes all ABIs.
+          universalApk false
+        }
+      }
+    }
+```

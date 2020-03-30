@@ -202,3 +202,31 @@ DataSource.Factory dataSourceFactory =
   ...
     />
 ```
+
+### 如何减小APK体积
+由于依赖了第三方库WebRTC，使APK体积增大了不少。如果对APK体积比较敏感，建议[针对不同CPU架构生成对应的APK](https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split)：
+```javascript
+android {
+  ...
+  splits {
+
+    // 根据ABI配置生成多APK
+    abi {
+
+      // 是否根据不同ABI生成APK
+      enable true
+
+      // 默认情况下所有ABI都包含了，因此需要调用reset()并且指定我们需要的CPU架构，如x86和x86_64
+
+      // 重置Gradle生成APK的ABI列表
+      reset()
+
+      // 指定CPU架构来生成我们需要的APK
+      include "x86", "x86_64"
+
+      // 设置不再生成一个包含所有ABI的APK
+      universalApk false
+    }
+  }
+}
+```
