@@ -204,7 +204,22 @@ DataSource.Factory dataSourceFactory =
 ```
 
 ### 如何减小APK体积
-由于依赖了第三方库WebRTC，使APK体积增大了不少。如果对APK体积比较敏感，建议[针对不同CPU架构生成对应的APK](https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split)：
+由于依赖了第三方库WebRTC，使APK体积增大了不少。如果对APK体积比较敏感，可以通过以下2种方案压缩体积：
+- `abiFilters`
+<br>编译系统的默认行为是将每个 ABI 的二进制文件包括在单个 APK（也称为胖 APK）内。与仅包含单个 ABI 的二进制文件的 APK 相比，胖 APK 要大得多；要权衡的是兼容性更广，但 APK 更大。要限制应用支持的 ABI 集，请使用 [abiFilters](https://developer.android.com/ndk/guides/abis)。
+```javascript
+android {
+    ...
+    defaultConfig {
+        ...
+        ndk {
+            abiFilters "armeabi-v7a", "armeabi"
+        }
+    }
+}
+```
+- `APK 拆分`
+<br>谷歌建议[针对不同CPU架构生成对应的APK](https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split)：
 ```javascript
 android {
   ...
@@ -216,13 +231,13 @@ android {
       // 是否根据不同ABI生成APK
       enable true
 
-      // 默认情况下所有ABI都包含了，因此需要调用reset()并且指定我们需要的CPU架构，如x86和x86_64
+      // 默认情况下所有ABI都包含了，因此需要调用reset()并且指定我们需要的CPU架构
 
       // 重置Gradle生成APK的ABI列表
       reset()
 
       // 指定CPU架构来生成我们需要的APK
-      include "x86", "x86_64"
+      include "armeabi-v7a", "arm64-v8a"
 
       // 设置不再生成一个包含所有ABI的APK
       universalApk false

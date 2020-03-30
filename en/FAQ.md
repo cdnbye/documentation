@@ -80,7 +80,21 @@ For details, please see official [demo](https://github.com/cdnbye/android-p2p-en
 
 ### How to reduce your APK size?
 CDNBye's core library weighs less than 300KB alone, but it uses some large dependencies such as the WebRTC C++ library, which is compiled for different architectures.
-The solution we recommend is to [split the builds per CPU architecture](https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split).
+- `abiFilters` 
+<br>The default behavior of the build system is to include the binaries for each ABI in a single APK, also known as a fat APK. A fat APK is significantly larger than one containing only the binaries for a single ABI; the tradeoff is gaining wider compatibility, but at the expense of a larger APK. To restrict the set of ABIs that your application supports, use [abiFilters](https://developer.android.com/ndk/guides/abis). 
+```javascript
+android {
+    ...
+    defaultConfig {
+        ...
+        ndk {
+            abiFilters "armeabi-v7a", "armeabi"
+        }
+    }
+}
+```
+- `APK Splits`
+<br>The solution google recommend is to [split the builds per CPU architecture](https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split).
 ```javascript
     android {
       ...
