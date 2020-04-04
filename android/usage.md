@@ -49,7 +49,6 @@ android {
 
 ## 导入SDK
 ### Gradle方式导入
-添加Jcenter仓库 Gradle依赖：
 ```
 dependencies {
   implementation 'com.cdnbye:sdk:latest.release'
