@@ -39,6 +39,7 @@ If `opts` is specified, then the default options (shown below) will be overridde
 | `wsReconnectInterval` | number | 30 | The number of seconds to delay before attempting to reconnect by websocket.
 | `memoryCacheLimit` | Object | {"pc": 1024 * 1024 * 512, "mobile": 1024 * 1024 * 256} | The max size of binary data that can be stored in the cache.
 | `p2pEnabled` | boolean | true | Enable or disable p2p engine.
+| `wifiOnly` | boolean | false | Only allow uploading on Wi-Fi and Ethernet.
 | `dcDownloadTimeout` | number | 25 | Max download timeout for WebRTC datachannel.
 | `webRTCConfig` | Object | {} | A [Configuration dictionary](https://github.com/feross/simple-peer) providing options to configure WebRTC connections.
 | `useHttpRange` | boolean | false | Use HTTP ranges requests where it is possible. Allows to continue (and not start over) aborted P2P downloads over HTTP(True in live mode by default).

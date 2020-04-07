@@ -18,6 +18,7 @@ let config = CBP2pConfig.defaultConfiguration()
 | `diskCacheLimit` | NSUInteger | 1024 * 1024 * 1024 | 点播模式下P2P在磁盘缓存的最大数据量(设为0可以禁用磁盘缓存)。
 | `memoryCacheLimit` | NSUInteger | 100 * 1024 * 1024 | P2P在内存缓存的最大数据量。
 | `p2pEnabled` | BOOL | YES | 开启或关闭p2p engine。
+| `wifiOnly` | BOOL | NO | 是否只在wifi模式上传数据（建议在云端设置）。
 | `localPort` | NSUInteger | 52019 | 本地代理服务器的端口号。
 | `downloadTimeout` | NSTimeInterval | 10.0 | HTTP下载ts文件超时时间（单位：秒）。
 | `dcDownloadTimeout` | NSTimeInterval | 15.0 | datachannel下载二进制数据的最大超时时间（单位：秒）。

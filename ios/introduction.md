@@ -9,7 +9,6 @@
 P2P技术使观看相同内容的用户之间可以相互分享数据，不仅能效降低视频/直播的带宽成本，还可以提升用户的播放体验，降低卡顿、二次缓存的发生率。本SDK传输能力基于WebRTC Datachannel，可以与CDNBye的[Web端插件](https://github.com/cdnbye/hlsjs-p2p-engine)互联互通，大大提高了P2P网络中的节点数量，打破了浏览器与移动端APP的隔阂，实现了真正意义上的全平台流媒体加速。只需要几行代码即可快速集成到现有项目中，配置自由度高，支持任何iOS播放器。SDK还具备智能缓存能力，用于避免文件重复下载问题，从而有效节省带宽消耗。
 
 ### 特性
-- 限时免费
 - 可与CDNBye [Web端[P2P插件](https://github.com/cdnbye/hlsjs-p2p-engine)和安卓端[SDK](https://github.com/cdnbye/android-p2p-engine)互联互通
 - 支持基于HLS流媒体协议(m3u8)的直播和点播场景
 - 支持加密HLS传输
@@ -23,7 +22,7 @@ P2P技术使观看相同内容的用户之间可以相互分享数据，不仅�
 - API已经固化，新版本完全兼容旧版本代码
 
 ### 系统要求
-支持iOS 9.0以上系统。
+支持iOS 10.0以上系统。
 <br>注意：本SDK暂时不支持bitcode，在发布前请在xcode关闭bitcode。若要开启bitcode请将pod的`GoogleWebRTC`替换为`GoogleWebRTC-Bitcode`。
 
 ### 获取Token

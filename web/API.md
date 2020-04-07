@@ -38,6 +38,7 @@ if (Hls.WEBRTC_SUPPORT) {
 | `wsReconnectInterval` | number | 30 | websocket重连时间间隔。
 | `memoryCacheLimit` | Object | {"pc": 1024 * 1024 * 512, "mobile": 1024 * 1024 * 256} | p2p缓存的最大数据量，分为PC和mobile。
 | `p2pEnabled` | boolean | true | 是否开启P2P。
+| `wifiOnly` | boolean | false | 是否只在wifi和有线网络模式上传数据（建议在云端设置）。
 | `dcDownloadTimeout` | number | 25 | p2p下载的最大超时时间。
 | `webRTCConfig` | Object | {} | 用于配置stun和datachannel的[字典](https://github.com/feross/simple-peer)。
 | `useHttpRange` | boolean | false | 在可能的情况下使用Http Range请求来补足p2p下载超时的剩余部分数据（直播模式下默认是true）。

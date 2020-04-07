@@ -13,6 +13,7 @@ P2pConfig config = new P2pConfig.Builder()
     .diskCacheLimit(1024*1024*1024)                   // 点播模式下P2P在磁盘缓存的最大数据量(设为0可以禁用磁盘缓存)
     .memoryCacheCountLimit(30)                        // P2P在内存缓存的最大数据量，用ts文件个数表示
     .p2pEnabled(true)                                 // 开启或关闭p2p engine
+    .wifiOnly(false)                                  // 是否只在wifi和有线网络模式上传数据（建议在云端设置）
     .withTag("unknown")                               // 用户自定义的标签，可以在控制台查看分布图
     .webRTCConfig(null)                               // 通过webRTCConfig来修改WebRTC默认配置
     .maxPeerConnections(20)                           // 最大连接节点数量
