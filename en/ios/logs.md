@@ -99,3 +99,7 @@
 - Optimize p2p scheduling algorithm
 - Fix other known bugs
 
+### 1.4.0 8/4/2020
+- New config `wifiOnly`
+- Fix known bug
+

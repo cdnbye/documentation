@@ -74,3 +74,7 @@
 ### 1.4.2 22/3/2020
 - Optimize P2P algorithm
 - Fix known bug
+
+### 1.5.0 8/4/2020
+- New config `wifiOnly`
+- Fix known bug
