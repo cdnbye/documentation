@@ -79,7 +79,6 @@ DataSource.Factory dataSourceFactory =
 For details, please see official [demo](https://github.com/cdnbye/android-p2p-engine).
 
 ### Resolve OOM Issue in Android set-top box
-配置比较低的机顶盒容易出现OOM，可以通过配置提高堆内存大小，在`app/src/main`目录中的`AndroidManifest.xml`的<application>标签中直接插入：
 You can resolve OOM by increasing heap size, add the attribute below in `app/src/main/AndroidManifest.xml`:
 ```xml
 <application
