@@ -4,7 +4,7 @@
 <a href="https://github.com/cdnbye/android-p2p-engine"><img src="https://img.shields.io/github/stars/cdnbye/android-p2p-engine.svg?style=social&label=Star" alt="stars"></a>
 
 ### Live/VOD P2P Engine for Android and Android TV
-CDNBye Android P2P Engine scales live/vod video streaming by peer-to-peer network using bittorrent-like protocol. Powered by WebRTC Datachannel, this SDK can interconnect with the Web side [plug-in](https://github.com/cdnbye/hlsjs-p2p-engine) of CDNBye, which greatly increases the number of nodes in the P2P network, breaking the gap between the browser and mobile application. Merely a few lines of codes are required to quickly integrate into existing projects. As expected, it supports Android mobile and Android TV!
+CDNBye Android P2P Engine scales live/vod video streaming by peer-to-peer network using bittorrent-like protocol. It can relieve stress on server infrastructures by connecting viewers watching the same stream at the same time. Powered by WebRTC Datachannel, this SDK can interconnect with the Web side [plug-in](https://github.com/cdnbye/hlsjs-p2p-engine) of CDNBye, which greatly increases the number of nodes in the P2P network, breaking the gap between the browser and mobile application. Merely a few lines of codes are required to quickly integrate into existing projects. As expected, it supports Android mobile and Android TV!
 
 ### Features
 - Interconnect with CDNBye [hlsjs-p2p-engine](https://github.com/cdnbye/hlsjs-p2p-engine) and [ios-p2p-engine](https://github.com/cdnbye/ios-p2p-engine)

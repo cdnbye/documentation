@@ -7,7 +7,7 @@
 <a href="https://github.com/cdnbye/hlsjs-p2p-engine"><img src="https://img.shields.io/github/stars/cdnbye/hlsjs-p2p-engine.svg?style=social&label=Star" alt="stars"></a>
 
 ### Web Video Delivery Technology with No Plugins
-CDNBye hlsjs-p2p-engine implements WebRTC datachannel to scale live/vod video streaming by peer-to-peer network using bittorrent-like protocol. The forming peer network can be layed over other CDNs or on top of the origin server. Powered by hls.js, it can play HLS on any platform with many popular HTML5 players such as video.js, JWPlayer and Flowplayer.
+CDNBye hlsjs-p2p-engine implements WebRTC datachannel to scale live/vod video streaming by peer-to-peer network using bittorrent-like protocol. It can relieve stress on server infrastructures by connecting viewers watching the same stream at the same time. The forming peer network can be layed over other CDNs or on top of the origin server. Powered by hls.js, it can play HLS on any platform with many popular HTML5 players such as video.js, JWPlayer and Flowplayer.
 
 ### Features
 - WebRTC data channels for lightweight peer-to-peer communication with no plugins
