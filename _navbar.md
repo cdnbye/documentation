@@ -1,4 +1,4 @@
 - language(语言)
   - [English](/en/)
   - [中文](/)
-- [控制台](https://oms.cdnbye.com)
+- [控制台](https://dashboard.cdnbye.com/)
