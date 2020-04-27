@@ -33,6 +33,9 @@ CDNBye基于WebRTC技术进行P2P传输，主流浏览器默认支持WebRTC，�
     </tr>
 </table>
 
+### 服务器赞助
+[<img src="http://dashboard.cdnbye.com/pics/cloudbase.png" width="200">](https://cloud.tencent.com/product/tcb?from=12334)
+
 ### 联系我们
 邮箱：service@cdnbye.com
 <br>
